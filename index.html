@@ -1,819 +1,1035 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta name="theme-color"
-      content="#111111">
+    <meta
+        name="theme-color"
+        content="#111111"
+    >
 
-<title>Avaliação Online - MSc Ronilson</title>
+    <meta
+        name="description"
+        content="Ambiente de avaliação online"
+    >
 
+    <title>
+        Avaliação Online - MSc Ronilson
+    </title>
 
-<style>
 
-/* =====================================================
-   CONFIGURAÇÃO GERAL
-===================================================== */
+    <style>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        /* =====================================================
+           RESET
+        ===================================================== */
 
-html,
-body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    width: 100%;
-    min-height: 100%;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+        html,
+        body {
 
-    background: #111;
+            width: 100%;
 
-    color: white;
-}
+            min-height: 100%;
 
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-/* =====================================================
-   TELA INICIAL
-===================================================== */
+            background: #111;
 
-#inicio {
+            color: #fff;
 
-    width: 100%;
+        }
 
-    min-height: 100vh;
-    min-height: 100dvh;
 
-    display: flex;
+        body {
 
-    align-items: center;
-    justify-content: center;
+            overflow-x: hidden;
 
-    padding: 20px;
+        }
 
-    background:
-        radial-gradient(
-            circle at top,
-            #292929,
-            #111 50%,
-            #050505
-        );
-}
 
+        button,
+        input {
 
-.card {
+            font-family: inherit;
 
-    width: 100%;
-    max-width: 680px;
+        }
 
-    background: #1b1b1b;
 
-    border: 1px solid #333;
+        /* =====================================================
+           TELA INICIAL
+        ===================================================== */
 
-    border-radius: 16px;
+        #inicio {
 
-    padding: 40px;
+            width: 100%;
 
-    text-align: center;
+            min-height: 100vh;
 
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.7);
-}
+            min-height: 100dvh;
 
+            display: flex;
 
-.icone {
+            align-items: center;
 
-    font-size: 55px;
+            justify-content: center;
 
-    margin-bottom: 15px;
-}
+            padding: 20px;
 
+            background:
 
-h1 {
+                radial-gradient(
+                    circle at top,
+                    #292929 0%,
+                    #111 50%,
+                    #050505 100%
+                );
 
-    font-size: clamp(
-        24px,
-        5vw,
-        32px
-    );
+        }
 
-    margin-bottom: 10px;
-}
 
+        /* =====================================================
+           CARD INICIAL
+        ===================================================== */
 
-.professor {
+        .card {
 
-    color: #31b279;
+            width: 100%;
 
-    font-size: 18px;
+            max-width: 680px;
 
-    margin-bottom: 25px;
-}
+            background: #1b1b1b;
 
+            border: 1px solid #333;
 
-.descricao {
+            border-radius: 16px;
 
-    color: #ccc;
+            padding: 40px;
 
-    line-height: 1.7;
+            text-align: center;
 
-    margin-bottom: 25px;
-}
+            box-shadow:
 
+                0 20px 60px
+                rgba(0, 0, 0, 0.70);
 
-/* =====================================================
-   REGRAS
-===================================================== */
+        }
 
-.regras {
 
-    width: 100%;
+        .icone {
 
-    text-align: left;
+            font-size: 58px;
 
-    background: #101010;
+            margin-bottom: 15px;
 
-    border-radius: 10px;
+        }
 
-    padding: 20px;
 
-    margin-bottom: 25px;
-}
+        .card h1 {
 
+            color: #fff;
 
-.regras h3 {
+            font-size:
+                clamp(
+                    24px,
+                    5vw,
+                    34px
+                );
 
-    color: #31b279;
+            margin-bottom: 10px;
 
-    margin-bottom: 15px;
-}
+        }
 
 
-.regras p {
+        .professor {
 
-    color: #ddd;
+            color: #31b279;
 
-    font-size: 14px;
+            font-size: 18px;
 
-    line-height: 1.5;
+            font-weight: bold;
 
-    margin: 8px 0;
-}
+            margin-bottom: 25px;
 
+        }
 
-/* =====================================================
-   INPUT
-===================================================== */
 
-input {
+        .descricao {
 
-    width: 100%;
+            color: #ccc;
 
-    height: 52px;
+            font-size: 15px;
 
-    padding:
-        0 15px;
+            line-height: 1.7;
 
-    background: #222;
+            margin-bottom: 25px;
 
-    border: 1px solid #444;
+        }
 
-    border-radius: 8px;
 
-    color: white;
+        /* =====================================================
+           REGRAS
+        ===================================================== */
 
-    font-size: 16px;
+        .regras {
 
-    outline: none;
+            width: 100%;
 
-    margin-bottom: 15px;
-}
+            text-align: left;
 
+            background: #101010;
 
-input:focus {
+            border: 1px solid #292929;
 
-    border-color: #31b279;
-}
+            border-radius: 10px;
 
+            padding: 20px;
 
-/* =====================================================
-   BOTÃO
-===================================================== */
+            margin-bottom: 25px;
 
-.btn {
+        }
 
-    width: 100%;
 
-    min-height: 52px;
+        .regras h3 {
 
-    border: none;
+            color: #31b279;
 
-    border-radius: 8px;
+            font-size: 17px;
 
-    background: #31b279;
+            margin-bottom: 15px;
 
-    color: white;
+        }
 
-    font-size: 16px;
 
-    font-weight: bold;
+        .regras p {
 
-    cursor: pointer;
-}
+            color: #ddd;
 
+            font-size: 14px;
 
-.btn:hover {
+            line-height: 1.5;
 
-    background: #27945f;
-}
+            margin: 9px 0;
 
+        }
 
-/* =====================================================
-   PROVA
-===================================================== */
 
-#prova {
+        /* =====================================================
+           CAMPO NOME
+        ===================================================== */
 
-    display: none;
+        input {
 
-    width: 100%;
+            width: 100%;
 
-    height: 100vh;
+            height: 52px;
 
-    height: 100dvh;
+            padding:
+                0 15px;
 
-    background: white;
+            background: #222;
 
-    overflow: hidden;
-}
+            color: #fff;
 
+            border: 1px solid #444;
 
-/* =====================================================
-   CABEÇALHO
-===================================================== */
+            border-radius: 8px;
 
-.topo {
+            outline: none;
 
-    width: 100%;
+            font-size: 16px;
 
-    height: 64px;
+            margin-bottom: 15px;
 
-    background: #111;
+            transition:
+                border-color .2s,
+                box-shadow .2s;
 
-    display: flex;
+        }
 
-    align-items: center;
 
-    justify-content: space-between;
+        input::placeholder {
 
-    gap: 15px;
+            color: #999;
 
-    padding:
-        8px 20px;
+        }
 
-    position: relative;
 
-    z-index: 100;
-}
+        input:focus {
 
+            border-color: #31b279;
 
-.informacoes {
+            box-shadow:
+                0 0 0 2px
+                rgba(49, 178, 121, .15);
 
-    min-width: 0;
+        }
 
-    flex: 1;
-}
 
+        /* =====================================================
+           BOTÃO
+        ===================================================== */
 
-.titulo {
+        .btn {
 
-    font-size: 17px;
+            width: 100%;
 
-    font-weight: bold;
+            min-height: 52px;
 
-    white-space: nowrap;
+            border: none;
 
-    overflow: hidden;
+            border-radius: 8px;
 
-    text-overflow: ellipsis;
-}
+            background: #31b279;
 
+            color: #fff;
 
-.aluno {
+            font-size: 16px;
 
-    color: #31b279;
+            font-weight: bold;
 
-    font-size: 13px;
+            cursor: pointer;
 
-    margin-top: 4px;
+            transition:
+                background .2s,
+                transform .1s;
 
-    white-space: nowrap;
+        }
 
-    overflow: hidden;
 
-    text-overflow: ellipsis;
-}
+        .btn:hover {
 
+            background: #27945f;
 
-/* =====================================================
-   CRONÔMETRO
-===================================================== */
+        }
 
-.cronometro {
 
-    flex-shrink: 0;
+        .btn:active {
 
-    min-width: 125px;
+            transform: scale(.99);
 
-    padding:
-        9px 14px;
+        }
 
-    background: #222;
 
-    border:
-        1px solid #31b279;
+        .btn:disabled {
 
-    border-radius: 7px;
+            opacity: .6;
 
-    color: #31b279;
+            cursor: not-allowed;
 
-    font-weight: bold;
+        }
 
-    text-align: center;
-}
 
+        /* =====================================================
+           ÁREA DA PROVA
+        ===================================================== */
 
-/* =====================================================
-   ÁREA DO FORM
-===================================================== */
+        #prova {
 
-.area-formulario {
+            display: none;
 
-    width: 100%;
+            width: 100%;
 
-    height:
-        calc(100vh - 64px);
+            height: 100vh;
 
-    height:
-        calc(100dvh - 64px);
+            height: 100dvh;
 
-    background: white;
+            background: #fff;
 
-    overflow: hidden;
-}
+            overflow: hidden;
 
+        }
 
-iframe {
 
-    display: block;
+        /* =====================================================
+           CABEÇALHO
+        ===================================================== */
 
-    width: 100%;
+        .topo {
 
-    height: 100%;
+            width: 100%;
 
-    border: none;
+            height: 64px;
 
-    background: white;
-}
+            background: #111;
 
+            display: flex;
 
-/* =====================================================
-   SUCESSO
-===================================================== */
+            align-items: center;
 
-#sucesso {
+            justify-content: space-between;
 
-    display: none;
+            gap: 15px;
 
-    width: 100%;
+            padding:
+                8px 20px;
 
-    min-height: 100vh;
+            position: relative;
 
-    min-height: 100dvh;
+            z-index: 100;
 
-    align-items: center;
+        }
 
-    justify-content: center;
 
-    text-align: center;
+        .informacoes {
 
-    padding: 20px;
+            min-width: 0;
 
-    background: #111;
-}
+            flex: 1;
 
+        }
 
-.sucesso-card {
 
-    width: 100%;
+        .titulo {
 
-    max-width: 600px;
+            color: #fff;
 
-    background: #1b1b1b;
+            font-size: 17px;
 
-    border:
-        2px solid #31b279;
+            font-weight: bold;
 
-    border-radius: 16px;
+            white-space: nowrap;
 
-    padding:
-        45px 30px;
+            overflow: hidden;
 
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.7);
-}
+            text-overflow: ellipsis;
 
+        }
 
-.sucesso-icone {
 
-    font-size: 65px;
+        .aluno {
 
-    margin-bottom: 20px;
-}
+            color: #31b279;
 
+            font-size: 13px;
 
-.sucesso-card h1 {
+            margin-top: 4px;
 
-    color: #31b279;
+            white-space: nowrap;
 
-    margin-bottom: 20px;
-}
+            overflow: hidden;
 
+            text-overflow: ellipsis;
 
-.sucesso-card p {
+        }
 
-    color: #ccc;
 
-    line-height: 1.7;
+        /* =====================================================
+           CRONÔMETRO
+        ===================================================== */
 
-    margin-bottom: 10px;
-}
+        .cronometro {
 
+            flex-shrink: 0;
 
-/* =====================================================
-   VIOLAÇÃO
-===================================================== */
+            min-width: 125px;
 
-#violacao {
+            padding:
+                9px 14px;
 
-    display: none;
+            background: #222;
 
-    width: 100%;
+            border:
+                1px solid #31b279;
 
-    min-height: 100vh;
+            border-radius: 7px;
 
-    min-height: 100dvh;
+            color: #31b279;
 
-    align-items: center;
+            font-size: 15px;
 
-    justify-content: center;
+            font-weight: bold;
 
-    text-align: center;
+            text-align: center;
 
-    padding: 20px;
+        }
 
-    background: #111;
-}
 
+        /* =====================================================
+           FORMULÁRIO
+        ===================================================== */
 
-.violacao-card {
+        .area-formulario {
 
-    width: 100%;
+            width: 100%;
 
-    max-width: 600px;
+            height:
+                calc(100vh - 64px);
 
-    background: #1b1b1b;
+            height:
+                calc(100dvh - 64px);
 
-    border:
-        2px solid #d32f2f;
+            background: #fff;
 
-    border-radius: 16px;
+            overflow: hidden;
 
-    padding:
-        45px 30px;
+        }
 
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.7);
-}
 
+        iframe {
 
-.violacao-icone {
+            display: block;
 
-    font-size: 65px;
+            width: 100%;
 
-    margin-bottom: 20px;
-}
+            height: 100%;
 
+            border: none;
 
-.violacao-card h1 {
+            background: #fff;
 
-    color: #ff5555;
+        }
 
-    margin-bottom: 20px;
-}
 
+        /* =====================================================
+           TELA DE SUCESSO
+        ===================================================== */
 
-.violacao-card p {
+        #sucesso {
 
-    color: #ccc;
+            display: none;
 
-    line-height: 1.7;
+            width: 100%;
 
-    margin-bottom: 10px;
-}
+            min-height: 100vh;
 
+            min-height: 100dvh;
 
-.motivo {
+            align-items: center;
 
-    background: #101010;
+            justify-content: center;
 
-    color: #ff7777;
+            text-align: center;
 
-    border-radius: 8px;
+            padding: 20px;
 
-    padding: 15px;
+            background:
 
-    margin-top: 20px;
+                radial-gradient(
+                    circle at top,
+                    #292929,
+                    #111 55%,
+                    #050505
+                );
 
-    line-height: 1.5;
-}
+        }
 
 
-/* =====================================================
-   TEMPO ENCERRADO
-===================================================== */
+        .sucesso-card {
 
-#finalizado {
+            width: 100%;
 
-    display: none;
+            max-width: 620px;
 
-    width: 100%;
+            padding:
+                45px 30px;
 
-    min-height: 100vh;
+            background: #1b1b1b;
 
-    min-height: 100dvh;
+            border:
+                2px solid #31b279;
 
-    align-items: center;
+            border-radius: 16px;
 
-    justify-content: center;
+            box-shadow:
+                0 20px 60px
+                rgba(0, 0, 0, .7);
 
-    text-align: center;
+        }
 
-    padding: 20px;
 
-    background: #111;
-}
+        .sucesso-icone {
 
+            font-size: 70px;
 
-.final-card {
+            margin-bottom: 20px;
 
-    width: 100%;
+        }
 
-    max-width: 600px;
 
-    background: #1b1b1b;
+        .sucesso-card h1 {
 
-    border:
-        2px solid #31b279;
+            color: #31b279;
 
-    border-radius: 16px;
+            font-size:
+                clamp(
+                    24px,
+                    5vw,
+                    34px
+                );
 
-    padding:
-        45px 30px;
-}
+            margin-bottom: 20px;
 
+        }
 
-.final-card h1 {
 
-    color: #31b279;
+        .sucesso-card p {
 
-    margin-bottom: 20px;
-}
+            color: #ccc;
 
+            font-size: 16px;
 
-.final-card p {
+            line-height: 1.7;
 
-    color: #ccc;
+            margin:
+                8px 0;
 
-    line-height: 1.7;
-}
+        }
 
 
-/* =====================================================
-   RESPONSIVO
-===================================================== */
+        .sucesso-nome {
 
-@media(max-width:768px) {
+            color: #fff !important;
 
-    #inicio {
+            font-weight: bold;
 
-        padding: 15px;
+            margin-top: 20px !important;
 
-    }
+        }
 
 
-    .card {
+        /* =====================================================
+           TELA DE VIOLAÇÃO
+        ===================================================== */
 
-        padding:
-            30px 22px;
+        #violacao {
 
-    }
+            display: none;
 
+            width: 100%;
 
-    .topo {
+            min-height: 100vh;
 
-        height: 60px;
+            min-height: 100dvh;
 
-        padding:
-            7px 12px;
+            align-items: center;
 
-    }
+            justify-content: center;
 
+            text-align: center;
 
-    .area-formulario {
+            padding: 20px;
 
-        height:
-            calc(100vh - 60px);
+            background:
 
-        height:
-            calc(100dvh - 60px);
+                radial-gradient(
+                    circle at top,
+                    #292929,
+                    #111 55%,
+                    #050505
+                );
 
-    }
+        }
 
-}
 
+        .violacao-card {
 
-@media(max-width:600px) {
+            width: 100%;
 
-    #inicio {
+            max-width: 620px;
 
-        align-items:
-            flex-start;
+            padding:
+                45px 30px;
 
-        padding: 12px;
+            background: #1b1b1b;
 
-        overflow-y: auto;
+            border:
+                2px solid #d32f2f;
 
-    }
+            border-radius: 16px;
 
+            box-shadow:
+                0 20px 60px
+                rgba(0, 0, 0, .7);
 
-    .card {
+        }
 
-        margin:
-            10px auto;
 
-        padding:
-            25px 18px;
+        .violacao-icone {
 
-    }
+            font-size: 70px;
 
+            margin-bottom: 20px;
 
-    .icone {
+        }
 
-        font-size: 45px;
 
-    }
+        .violacao-card h1 {
 
+            color: #ff5555;
 
-    h1 {
+            font-size:
+                clamp(
+                    24px,
+                    5vw,
+                    34px
+                );
 
-        font-size: 24px;
+            margin-bottom: 20px;
 
-    }
+        }
 
 
-    .professor {
+        .violacao-card p {
 
-        font-size: 15px;
+            color: #ccc;
 
-    }
+            font-size: 16px;
 
+            line-height: 1.7;
 
-    .descricao {
+            margin:
+                8px 0;
 
-        font-size: 14px;
+        }
 
-    }
 
+        .motivo {
 
-    .regras {
+            margin-top: 22px;
 
-        padding: 15px;
+            padding: 15px;
 
-    }
+            background: #101010;
 
+            border-radius: 8px;
 
-    .regras p {
+            color: #ff7777;
 
-        font-size: 13px;
+            line-height: 1.5;
 
-    }
+        }
 
 
-    .topo {
+        /* =====================================================
+           TELA TEMPO ENCERRADO
+        ===================================================== */
 
-        height: 58px;
+        #finalizado {
 
-        padding:
-            6px 8px;
+            display: none;
 
-        gap: 8px;
+            width: 100%;
 
-    }
+            min-height: 100vh;
 
+            min-height: 100dvh;
 
-    .titulo {
+            align-items: center;
 
-        font-size: 13px;
+            justify-content: center;
 
-    }
+            text-align: center;
 
+            padding: 20px;
 
-    .aluno {
+            background:
 
-        font-size: 10px;
+                radial-gradient(
+                    circle at top,
+                    #292929,
+                    #111 55%,
+                    #050505
+                );
 
-        max-width: 180px;
+        }
 
-    }
 
+        .final-card {
 
-    .cronometro {
+            width: 100%;
 
-        min-width: 92px;
+            max-width: 620px;
 
-        padding:
-            8px 5px;
+            padding:
+                45px 30px;
 
-        font-size: 12px;
+            background: #1b1b1b;
 
-    }
+            border:
+                2px solid #31b279;
 
+            border-radius: 16px;
 
-    .area-formulario {
+        }
 
-        height:
-            calc(100vh - 58px);
 
-        height:
-            calc(100dvh - 58px);
+        .final-card h1 {
 
-    }
+            color: #31b279;
 
+            font-size:
+                clamp(
+                    24px,
+                    5vw,
+                    34px
+                );
 
-    .sucesso-card,
-    .violacao-card,
-    .final-card {
+            margin-bottom: 20px;
 
-        padding:
-            35px 20px;
+        }
 
-    }
 
-}
+        .final-card p {
 
+            color: #ccc;
 
-@media(max-width:380px) {
+            line-height: 1.7;
 
-    .titulo {
+            margin: 8px 0;
 
-        font-size: 12px;
+        }
 
-    }
 
+        /* =====================================================
+           RESPONSIVO - TABLET
+        ===================================================== */
 
-    .aluno {
+        @media (max-width: 768px) {
 
-        max-width: 130px;
+            #inicio {
 
-    }
+                padding: 15px;
 
+            }
 
-    .cronometro {
 
-        min-width: 85px;
+            .card {
 
-        font-size: 11px;
+                padding:
+                    30px 22px;
 
-    }
+            }
 
-}
 
-</style>
+            .topo {
+
+                height: 60px;
+
+                padding:
+                    7px 12px;
+
+            }
+
+
+            .area-formulario {
+
+                height:
+                    calc(100vh - 60px);
+
+                height:
+                    calc(100dvh - 60px);
+
+            }
+
+
+            .titulo {
+
+                font-size: 15px;
+
+            }
+
+
+            .cronometro {
+
+                min-width: 110px;
+
+                font-size: 13px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVO - CELULAR
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            #inicio {
+
+                align-items:
+                    flex-start;
+
+                padding: 12px;
+
+                overflow-y: auto;
+
+            }
+
+
+            .card {
+
+                margin:
+                    10px auto;
+
+                padding:
+                    25px 18px;
+
+            }
+
+
+            .icone {
+
+                font-size: 45px;
+
+            }
+
+
+            .card h1 {
+
+                font-size: 24px;
+
+            }
+
+
+            .professor {
+
+                font-size: 15px;
+
+            }
+
+
+            .descricao {
+
+                font-size: 14px;
+
+            }
+
+
+            .regras {
+
+                padding: 15px;
+
+            }
+
+
+            .regras p {
+
+                font-size: 13px;
+
+            }
+
+
+            .topo {
+
+                height: 58px;
+
+                padding:
+                    6px 8px;
+
+                gap: 8px;
+
+            }
+
+
+            .titulo {
+
+                font-size: 12px;
+
+            }
+
+
+            .aluno {
+
+                font-size: 10px;
+
+                max-width: 180px;
+
+            }
+
+
+            .cronometro {
+
+                min-width: 90px;
+
+                padding:
+                    8px 5px;
+
+                font-size: 11px;
+
+            }
+
+
+            .area-formulario {
+
+                height:
+                    calc(100vh - 58px);
+
+                height:
+                    calc(100dvh - 58px);
+
+            }
+
+
+            .sucesso-card,
+            .violacao-card,
+            .final-card {
+
+                padding:
+                    35px 20px;
+
+            }
+
+
+            .sucesso-icone,
+            .violacao-icone {
+
+                font-size: 60px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CELULAR PEQUENO
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .titulo {
+
+                font-size: 11px;
+
+            }
+
+
+            .aluno {
+
+                max-width: 125px;
+
+            }
+
+
+            .cronometro {
+
+                min-width: 82px;
+
+                font-size: 10px;
+
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -821,1177 +1037,1754 @@ iframe {
 <body>
 
 
-<!-- =====================================================
-     INÍCIO
-===================================================== -->
+    <!-- =====================================================
+         TELA INICIAL
+    ===================================================== -->
 
-<section id="inicio">
-
-
-    <div class="card">
+    <section id="inicio">
 
 
-        <div class="icone">
-            🔒
-        </div>
+        <div class="card">
 
 
-        <h1>
-            Ambiente de Avaliação
-        </h1>
+            <div class="icone">
+                🔒
+            </div>
 
 
-        <div class="professor">
-            Professor: MSc Ronilson
-        </div>
+            <h1>
+                Ambiente de Avaliação
+            </h1>
 
 
-        <p class="descricao">
-
-            Leia atentamente as regras
-            antes de iniciar a avaliação.
-
-        </p>
+            <div class="professor">
+                Professor: MSc Ronilson
+            </div>
 
 
-        <div class="regras">
+            <p class="descricao">
 
+                Leia atentamente as regras
+                antes de iniciar a avaliação.
 
-            <h3>
-                ⚠️ Regras da avaliação
-            </h3>
-
-
-            <p>
-                ✓ Não utilize mecanismos de pesquisa.
             </p>
 
 
-            <p>
-                ✓ Não abra outras páginas.
-            </p>
+            <!-- REGRAS -->
+
+            <div class="regras">
 
 
-            <p>
-                ✓ Não troque de aba ou janela.
-            </p>
+                <h3>
+                    ⚠️ REGRAS DA AVALIAÇÃO
+                </h3>
 
 
-            <p>
-                ✓ A avaliação será realizada em tela cheia.
-            </p>
+                <p>
+                    ✓ Digite seu nome completo antes de iniciar.
+                </p>
 
 
-            <p>
-                ✓ Se sair da tela cheia, a avaliação será encerrada.
-            </p>
+                <p>
+                    ✓ Não utilize mecanismos de pesquisa.
+                </p>
 
 
-            <p>
-                ✓ Se sair da página, a avaliação será encerrada.
-            </p>
+                <p>
+                    ✓ Não abra outras páginas.
+                </p>
 
 
-            <p>
-                ✓ Depois de encerrada, não será possível retornar.
-            </p>
+                <p>
+                    ✓ Não troque de aba ou janela.
+                </p>
 
 
-        </div>
+                <p>
+                    ✓ Não saia da tela cheia.
+                </p>
 
 
-        <input
-            type="text"
-            id="nomeAluno"
-            placeholder="Digite seu nome completo"
-            autocomplete="off"
-            maxlength="100"
-        >
+                <p>
+                    ✓ Se sair da tela cheia, a avaliação será encerrada.
+                </p>
 
 
-        <button
-            class="btn"
-            id="botaoIniciar"
-            onclick="iniciarProva()"
-        >
-
-            🔒 INICIAR AVALIAÇÃO
-
-        </button>
+                <p>
+                    ✓ Se trocar de aba ou janela, a avaliação será encerrada.
+                </p>
 
 
-    </div>
+                <p>
+                    ✓ O botão Voltar também encerra a avaliação.
+                </p>
 
 
-</section>
+                <p>
+                    ✓ Após encerrada, a avaliação não poderá ser retomada.
+                </p>
 
 
+                <p>
+                    ✓ Ao clicar em Enviar, aguarde a confirmação.
+                </p>
 
-<!-- =====================================================
-     PROVA
-===================================================== -->
-
-<section id="prova">
-
-
-    <header class="topo">
-
-
-        <div class="informacoes">
-
-
-            <div class="titulo">
-
-                🔒 AVALIAÇÃO ONLINE
 
             </div>
 
 
+            <!-- NOME -->
+
+            <input
+                type="text"
+                id="nomeAluno"
+                placeholder="Digite seu nome completo"
+                autocomplete="off"
+                maxlength="100"
+            >
+
+
+            <!-- BOTÃO -->
+
+            <button
+                type="button"
+                class="btn"
+                id="botaoIniciar"
+                onclick="iniciarProva()"
+            >
+
+                🔒 INICIAR AVALIAÇÃO
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TELA DA PROVA
+    ===================================================== -->
+
+    <section id="prova">
+
+
+        <!-- CABEÇALHO -->
+
+        <header class="topo">
+
+
+            <div class="informacoes">
+
+
+                <div class="titulo">
+
+                    🔒 AVALIAÇÃO ONLINE
+
+                </div>
+
+
+                <div
+                    class="aluno"
+                    id="aluno"
+                ></div>
+
+
+            </div>
+
+
+            <!-- CRONÔMETRO -->
+
             <div
-                class="aluno"
-                id="aluno"
+                class="cronometro"
+                id="cronometro"
+            >
+
+                01:30:00
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- FORMULÁRIO -->
+
+        <div class="area-formulario">
+
+
+            <iframe
+
+                id="formulario"
+
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdSBg1ISfOMXN7dlGn04kiQWpHRgFPJyFvHAUmsarDUWr6nyA/viewform?embedded=true"
+
+                title="Avaliação Teste"
+
+                allow="fullscreen"
+
+                referrerpolicy="strict-origin-when-cross-origin"
+
+            ></iframe>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TELA SUCESSO
+    ===================================================== -->
+
+    <section id="sucesso">
+
+
+        <div class="sucesso-card">
+
+
+            <div class="sucesso-icone">
+
+                ✅
+
+            </div>
+
+
+            <h1>
+
+                FORMULÁRIO ENVIADO COM SUCESSO!
+
+            </h1>
+
+
+            <p>
+
+                Sua resposta foi registrada.
+
+            </p>
+
+
+            <p>
+
+                A avaliação foi concluída.
+
+            </p>
+
+
+            <p class="sucesso-nome"
+               id="nomeSucesso">
+
+            </p>
+
+
+            <p>
+
+                Você pode fechar esta página.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TELA VIOLAÇÃO
+    ===================================================== -->
+
+    <section id="violacao">
+
+
+        <div class="violacao-card">
+
+
+            <div class="violacao-icone">
+
+                🚫
+
+            </div>
+
+
+            <h1>
+
+                AVALIAÇÃO ENCERRADA
+
+            </h1>
+
+
+            <p>
+
+                Foi detectada uma saída
+                do ambiente de avaliação.
+
+            </p>
+
+
+            <p>
+
+                A avaliação não poderá
+                ser retomada.
+
+            </p>
+
+
+            <div
+                class="motivo"
+                id="motivo"
             ></div>
 
 
         </div>
 
 
-        <div
-            class="cronometro"
-            id="cronometro"
-        >
+    </section>
 
-            01:30:00
+
+
+    <!-- =====================================================
+         TELA TEMPO ENCERRADO
+    ===================================================== -->
+
+    <section id="finalizado">
+
+
+        <div class="final-card">
+
+
+            <div style="font-size:60px;margin-bottom:20px;">
+
+                ⏰
+
+            </div>
+
+
+            <h1>
+
+                TEMPO ENCERRADO
+
+            </h1>
+
+
+            <p>
+
+                O tempo destinado à avaliação terminou.
+
+            </p>
+
+
+            <p>
+
+                A avaliação foi encerrada.
+
+            </p>
+
 
         </div>
 
 
-    </header>
+    </section>
 
 
-    <div class="area-formulario">
 
+    <script>
 
-        <iframe
-            id="formulario"
+        /* =====================================================
+           VARIÁVEIS
+        ===================================================== */
 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdSBg1ISfOMXN7dlGn04kiQWpHRgFPJyFvHAUmsarDUWr6nyA/viewform?embedded=true"
 
-            title="Avaliação"
+        let provaIniciada = false;
 
-            allow="fullscreen">
+        let provaEncerrada = false;
 
-        </iframe>
+        let monitoramentoAtivo = false;
 
+        let fullscreenConfirmado = false;
 
-    </div>
+        let formularioCarregamentos = 0;
 
+        let tempoRestante = 90 * 60;
 
-</section>
+        let intervaloCronometro = null;
 
+        let nomeAlunoAtual = "";
 
 
-<!-- =====================================================
-     SUCESSO
-===================================================== -->
 
-<section id="sucesso">
+        /* =====================================================
+           INICIAR PROVA
+        ===================================================== */
 
+        async function iniciarProva() {
 
-    <div class="sucesso-card">
 
+            const campoNome =
+                document.getElementById(
+                    "nomeAluno"
+                );
 
-        <div class="sucesso-icone">
-            ✅
-        </div>
 
+            const nome =
+                campoNome.value.trim();
 
-        <h1>
-            Formulário enviado com sucesso!
-        </h1>
 
+            /*
+             * Verifica nome.
+             */
 
-        <p>
-            Sua resposta foi registrada.
-        </p>
+            if (nome === "") {
 
 
-        <p>
-            A avaliação foi concluída.
-        </p>
+                alert(
+                    "Digite seu nome completo antes de iniciar a avaliação."
+                );
 
 
-        <p>
-            Você pode fechar esta página.
-        </p>
+                campoNome.focus();
 
 
-    </div>
+                return;
 
+            }
 
-</section>
 
+            /*
+             * Impede iniciar duas vezes.
+             */
 
+            if (provaIniciada) {
 
-<!-- =====================================================
-     VIOLAÇÃO
-===================================================== -->
+                return;
 
-<section id="violacao">
+            }
 
 
-    <div class="violacao-card">
+            /*
+             * Guarda nome.
+             */
 
+            nomeAlunoAtual = nome;
 
-        <div class="violacao-icone">
-            🚫
-        </div>
 
+            /*
+             * Mostra aluno.
+             */
 
-        <h1>
-            Avaliação encerrada
-        </h1>
+            document
+                .getElementById("aluno")
+                .innerText =
+                "Aluno: " + nome;
 
 
-        <p>
-            Foi detectada uma saída
-            do ambiente de avaliação.
-        </p>
+            document
+                .getElementById("nomeSucesso")
+                .innerText =
+                "Aluno: " + nome;
 
 
-        <p>
-            O formulário foi encerrado
-            e a avaliação não poderá
-            ser retomada.
-        </p>
+            /*
+             * Desabilita botão.
+             */
 
+            document
+                .getElementById("botaoIniciar")
+                .disabled = true;
 
-        <div
-            class="motivo"
-            id="motivo"
-        ></div>
 
+            /*
+             * Esconde início.
+             */
 
-    </div>
+            document
+                .getElementById("inicio")
+                .style.display =
+                "none";
 
 
-</section>
+            /*
+             * Mostra prova.
+             */
 
+            document
+                .getElementById("prova")
+                .style.display =
+                "block";
 
 
-<!-- =====================================================
-     FINAL POR TEMPO
-===================================================== -->
+            /*
+             * Reset dos controles.
+             */
 
-<section id="finalizado">
+            provaEncerrada = false;
 
+            provaIniciada = false;
 
-    <div class="final-card">
+            monitoramentoAtivo = false;
 
+            fullscreenConfirmado = false;
 
-        <h1>
-            ⏰ Tempo encerrado
-        </h1>
+            formularioCarregamentos = 0;
 
 
-        <p>
-            O tempo destinado à avaliação terminou.
-        </p>
+            /*
+             * Tenta ativar tela cheia.
+             */
 
+            try {
 
-        <br>
 
+                await document
+                    .documentElement
+                    .requestFullscreen();
 
-        <p>
-            A avaliação foi encerrada.
-        </p>
 
+                /*
+                 * Fullscreen aceito.
+                 */
 
-    </div>
+                fullscreenConfirmado = true;
 
 
-</section>
+            }
+            catch (erro) {
 
 
+                /*
+                 * Alguns celulares/navegadores
+                 * não permitem fullscreen.
+                 */
 
-<script>
+                console.log(
+                    "Tela cheia não disponível:",
+                    erro
+                );
 
-/* =====================================================
-   VARIÁVEIS
-===================================================== */
 
-let provaIniciada = false;
+            }
 
-let provaEncerrada = false;
 
-let monitoramentoAtivo = false;
+            /*
+             * A prova foi iniciada.
+             */
 
-let fullscreenConfirmado = false;
+            provaIniciada = true;
 
-let tempoRestante = 90 * 60;
 
-let intervalo = null;
+            /*
+             * Aguarda a página estabilizar.
+             *
+             * Isso evita que a própria entrada
+             * em fullscreen seja interpretada
+             * como uma saída.
+             */
 
+            setTimeout(
+                function() {
 
-/* =====================================================
-   INICIAR PROVA
-===================================================== */
+                    if (
+                        provaIniciada &&
+                        !provaEncerrada
+                    ) {
 
-async function iniciarProva() {
+                        monitoramentoAtivo = true;
 
+                    }
 
-    const campo =
-        document.getElementById(
-            "nomeAluno"
-        );
-
-
-    const nome =
-        campo.value.trim();
-
-
-    if(nome === "") {
-
-        alert(
-            "Digite seu nome completo antes de iniciar."
-        );
-
-        campo.focus();
-
-        return;
-
-    }
-
-
-    const botao =
-        document.getElementById(
-            "botaoIniciar"
-        );
-
-
-    botao.disabled = true;
-
-
-    botao.innerText =
-        "INICIANDO...";
-
-
-    /*
-     * Nome do aluno.
-     */
-
-    document
-        .getElementById("aluno")
-        .innerText =
-        "Aluno: " + nome;
-
-
-    /*
-     * Mostra a prova.
-     */
-
-    document
-        .getElementById("inicio")
-        .style.display =
-        "none";
-
-
-    document
-        .getElementById("prova")
-        .style.display =
-        "block";
-
-
-    /*
-     * IMPORTANTE:
-     *
-     * Ainda não ativamos o
-     * monitoramento.
-     */
-
-    monitoramentoAtivo = false;
-
-
-    fullscreenConfirmado = false;
-
-
-    /*
-     * Solicita fullscreen.
-     */
-
-    try {
-
-
-        await document
-            .documentElement
-            .requestFullscreen();
-
-
-        /*
-         * Se chegou aqui, o navegador
-         * aceitou o fullscreen.
-         */
-
-        fullscreenConfirmado = true;
-
-
-    }
-    catch(erro) {
-
-
-        /*
-         * Alguns celulares/navegadores
-         * podem não permitir fullscreen.
-         */
-
-        console.log(
-            "Fullscreen não disponível:",
-            erro
-        );
-
-    }
-
-
-    /*
-     * A prova está iniciada.
-     */
-
-    provaIniciada = true;
-
-
-    /*
-     * Pequeno intervalo para o
-     * navegador terminar a transição.
-     */
-
-    setTimeout(
-        function() {
-
-            monitoramentoAtivo = true;
-
-        },
-        2000
-    );
-
-
-    iniciarCronometro();
-
-}
-
-
-
-/* =====================================================
-   DETECTAR SAÍDA DA TELA CHEIA
-===================================================== */
-
-document.addEventListener(
-    "fullscreenchange",
-    function() {
-
-
-        /*
-         * Não monitora durante
-         * a inicialização.
-         */
-
-        if(!monitoramentoAtivo) {
-
-            return;
-
-        }
-
-
-        /*
-         * Se entrou novamente em fullscreen,
-         * tudo normal.
-         */
-
-        if(
-            document.fullscreenElement
-        ) {
-
-            fullscreenConfirmado = true;
-
-            return;
-
-        }
-
-
-        /*
-         * Se realmente estava em fullscreen
-         * e saiu, encerra.
-         */
-
-        if(
-            provaIniciada &&
-            !provaEncerrada &&
-            fullscreenConfirmado
-        ) {
-
-
-            encerrarPorViolacao(
-                "O aluno saiu da tela cheia."
+                },
+                2000
             );
 
 
-        }
+            /*
+             * Inicia cronômetro.
+             */
 
-    }
-);
-
-
-
-/* =====================================================
-   DETECTAR TROCA DE ABA
-===================================================== */
-
-document.addEventListener(
-    "visibilitychange",
-    function() {
-
-
-        /*
-         * Ignora o período inicial.
-         */
-
-        if(!monitoramentoAtivo) {
-
-            return;
+            iniciarCronometro();
 
         }
 
 
-        /*
-         * Só encerra quando a página
-         * realmente fica oculta.
-         */
 
-        if(
-            document.hidden &&
-            provaIniciada &&
-            !provaEncerrada
-        ) {
+        /* =====================================================
+           DETECTAR CARREGAMENTO DO GOOGLE FORMS
+        ===================================================== */
 
 
-            encerrarPorViolacao(
-                "O aluno saiu da página ou mudou de aba."
+        const iframeFormulario =
+            document.getElementById(
+                "formulario"
             );
 
 
-        }
-
-    }
-);
-
-
-
-/* =====================================================
-   ENCERRAR POR VIOLAÇÃO
-===================================================== */
-
-function encerrarPorViolacao(motivo) {
-
-
-    if(provaEncerrada) {
-
-        return;
-
-    }
-
-
-    provaEncerrada = true;
-
-    provaIniciada = false;
-
-    monitoramentoAtivo = false;
-
-
-    clearInterval(intervalo);
-
-
-    /*
-     * Remove o Forms.
-     */
-
-    const formulario =
-        document.getElementById(
-            "formulario"
-        );
-
-
-    if(formulario) {
-
-        formulario.src =
-            "about:blank";
-
-        formulario.remove();
-
-    }
-
-
-    /*
-     * Esconde a prova.
-     */
-
-    document
-        .getElementById("prova")
-        .style.display =
-        "none";
-
-
-    /*
-     * Mostra violação.
-     */
-
-    document
-        .getElementById("violacao")
-        .style.display =
-        "flex";
-
-
-    document
-        .getElementById("motivo")
-        .innerText =
-        "Motivo: " + motivo;
-
-
-    /*
-     * Registra localmente.
-     */
-
-    localStorage.setItem(
-        "avaliacao_violacao",
-        "true"
-    );
-
-
-    localStorage.setItem(
-        "motivo_violacao",
-        motivo
-    );
-
-
-    localStorage.setItem(
-        "data_violacao",
-        new Date().toISOString()
-    );
-
-
-    /*
-     * Sai do fullscreen.
-     */
-
-    if(document.fullscreenElement) {
-
-        document
-            .exitFullscreen()
-            .catch(
-                () => {}
-            );
-
-    }
-
-}
-
-
-
-/* =====================================================
-   CRONÔMETRO
-===================================================== */
-
-function iniciarCronometro() {
-
-
-    atualizarCronometro();
-
-
-    intervalo =
-        setInterval(
+        iframeFormulario.addEventListener(
+            "load",
             function() {
 
 
-                if(provaEncerrada) {
+                /*
+                 * Se a prova ainda não começou,
+                 * ignora.
+                 */
 
-                    clearInterval(
-                        intervalo
-                    );
+                if (!provaIniciada) {
 
                     return;
 
                 }
 
 
-                tempoRestante--;
+                /*
+                 * Conta carregamentos.
+                 */
+
+                formularioCarregamentos++;
 
 
-                atualizarCronometro();
+                console.log(
+                    "Google Forms carregado:",
+                    formularioCarregamentos
+                );
 
 
-                if(
-                    tempoRestante <= 0
+                /*
+                 * PRIMEIRO CARREGAMENTO:
+                 *
+                 * Página da avaliação.
+                 *
+                 *
+                 * SEGUNDO CARREGAMENTO:
+                 *
+                 * Após o aluno clicar em ENVIAR,
+                 * o Google Forms navega para
+                 * sua página de confirmação.
+                 *
+                 * Exemplo observado:
+                 *
+                 * /formResponse
+                 *
+                 * contendo:
+                 *
+                 * "Sua resposta foi registrada."
+                 */
+
+
+                if (
+                    formularioCarregamentos >= 2 &&
+                    provaIniciada &&
+                    !provaEncerrada
                 ) {
 
 
-                    clearInterval(
-                        intervalo
+                    /*
+                     * Pequeno atraso para deixar
+                     * a página de confirmação terminar
+                     * de carregar.
+                     */
+
+                    setTimeout(
+                        function() {
+
+
+                            if (
+                                provaIniciada &&
+                                !provaEncerrada
+                            ) {
+
+
+                                mostrarSucesso();
+
+
+                            }
+
+
+                        },
+                        800
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           MOSTRAR SUCESSO
+        ===================================================== */
+
+        function mostrarSucesso() {
+
+
+            /*
+             * Segurança.
+             */
+
+            if (provaEncerrada) {
+
+                return;
+
+            }
+
+
+            /*
+             * Finaliza estado.
+             */
+
+            provaEncerrada = true;
+
+            provaIniciada = false;
+
+            monitoramentoAtivo = false;
+
+
+            /*
+             * Para cronômetro.
+             */
+
+            if (intervaloCronometro) {
+
+                clearInterval(
+                    intervaloCronometro
+                );
+
+            }
+
+
+            /*
+             * Remove formulário.
+             */
+
+            const iframe =
+                document.getElementById(
+                    "formulario"
+                );
+
+
+            if (iframe) {
+
+                iframe.src =
+                    "about:blank";
+
+                iframe.remove();
+
+            }
+
+
+            /*
+             * Esconde prova.
+             */
+
+            document
+                .getElementById("prova")
+                .style.display =
+                "none";
+
+
+            /*
+             * Mostra sucesso.
+             */
+
+            document
+                .getElementById("sucesso")
+                .style.display =
+                "flex";
+
+
+            /*
+             * Sai do fullscreen.
+             *
+             * Aqui NÃO é considerado
+             * violação, porque a prova
+             * já foi enviada.
+             */
+
+            if (
+                document.fullscreenElement
+            ) {
+
+
+                document
+                    .exitFullscreen()
+                    .catch(
+                        function() {}
                     );
 
 
-                    finalizarPorTempo();
+            }
 
+        }
+
+
+
+        /* =====================================================
+           SAÍDA DA TELA CHEIA
+        ===================================================== */
+
+        document.addEventListener(
+            "fullscreenchange",
+            function() {
+
+
+                /*
+                 * Não monitora durante
+                 * inicialização.
+                 */
+
+                if (!monitoramentoAtivo) {
+
+                    return;
 
                 }
 
 
-            },
-            1000
-        );
+                /*
+                 * Se está em fullscreen,
+                 * está tudo normal.
+                 */
 
-}
-
-
-
-/* =====================================================
-   CRONÔMETRO DISPLAY
-===================================================== */
-
-function atualizarCronometro() {
+                if (
+                    document.fullscreenElement
+                ) {
 
 
-    const horas =
-        Math.floor(
-            tempoRestante / 3600
-        );
+                    fullscreenConfirmado = true;
 
 
-    const minutos =
-        Math.floor(
-            (tempoRestante % 3600) / 60
-        );
+                    return;
+
+                }
 
 
-    const segundos =
-        tempoRestante % 60;
+                /*
+                 * Se saiu de fullscreen
+                 * depois que ele já estava ativo.
+                 */
+
+                if (
+                    provaIniciada &&
+                    !provaEncerrada &&
+                    fullscreenConfirmado
+                ) {
 
 
-    const h =
-        String(horas)
-        .padStart(2,"0");
+                    encerrarPorViolacao(
+                        "Você saiu da tela cheia."
+                    );
 
 
-    const m =
-        String(minutos)
-        .padStart(2,"0");
+                }
 
-
-    const s =
-        String(segundos)
-        .padStart(2,"0");
-
-
-    document
-        .getElementById("cronometro")
-        .innerText =
-        h + ":" +
-        m + ":" +
-        s;
-
-
-    /*
-     * Últimos 5 minutos.
-     */
-
-    if(
-        tempoRestante <= 300
-    ) {
-
-        document
-            .getElementById("cronometro")
-            .style.color =
-            "#ff4444";
-
-    }
-
-}
-
-
-
-/* =====================================================
-   FINALIZAR POR TEMPO
-===================================================== */
-
-function finalizarPorTempo() {
-
-
-    provaEncerrada = true;
-
-    provaIniciada = false;
-
-    monitoramentoAtivo = false;
-
-
-    const formulario =
-        document.getElementById(
-            "formulario"
+            }
         );
 
 
-    if(formulario) {
 
-        formulario.src =
-            "about:blank";
+        /* =====================================================
+           TROCA DE ABA / JANELA
+        ===================================================== */
 
-    }
+        document.addEventListener(
+            "visibilitychange",
+            function() {
 
 
-    document
-        .getElementById("prova")
-        .style.display =
-        "none";
+                /*
+                 * Durante inicialização,
+                 * ignora.
+                 */
 
+                if (!monitoramentoAtivo) {
 
-    document
-        .getElementById("finalizado")
-        .style.display =
-        "flex";
+                    return;
 
+                }
 
-    if(document.fullscreenElement) {
 
-        document
-            .exitFullscreen()
-            .catch(
-                () => {}
-            );
+                /*
+                 * Página ficou oculta.
+                 */
 
-    }
+                if (
+                    document.hidden &&
+                    provaIniciada &&
+                    !provaEncerrada
+                ) {
 
-}
 
+                    encerrarPorViolacao(
+                        "Você saiu da página ou trocou de aba/janela."
+                    );
 
 
-/* =====================================================
-   BLOQUEAR BOTÃO DIREITO
-===================================================== */
+                }
 
-document.addEventListener(
-    "contextmenu",
-    function(event) {
+            }
+        );
 
 
-        if(provaIniciada) {
 
-            event.preventDefault();
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
-   BLOQUEAR SELEÇÃO
-===================================================== */
-
-document.addEventListener(
-    "selectstart",
-    function(event) {
-
-
-        if(provaIniciada) {
-
-            event.preventDefault();
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
-   BLOQUEAR ARRASTAR
-===================================================== */
-
-document.addEventListener(
-    "dragstart",
-    function(event) {
-
-
-        if(provaIniciada) {
-
-            event.preventDefault();
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
-   BLOQUEAR ATALHOS
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-
-        if(!provaIniciada) {
-
-            return;
-
-        }
-
-
-        const tecla =
-            event.key.toLowerCase();
-
-
-        /*
-         * F12
-         */
-
-        if(
-            event.key === "F12"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * F11
-         */
-
-        if(
-            event.key === "F11"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * CTRL + SHIFT + I
-         */
-
-        if(
-            event.ctrlKey &&
-            event.shiftKey &&
-            tecla === "i"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * CTRL + SHIFT + J
-         */
-
-        if(
-            event.ctrlKey &&
-            event.shiftKey &&
-            tecla === "j"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * CTRL + U
-         */
-
-        if(
-            event.ctrlKey &&
-            tecla === "u"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * CTRL + C
-         */
-
-        if(
-            event.ctrlKey &&
-            tecla === "c"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * CTRL + V
-         */
-
-        if(
-            event.ctrlKey &&
-            tecla === "v"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * CTRL + X
-         */
-
-        if(
-            event.ctrlKey &&
-            tecla === "x"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * CTRL + S
-         */
-
-        if(
-            event.ctrlKey &&
-            tecla === "s"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * CTRL + P
-         */
-
-        if(
-            event.ctrlKey &&
-            tecla === "p"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * CTRL + F
-         */
-
-        if(
-            event.ctrlKey &&
-            tecla === "f"
-        ) {
-
-            event.preventDefault();
-
-        }
-
-
-        /*
-         * ALT + SETAS
-         */
-
-        if(
-            event.altKey &&
-            (
-                event.key === "ArrowLeft" ||
-                event.key === "ArrowRight"
-            )
-        ) {
-
-            event.preventDefault();
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
-   HISTÓRICO
-===================================================== */
-
-history.pushState(
-    null,
-    null,
-    location.href
-);
-
-
-window.addEventListener(
-    "popstate",
-    function() {
-
-
-        if(
-            provaIniciada &&
-            !provaEncerrada
-        ) {
-
-
-            encerrarPorViolacao(
-                "O aluno tentou utilizar o botão Voltar."
-            );
-
-
-        }
-
+        /* =====================================================
+           BOTÃO VOLTAR
+        ===================================================== */
 
         history.pushState(
             null,
-            null,
+            "",
             location.href
         );
 
-    }
-);
+
+        window.addEventListener(
+            "popstate",
+            function() {
+
+
+                /*
+                 * Se estiver fazendo prova,
+                 * encerra.
+                 */
+
+                if (
+                    provaIniciada &&
+                    !provaEncerrada
+                ) {
+
+
+                    encerrarPorViolacao(
+                        "Você tentou sair da avaliação usando o botão Voltar."
+                    );
+
+
+                    return;
+
+                }
+
+
+                /*
+                 * Mantém histórico.
+                 */
+
+                history.pushState(
+                    null,
+                    "",
+                    location.href
+                );
+
+            }
+        );
 
 
 
-/* =====================================================
-   RECARREGAMENTO
-===================================================== */
+        /* =====================================================
+           ENCERRAR POR VIOLAÇÃO
+        ===================================================== */
 
-window.addEventListener(
-    "beforeunload",
-    function(event) {
-
-
-        if(
-            provaIniciada &&
-            !provaEncerrada
+        function encerrarPorViolacao(
+            motivo
         ) {
 
 
-            event.preventDefault();
+            /*
+             * Evita duplicidade.
+             */
 
-            event.returnValue = "";
+            if (provaEncerrada) {
 
+                return;
+
+            }
+
+
+            /*
+             * Estado encerrado.
+             */
+
+            provaEncerrada = true;
+
+            provaIniciada = false;
+
+            monitoramentoAtivo = false;
+
+
+            /*
+             * Para cronômetro.
+             */
+
+            if (intervaloCronometro) {
+
+                clearInterval(
+                    intervaloCronometro
+                );
+
+            }
+
+
+            /*
+             * Destrói formulário.
+             */
+
+            const iframe =
+                document.getElementById(
+                    "formulario"
+                );
+
+
+            if (iframe) {
+
+                iframe.src =
+                    "about:blank";
+
+                iframe.remove();
+
+            }
+
+
+            /*
+             * Esconde prova.
+             */
+
+            document
+                .getElementById("prova")
+                .style.display =
+                "none";
+
+
+            /*
+             * Mostra bloqueio.
+             */
+
+            document
+                .getElementById("violacao")
+                .style.display =
+                "flex";
+
+
+            /*
+             * Mostra motivo.
+             */
+
+            document
+                .getElementById("motivo")
+                .innerText =
+                "Motivo: " + motivo;
+
+
+            /*
+             * Registra localmente.
+             */
+
+            try {
+
+
+                localStorage.setItem(
+                    "avaliacao_encerrada",
+                    "true"
+                );
+
+
+                localStorage.setItem(
+                    "avaliacao_motivo",
+                    motivo
+                );
+
+
+                localStorage.setItem(
+                    "avaliacao_aluno",
+                    nomeAlunoAtual
+                );
+
+
+                localStorage.setItem(
+                    "avaliacao_data",
+                    new Date().toISOString()
+                );
+
+
+            }
+            catch (erro) {
+
+                console.log(
+                    "Não foi possível utilizar localStorage."
+                );
+
+            }
+
+
+            /*
+             * Sai do fullscreen.
+             */
+
+            if (
+                document.fullscreenElement
+            ) {
+
+
+                document
+                    .exitFullscreen()
+                    .catch(
+                        function() {}
+                    );
+
+
+            }
 
         }
 
-    }
-);
 
-</script>
+
+        /* =====================================================
+           CRONÔMETRO
+        ===================================================== */
+
+        function iniciarCronometro() {
+
+
+            /*
+             * Mostra imediatamente.
+             */
+
+            atualizarCronometro();
+
+
+            /*
+             * Inicia contagem.
+             */
+
+            intervaloCronometro =
+                setInterval(
+                    function() {
+
+
+                        /*
+                         * Se acabou,
+                         * para.
+                         */
+
+                        if (
+                            provaEncerrada
+                        ) {
+
+
+                            clearInterval(
+                                intervaloCronometro
+                            );
+
+
+                            return;
+
+                        }
+
+
+                        /*
+                         * Diminui 1 segundo.
+                         */
+
+                        tempoRestante--;
+
+
+                        /*
+                         * Atualiza tela.
+                         */
+
+                        atualizarCronometro();
+
+
+                        /*
+                         * Acabou.
+                         */
+
+                        if (
+                            tempoRestante <= 0
+                        ) {
+
+
+                            clearInterval(
+                                intervaloCronometro
+                            );
+
+
+                            finalizarPorTempo();
+
+
+                        }
+
+                    },
+                    1000
+                );
+
+        }
+
+
+
+        /* =====================================================
+           ATUALIZAR CRONÔMETRO
+        ===================================================== */
+
+        function atualizarCronometro() {
+
+
+            const horas =
+                Math.floor(
+                    tempoRestante / 3600
+                );
+
+
+            const minutos =
+                Math.floor(
+                    (tempoRestante % 3600) / 60
+                );
+
+
+            const segundos =
+                tempoRestante % 60;
+
+
+            const h =
+                String(horas)
+                    .padStart(2, "0");
+
+
+            const m =
+                String(minutos)
+                    .padStart(2, "0");
+
+
+            const s =
+                String(segundos)
+                    .padStart(2, "0");
+
+
+            const cronometro =
+                document.getElementById(
+                    "cronometro"
+                );
+
+
+            cronometro.innerText =
+                h + ":" +
+                m + ":" +
+                s;
+
+
+            /*
+             * Últimos 5 minutos.
+             */
+
+            if (
+                tempoRestante <= 300
+            ) {
+
+
+                cronometro.style.color =
+                    "#ff4444";
+
+
+                cronometro.style.borderColor =
+                    "#ff4444";
+
+
+            }
+            else {
+
+
+                cronometro.style.color =
+                    "#31b279";
+
+
+                cronometro.style.borderColor =
+                    "#31b279";
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           FINALIZAR POR TEMPO
+        ===================================================== */
+
+        function finalizarPorTempo() {
+
+
+            /*
+             * Estado.
+             */
+
+            provaEncerrada = true;
+
+            provaIniciada = false;
+
+            monitoramentoAtivo = false;
+
+
+            /*
+             * Remove formulário.
+             */
+
+            const iframe =
+                document.getElementById(
+                    "formulario"
+                );
+
+
+            if (iframe) {
+
+                iframe.src =
+                    "about:blank";
+
+                iframe.remove();
+
+            }
+
+
+            /*
+             * Esconde prova.
+             */
+
+            document
+                .getElementById("prova")
+                .style.display =
+                "none";
+
+
+            /*
+             * Mostra tela final.
+             */
+
+            document
+                .getElementById("finalizado")
+                .style.display =
+                "flex";
+
+
+            /*
+             * Sai fullscreen.
+             */
+
+            if (
+                document.fullscreenElement
+            ) {
+
+
+                document
+                    .exitFullscreen()
+                    .catch(
+                        function() {}
+                    );
+
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           BLOQUEAR BOTÃO DIREITO
+        ===================================================== */
+
+        document.addEventListener(
+            "contextmenu",
+            function(event) {
+
+
+                if (provaIniciada) {
+
+                    event.preventDefault();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           BLOQUEAR SELEÇÃO
+        ===================================================== */
+
+        document.addEventListener(
+            "selectstart",
+            function(event) {
+
+
+                if (provaIniciada) {
+
+                    event.preventDefault();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           BLOQUEAR ARRASTAR
+        ===================================================== */
+
+        document.addEventListener(
+            "dragstart",
+            function(event) {
+
+
+                if (provaIniciada) {
+
+                    event.preventDefault();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           BLOQUEAR ATALHOS
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+
+                if (!provaIniciada) {
+
+                    return;
+
+                }
+
+
+                const tecla =
+                    event.key.toLowerCase();
+
+
+                /*
+                 * F12
+                 */
+
+                if (
+                    event.key === "F12"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * F11
+                 */
+
+                if (
+                    event.key === "F11"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + SHIFT + I
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    event.shiftKey &&
+                    tecla === "i"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + SHIFT + J
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    event.shiftKey &&
+                    tecla === "j"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + SHIFT + C
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    event.shiftKey &&
+                    tecla === "c"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + U
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    tecla === "u"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + S
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    tecla === "s"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + P
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    tecla === "p"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + F
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    tecla === "f"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + C
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    tecla === "c"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + X
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    tecla === "x"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * CTRL + V
+                 */
+
+                if (
+                    event.ctrlKey &&
+                    tecla === "v"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * ALT + SETA ESQUERDA
+                 */
+
+                if (
+                    event.altKey &&
+                    event.key === "ArrowLeft"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+
+                /*
+                 * ALT + SETA DIREITA
+                 */
+
+                if (
+                    event.altKey &&
+                    event.key === "ArrowRight"
+                ) {
+
+                    event.preventDefault();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           IMPEDIR RECARREGAMENTO DURANTE A PROVA
+        ===================================================== */
+
+        window.addEventListener(
+            "beforeunload",
+            function(event) {
+
+
+                if (
+                    provaIniciada &&
+                    !provaEncerrada
+                ) {
+
+
+                    event.preventDefault();
+
+
+                    event.returnValue = "";
+
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           DETECTAR PÁGINA OCULTA
+        ===================================================== */
+
+        window.addEventListener(
+            "blur",
+            function() {
+
+
+                /*
+                 * Não usamos blur sozinho
+                 * para encerrar porque o iframe
+                 * pode provocar comportamentos
+                 * de foco.
+                 *
+                 * A confirmação é feita pelo
+                 * visibilitychange.
+                 */
+
+                if (
+                    !monitoramentoAtivo
+                ) {
+
+                    return;
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           IMPEDIR ARRASTAR LINKS
+        ===================================================== */
+
+        document.addEventListener(
+            "dragover",
+            function(event) {
+
+
+                if (provaIniciada) {
+
+                    event.preventDefault();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           TECLA ESC
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+
+                if (
+                    event.key === "Escape" &&
+                    provaIniciada &&
+                    monitoramentoAtivo
+                ) {
+
+
+                    /*
+                     * ESC pode retirar
+                     * o fullscreen.
+                     *
+                     * O fullscreenchange
+                     * será responsável
+                     * por encerrar.
+                     */
+
+                    console.log(
+                        "ESC pressionado."
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 
