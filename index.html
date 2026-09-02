@@ -9,7 +9,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Ambiente de Avaliação</title>
+    <title>Avaliação Online - MSc Ronilson</title>
 
 
     <style>
@@ -28,9 +28,9 @@
         }
 
 
-        /* ==========================================
+        /* ================================
            TELA INICIAL
-        ========================================== */
+        ================================= */
 
         #inicio {
 
@@ -41,14 +41,14 @@
             align-items: center;
             justify-content: center;
 
+            padding: 20px;
+
             background:
                 radial-gradient(
                     circle at top,
                     #292929,
                     #050505 70%
                 );
-
-            padding: 20px;
         }
 
 
@@ -197,9 +197,9 @@
         }
 
 
-        /* ==========================================
+        /* ================================
            PROVA
-        ========================================== */
+        ================================= */
 
         #prova {
 
@@ -215,9 +215,9 @@
 
         .topo {
 
-            height: 60px;
-
             width: 100%;
+
+            height: 60px;
 
             background: #111;
 
@@ -281,9 +281,9 @@
         }
 
 
-        /* ==========================================
-           TELA DE VIOLAÇÃO
-        ========================================== */
+        /* ================================
+           VIOLAÇÃO
+        ================================= */
 
         #violacao {
 
@@ -362,13 +362,12 @@
             color: #ff7777;
 
             margin-top: 20px;
-
         }
 
 
-        /* ==========================================
-           FINALIZAÇÃO
-        ========================================== */
+        /* ================================
+           FINAL
+        ================================= */
 
         #finalizado {
 
@@ -420,9 +419,9 @@
         }
 
 
-        /* ==========================================
+        /* ================================
            RESPONSIVO
-        ========================================== */
+        ================================= */
 
         @media(max-width:700px) {
 
@@ -456,9 +455,9 @@
 <body>
 
 
-<!-- =================================================
-     TELA INICIAL
-================================================== -->
+<!-- =========================================
+     INÍCIO
+========================================= -->
 
 <section id="inicio">
 
@@ -482,11 +481,11 @@
 
         <p class="descricao">
 
-            Esta avaliação será realizada em
-            ambiente controlado.
+            Você está prestes a iniciar a
+            avaliação.
 
-            Leia atentamente as regras antes
-            de iniciar.
+            Leia atentamente as regras
+            antes de começar.
 
         </p>
 
@@ -494,8 +493,13 @@
         <div class="regras">
 
             <h3>
-                ⚠️ Regras
+                ⚠️ Regras da avaliação
             </h3>
+
+
+            <p>
+                ✓ Não utilize mecanismos de pesquisa.
+            </p>
 
 
             <p>
@@ -509,22 +513,22 @@
 
 
             <p>
-                ✓ A avaliação será executada em tela cheia.
+                ✓ A avaliação será realizada em tela cheia.
             </p>
 
 
             <p>
-                ✓ Se sair da tela cheia, a avaliação será encerrada.
+                ✓ Se sair da tela cheia, a prova será encerrada.
             </p>
 
 
             <p>
-                ✓ Se trocar de aba, a avaliação será encerrada.
+                ✓ Se trocar de aba, a prova será encerrada.
             </p>
 
 
             <p>
-                ✓ Após uma violação, não será possível retornar.
+                ✓ Após o encerramento, não será possível retornar.
             </p>
 
         </div>
@@ -553,9 +557,9 @@
 
 
 
-<!-- =================================================
+<!-- =========================================
      PROVA
-================================================== -->
+========================================= -->
 
 <section id="prova">
 
@@ -592,13 +596,19 @@
     </div>
 
 
-    <!-- GOOGLE FORMS -->
+    <!-- ======================================
+         NOVO GOOGLE FORMS
+    ======================================= -->
 
     <iframe
         id="formulario"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdkWHZpbACo1Z9xvV-uzMU8v5E8JsRUaLzKcFAooPAKkuL7Xw/viewform?embedded=true"
-        title="Avaliação"
+
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdSBg1ISfOMXN7dlGn04kiQWpHRgFPJyFvHAUmsarDUWr6nyA/viewform?embedded=true"
+
+        title="Avaliação Teste"
+
         allow="fullscreen">
+
     </iframe>
 
 
@@ -606,9 +616,9 @@
 
 
 
-<!-- =================================================
-     TELA DE VIOLAÇÃO
-================================================== -->
+<!-- =========================================
+     VIOLAÇÃO
+========================================= -->
 
 <section id="violacao">
 
@@ -636,8 +646,9 @@
 
         <p>
 
-            O formulário foi encerrado e
-            não poderá ser acessado novamente.
+            O Google Forms foi encerrado
+            e a avaliação não poderá
+            ser retomada.
 
         </p>
 
@@ -654,9 +665,9 @@
 
 
 
-<!-- =================================================
-     TELA FINAL
-================================================== -->
+<!-- =========================================
+     FINAL POR TEMPO
+========================================= -->
 
 <section id="finalizado">
 
@@ -682,8 +693,8 @@
 
         <p>
 
-            Caso a avaliação tenha sido enviada,
-            a resposta será registrada conforme
+            Caso você tenha enviado o formulário,
+            sua resposta será registrada conforme
             as configurações do Google Forms.
 
         </p>
@@ -697,10 +708,9 @@
 <script>
 
 
-/* =================================================
-   CONFIGURAÇÕES
-================================================= */
-
+/* =========================================
+   VARIÁVEIS
+========================================= */
 
 let provaIniciada = false;
 
@@ -711,9 +721,9 @@ let tempoRestante = 90 * 60;
 let intervalo;
 
 
-/* =================================================
-   INICIAR PROVA
-================================================= */
+/* =========================================
+   INICIAR
+========================================= */
 
 async function iniciarProva() {
 
@@ -728,7 +738,7 @@ async function iniciarProva() {
     if(nome === "") {
 
         alert(
-            "Digite seu nome completo."
+            "Digite seu nome completo antes de iniciar."
         );
 
         return;
@@ -755,9 +765,9 @@ async function iniciarProva() {
         .style.display = "block";
 
 
-    /*
-     * Tenta entrar em tela cheia.
-     */
+    /* =====================================
+       TELA CHEIA
+    ====================================== */
 
     try {
 
@@ -768,11 +778,6 @@ async function iniciarProva() {
     }
 
     catch(erro) {
-
-        /*
-         * Se o navegador não permitir
-         * fullscreen, a prova não deve continuar.
-         */
 
         encerrarPorViolacao(
             "Não foi possível ativar o modo de tela cheia."
@@ -789,9 +794,9 @@ async function iniciarProva() {
 
 
 
-/* =================================================
-   DETECTAR SAÍDA DO FULLSCREEN
-================================================= */
+/* =========================================
+   FULLSCREEN
+========================================= */
 
 document.addEventListener(
     "fullscreenchange",
@@ -815,9 +820,9 @@ document.addEventListener(
 
 
 
-/* =================================================
-   DETECTAR TROCA DE ABA
-================================================= */
+/* =========================================
+   TROCA DE ABA
+========================================= */
 
 document.addEventListener(
     "visibilitychange",
@@ -841,9 +846,9 @@ document.addEventListener(
 
 
 
-/* =================================================
+/* =========================================
    ENCERRAR POR VIOLAÇÃO
-================================================= */
+========================================= */
 
 function encerrarPorViolacao(motivo) {
 
@@ -864,18 +869,20 @@ function encerrarPorViolacao(motivo) {
 
 
     /*
-     * Remove completamente o Forms.
+     * Remove o Google Forms.
      */
 
     const iframe =
         document.getElementById("formulario");
 
 
-    iframe.src = "about:blank";
+    if(iframe) {
 
+        iframe.src = "about:blank";
 
-    iframe.remove();
+        iframe.remove();
 
+    }
 
 
     /*
@@ -887,9 +894,8 @@ function encerrarPorViolacao(motivo) {
         .style.display = "none";
 
 
-
     /*
-     * Mostra tela de violação.
+     * Mostra encerramento.
      */
 
     document
@@ -900,11 +906,11 @@ function encerrarPorViolacao(motivo) {
     document
         .getElementById("motivo")
         .innerText =
-        "Motivo registrado: " + motivo;
+        "Motivo: " + motivo;
 
 
     /*
-     * Guarda a ocorrência no navegador.
+     * Registra localmente.
      */
 
     localStorage.setItem(
@@ -920,7 +926,7 @@ function encerrarPorViolacao(motivo) {
 
 
     /*
-     * Sai do fullscreen.
+     * Sai da tela cheia.
      */
 
     if(document.fullscreenElement) {
@@ -935,9 +941,9 @@ function encerrarPorViolacao(motivo) {
 
 
 
-/* =================================================
+/* =========================================
    CRONÔMETRO
-================================================= */
+========================================= */
 
 function iniciarCronometro() {
 
@@ -971,7 +977,6 @@ function iniciarCronometro() {
 
                     clearInterval(intervalo);
 
-
                     finalizarProva();
 
                 }
@@ -985,9 +990,9 @@ function iniciarCronometro() {
 
 
 
-/* =================================================
+/* =========================================
    ATUALIZAR CRONÔMETRO
-================================================= */
+========================================= */
 
 function atualizarCronometro() {
 
@@ -1029,10 +1034,6 @@ function atualizarCronometro() {
         h + ":" + m + ":" + s;
 
 
-    /*
-     * Últimos 5 minutos.
-     */
-
     if(
         tempoRestante <= 300
     ) {
@@ -1048,9 +1049,9 @@ function atualizarCronometro() {
 
 
 
-/* =================================================
+/* =========================================
    FINALIZAR POR TEMPO
-================================================= */
+========================================= */
 
 function finalizarProva() {
 
@@ -1063,10 +1064,15 @@ function finalizarProva() {
     clearInterval(intervalo);
 
 
-    document
-        .getElementById("formulario")
-        .src =
-        "about:blank";
+    const iframe =
+        document.getElementById("formulario");
+
+
+    if(iframe) {
+
+        iframe.src = "about:blank";
+
+    }
 
 
     document
@@ -1091,9 +1097,9 @@ function finalizarProva() {
 
 
 
-/* =================================================
-   BLOQUEAR BOTÃO DIREITO
-================================================= */
+/* =========================================
+   BOTÃO DIREITO
+========================================= */
 
 document.addEventListener(
     "contextmenu",
@@ -1111,9 +1117,9 @@ document.addEventListener(
 
 
 
-/* =================================================
-   BLOQUEAR SELEÇÃO
-================================================= */
+/* =========================================
+   SELEÇÃO
+========================================= */
 
 document.addEventListener(
     "selectstart",
@@ -1131,9 +1137,9 @@ document.addEventListener(
 
 
 
-/* =================================================
-   BLOQUEAR ARRASTAR
-================================================= */
+/* =========================================
+   ARRASTAR
+========================================= */
 
 document.addEventListener(
     "dragstart",
@@ -1151,9 +1157,9 @@ document.addEventListener(
 
 
 
-/* =================================================
-   BLOQUEAR ATALHOS
-================================================= */
+/* =========================================
+   ATALHOS
+========================================= */
 
 document.addEventListener(
     "keydown",
@@ -1346,9 +1352,9 @@ document.addEventListener(
 
 
 
-/* =================================================
-   IMPEDIR RECARREGAMENTO ACIDENTAL
-================================================= */
+/* =========================================
+   RECARREGAMENTO
+========================================= */
 
 window.addEventListener(
     "beforeunload",
@@ -1371,9 +1377,9 @@ window.addEventListener(
 
 
 
-/* =================================================
-   IMPEDIR VOLTAR PELO HISTÓRICO
-================================================= */
+/* =========================================
+   BOTÃO VOLTAR
+========================================= */
 
 history.pushState(
     null,
@@ -1393,7 +1399,7 @@ window.addEventListener(
         ) {
 
             encerrarPorViolacao(
-                "O aluno tentou utilizar a navegação do navegador."
+                "O aluno tentou utilizar o botão Voltar."
             );
 
         }
@@ -1410,8 +1416,10 @@ window.addEventListener(
 
 </script>
 
+
 </body>
 
 </html>
 ```
+
 
