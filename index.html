@@ -18,7 +18,7 @@
 <style>
 
 /* =====================================================
-   RESET
+   CONFIGURAÇÃO GERAL
 ===================================================== */
 
 * {
@@ -26,7 +26,6 @@
     margin: 0;
     padding: 0;
 }
-
 
 html,
 body {
@@ -42,7 +41,6 @@ body {
     background: #111;
 
     color: white;
-
 }
 
 
@@ -60,7 +58,6 @@ body {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
@@ -69,17 +66,15 @@ body {
         radial-gradient(
             circle at top,
             #292929,
-            #111111 45%,
-            #050505 100%
+            #111 50%,
+            #050505
         );
-
 }
 
 
 .card {
 
     width: 100%;
-
     max-width: 680px;
 
     background: #1b1b1b;
@@ -95,7 +90,6 @@ body {
     box-shadow:
         0 20px 60px
         rgba(0,0,0,.7);
-
 }
 
 
@@ -104,7 +98,6 @@ body {
     font-size: 55px;
 
     margin-bottom: 15px;
-
 }
 
 
@@ -116,10 +109,7 @@ h1 {
         32px
     );
 
-    line-height: 1.2;
-
     margin-bottom: 10px;
-
 }
 
 
@@ -130,7 +120,6 @@ h1 {
     font-size: 18px;
 
     margin-bottom: 25px;
-
 }
 
 
@@ -141,11 +130,16 @@ h1 {
     line-height: 1.7;
 
     margin-bottom: 25px;
-
 }
 
 
+/* =====================================================
+   REGRAS
+===================================================== */
+
 .regras {
+
+    width: 100%;
 
     text-align: left;
 
@@ -156,7 +150,6 @@ h1 {
     padding: 20px;
 
     margin-bottom: 25px;
-
 }
 
 
@@ -165,7 +158,6 @@ h1 {
     color: #31b279;
 
     margin-bottom: 15px;
-
 }
 
 
@@ -178,9 +170,12 @@ h1 {
     line-height: 1.5;
 
     margin: 8px 0;
-
 }
 
+
+/* =====================================================
+   INPUT
+===================================================== */
 
 input {
 
@@ -188,7 +183,8 @@ input {
 
     height: 52px;
 
-    padding: 0 15px;
+    padding:
+        0 15px;
 
     background: #222;
 
@@ -203,24 +199,24 @@ input {
     outline: none;
 
     margin-bottom: 15px;
-
 }
 
 
 input:focus {
 
     border-color: #31b279;
-
 }
 
+
+/* =====================================================
+   BOTÃO
+===================================================== */
 
 .btn {
 
     width: 100%;
 
     min-height: 52px;
-
-    padding: 14px;
 
     border: none;
 
@@ -235,14 +231,12 @@ input:focus {
     font-weight: bold;
 
     cursor: pointer;
-
 }
 
 
 .btn:hover {
 
     background: #27945f;
-
 }
 
 
@@ -262,8 +256,13 @@ input:focus {
 
     background: white;
 
+    overflow: hidden;
 }
 
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
 
 .topo {
 
@@ -284,6 +283,9 @@ input:focus {
     padding:
         8px 20px;
 
+    position: relative;
+
+    z-index: 100;
 }
 
 
@@ -292,7 +294,6 @@ input:focus {
     min-width: 0;
 
     flex: 1;
-
 }
 
 
@@ -307,7 +308,6 @@ input:focus {
     overflow: hidden;
 
     text-overflow: ellipsis;
-
 }
 
 
@@ -324,9 +324,12 @@ input:focus {
     overflow: hidden;
 
     text-overflow: ellipsis;
-
 }
 
+
+/* =====================================================
+   CRONÔMETRO
+===================================================== */
 
 .cronometro {
 
@@ -339,7 +342,8 @@ input:focus {
 
     background: #222;
 
-    border: 1px solid #31b279;
+    border:
+        1px solid #31b279;
 
     border-radius: 7px;
 
@@ -348,9 +352,12 @@ input:focus {
     font-weight: bold;
 
     text-align: center;
-
 }
 
+
+/* =====================================================
+   ÁREA DO FORM
+===================================================== */
 
 .area-formulario {
 
@@ -365,7 +372,6 @@ input:focus {
     background: white;
 
     overflow: hidden;
-
 }
 
 
@@ -377,17 +383,88 @@ iframe {
 
     height: 100%;
 
-    min-height: 400px;
-
     border: none;
 
     background: white;
-
 }
 
 
 /* =====================================================
-   TELA DE VIOLAÇÃO
+   SUCESSO
+===================================================== */
+
+#sucesso {
+
+    display: none;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    min-height: 100dvh;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background: #111;
+}
+
+
+.sucesso-card {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    background: #1b1b1b;
+
+    border:
+        2px solid #31b279;
+
+    border-radius: 16px;
+
+    padding:
+        45px 30px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.7);
+}
+
+
+.sucesso-icone {
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+}
+
+
+.sucesso-card h1 {
+
+    color: #31b279;
+
+    margin-bottom: 20px;
+}
+
+
+.sucesso-card p {
+
+    color: #ccc;
+
+    line-height: 1.7;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   VIOLAÇÃO
 ===================================================== */
 
 #violacao {
@@ -409,7 +486,6 @@ iframe {
     padding: 20px;
 
     background: #111;
-
 }
 
 
@@ -421,21 +497,25 @@ iframe {
 
     background: #1b1b1b;
 
-    border: 2px solid #d32f2f;
+    border:
+        2px solid #d32f2f;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
-    padding: 40px 30px;
+    padding:
+        45px 30px;
 
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.7);
 }
 
 
 .violacao-icone {
 
-    font-size: 60px;
+    font-size: 65px;
 
     margin-bottom: 20px;
-
 }
 
 
@@ -444,7 +524,6 @@ iframe {
     color: #ff5555;
 
     margin-bottom: 20px;
-
 }
 
 
@@ -455,7 +534,6 @@ iframe {
     line-height: 1.7;
 
     margin-bottom: 10px;
-
 }
 
 
@@ -463,21 +541,20 @@ iframe {
 
     background: #101010;
 
+    color: #ff7777;
+
     border-radius: 8px;
 
     padding: 15px;
 
-    color: #ff7777;
-
     margin-top: 20px;
 
     line-height: 1.5;
-
 }
 
 
 /* =====================================================
-   FINAL
+   TEMPO ENCERRADO
 ===================================================== */
 
 #finalizado {
@@ -496,10 +573,9 @@ iframe {
 
     text-align: center;
 
-    background: #111;
-
     padding: 20px;
 
+    background: #111;
 }
 
 
@@ -511,12 +587,13 @@ iframe {
 
     background: #1b1b1b;
 
-    border: 1px solid #31b279;
+    border:
+        2px solid #31b279;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
-    padding: 40px 30px;
-
+    padding:
+        45px 30px;
 }
 
 
@@ -525,7 +602,6 @@ iframe {
     color: #31b279;
 
     margin-bottom: 20px;
-
 }
 
 
@@ -534,12 +610,11 @@ iframe {
     color: #ccc;
 
     line-height: 1.7;
-
 }
 
 
 /* =====================================================
-   TABLET
+   RESPONSIVO
 ===================================================== */
 
 @media(max-width:768px) {
@@ -553,7 +628,8 @@ iframe {
 
     .card {
 
-        padding: 30px 22px;
+        padding:
+            30px 22px;
 
     }
 
@@ -581,15 +657,12 @@ iframe {
 }
 
 
-/* =====================================================
-   CELULAR
-===================================================== */
-
 @media(max-width:600px) {
 
     #inicio {
 
-        align-items: flex-start;
+        align-items:
+            flex-start;
 
         padding: 12px;
 
@@ -626,8 +699,6 @@ iframe {
     .professor {
 
         font-size: 15px;
-
-        margin-bottom: 18px;
 
     }
 
@@ -704,19 +775,17 @@ iframe {
     }
 
 
-    .violacao-card {
+    .sucesso-card,
+    .violacao-card,
+    .final-card {
 
         padding:
-            30px 20px;
+            35px 20px;
 
     }
 
 }
 
-
-/* =====================================================
-   CELULAR PEQUENO
-===================================================== */
 
 @media(max-width:380px) {
 
@@ -779,8 +848,8 @@ iframe {
 
         <p class="descricao">
 
-            Você está prestes a iniciar a avaliação.
-            Leia atentamente as regras antes de começar.
+            Leia atentamente as regras
+            antes de iniciar a avaliação.
 
         </p>
 
@@ -819,7 +888,12 @@ iframe {
 
 
             <p>
-                ✓ Se trocar de aba, a avaliação será encerrada.
+                ✓ Se sair da página, a avaliação será encerrada.
+            </p>
+
+
+            <p>
+                ✓ Depois de encerrada, não será possível retornar.
             </p>
 
 
@@ -847,6 +921,7 @@ iframe {
 
 
     </div>
+
 
 </section>
 
@@ -898,7 +973,6 @@ iframe {
 
 
         <iframe
-
             id="formulario"
 
             src="https://docs.google.com/forms/d/e/1FAIpQLSdSBg1ISfOMXN7dlGn04kiQWpHRgFPJyFvHAUmsarDUWr6nyA/viewform?embedded=true"
@@ -908,6 +982,48 @@ iframe {
             allow="fullscreen">
 
         </iframe>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SUCESSO
+===================================================== -->
+
+<section id="sucesso">
+
+
+    <div class="sucesso-card">
+
+
+        <div class="sucesso-icone">
+            ✅
+        </div>
+
+
+        <h1>
+            Formulário enviado com sucesso!
+        </h1>
+
+
+        <p>
+            Sua resposta foi registrada.
+        </p>
+
+
+        <p>
+            A avaliação foi concluída.
+        </p>
+
+
+        <p>
+            Você pode fechar esta página.
+        </p>
 
 
     </div>
@@ -933,23 +1049,20 @@ iframe {
 
 
         <h1>
-            Avaliação Encerrada
+            Avaliação encerrada
         </h1>
 
 
         <p>
-
-            O sistema detectou uma saída
+            Foi detectada uma saída
             do ambiente de avaliação.
-
         </p>
 
 
         <p>
-
-            O formulário foi encerrado e
-            não poderá ser retomado.
-
+            O formulário foi encerrado
+            e a avaliação não poderá
+            ser retomada.
         </p>
 
 
@@ -977,14 +1090,12 @@ iframe {
 
 
         <h1>
-            ⏰ Avaliação encerrada
+            ⏰ Tempo encerrado
         </h1>
 
 
         <p>
-
             O tempo destinado à avaliação terminou.
-
         </p>
 
 
@@ -992,11 +1103,7 @@ iframe {
 
 
         <p>
-
-            Caso você tenha enviado o formulário,
-            sua resposta será registrada conforme
-            as configurações do Google Forms.
-
+            A avaliação foi encerrada.
         </p>
 
 
@@ -1017,21 +1124,13 @@ let provaIniciada = false;
 
 let provaEncerrada = false;
 
-let fullscreenAtivo = false;
-
 let monitoramentoAtivo = false;
+
+let fullscreenConfirmado = false;
 
 let tempoRestante = 90 * 60;
 
 let intervalo = null;
-
-
-/*
- * Tempo utilizado somente para evitar
- * falsos positivos durante a inicialização.
- */
-
-let inicioMonitoramento = 0;
 
 
 /* =====================================================
@@ -1042,7 +1141,9 @@ async function iniciarProva() {
 
 
     const campo =
-        document.getElementById("nomeAluno");
+        document.getElementById(
+            "nomeAluno"
+        );
 
 
     const nome =
@@ -1062,11 +1163,6 @@ async function iniciarProva() {
     }
 
 
-    /*
-     * Desabilita o botão para evitar
-     * dois cliques.
-     */
-
     const botao =
         document.getElementById(
             "botaoIniciar"
@@ -1075,23 +1171,14 @@ async function iniciarProva() {
 
     botao.disabled = true;
 
+
     botao.innerText =
-        "INICIANDO AVALIAÇÃO...";
+        "INICIANDO...";
 
 
     /*
-     * Mostra a prova.
+     * Nome do aluno.
      */
-
-    document
-        .getElementById("inicio")
-        .style.display = "none";
-
-
-    document
-        .getElementById("prova")
-        .style.display = "block";
-
 
     document
         .getElementById("aluno")
@@ -1100,26 +1187,52 @@ async function iniciarProva() {
 
 
     /*
+     * Mostra a prova.
+     */
+
+    document
+        .getElementById("inicio")
+        .style.display =
+        "none";
+
+
+    document
+        .getElementById("prova")
+        .style.display =
+        "block";
+
+
+    /*
      * IMPORTANTE:
      *
-     * Ainda NÃO ativamos a fiscalização.
-     *
-     * Primeiro tentamos colocar
-     * o navegador em tela cheia.
+     * Ainda não ativamos o
+     * monitoramento.
+     */
+
+    monitoramentoAtivo = false;
+
+
+    fullscreenConfirmado = false;
+
+
+    /*
+     * Solicita fullscreen.
      */
 
     try {
 
 
-        if(
-            !document.fullscreenElement
-        ) {
+        await document
+            .documentElement
+            .requestFullscreen();
 
-            await document
-                .documentElement
-                .requestFullscreen();
 
-        }
+        /*
+         * Se chegou aqui, o navegador
+         * aceitou o fullscreen.
+         */
+
+        fullscreenConfirmado = true;
 
 
     }
@@ -1127,11 +1240,8 @@ async function iniciarProva() {
 
 
         /*
-         * Alguns navegadores/celulares
+         * Alguns celulares/navegadores
          * podem não permitir fullscreen.
-         *
-         * Não vamos encerrar a prova
-         * automaticamente por isso.
          */
 
         console.log(
@@ -1143,31 +1253,24 @@ async function iniciarProva() {
 
 
     /*
-     * A partir daqui a prova está
-     * realmente iniciada.
+     * A prova está iniciada.
      */
 
     provaIniciada = true;
 
 
     /*
-     * Dá um pequeno período para o
-     * navegador estabilizar.
+     * Pequeno intervalo para o
+     * navegador terminar a transição.
      */
 
     setTimeout(
         function() {
 
-            fullscreenAtivo =
-                !!document.fullscreenElement;
-
             monitoramentoAtivo = true;
 
-            inicioMonitoramento =
-                Date.now();
-
         },
-        1500
+        2000
     );
 
 
@@ -1178,7 +1281,7 @@ async function iniciarProva() {
 
 
 /* =====================================================
-   DETECTAR FULLSCREEN
+   DETECTAR SAÍDA DA TELA CHEIA
 ===================================================== */
 
 document.addEventListener(
@@ -1187,8 +1290,8 @@ document.addEventListener(
 
 
         /*
-         * Ignora eventos antes do
-         * monitoramento estar ativo.
+         * Não monitora durante
+         * a inicialização.
          */
 
         if(!monitoramentoAtivo) {
@@ -1199,29 +1302,15 @@ document.addEventListener(
 
 
         /*
-         * Ignora os primeiros segundos
-         * da inicialização.
+         * Se entrou novamente em fullscreen,
+         * tudo normal.
          */
 
         if(
-            Date.now() -
-            inicioMonitoramento <
-            2000
+            document.fullscreenElement
         ) {
 
-            return;
-
-        }
-
-
-        /*
-         * Se existe fullscreen,
-         * registra que ele está ativo.
-         */
-
-        if(document.fullscreenElement) {
-
-            fullscreenAtivo = true;
+            fullscreenConfirmado = true;
 
             return;
 
@@ -1229,14 +1318,14 @@ document.addEventListener(
 
 
         /*
-         * Só encerra se a prova já
-         * estava efetivamente em fullscreen.
+         * Se realmente estava em fullscreen
+         * e saiu, encerra.
          */
 
         if(
             provaIniciada &&
             !provaEncerrada &&
-            fullscreenAtivo
+            fullscreenConfirmado
         ) {
 
 
@@ -1262,8 +1351,7 @@ document.addEventListener(
 
 
         /*
-         * Durante a inicialização
-         * não faz nada.
+         * Ignora o período inicial.
          */
 
         if(!monitoramentoAtivo) {
@@ -1274,24 +1362,8 @@ document.addEventListener(
 
 
         /*
-         * Ignora uma possível mudança
-         * de foco nos primeiros segundos.
-         */
-
-        if(
-            Date.now() -
-            inicioMonitoramento <
-            2000
-        ) {
-
-            return;
-
-        }
-
-
-        /*
-         * Só considera violação quando
-         * a página realmente ficou oculta.
+         * Só encerra quando a página
+         * realmente fica oculta.
          */
 
         if(
@@ -1338,7 +1410,7 @@ function encerrarPorViolacao(motivo) {
 
 
     /*
-     * Remove o Google Forms.
+     * Remove o Forms.
      */
 
     const formulario =
@@ -1363,16 +1435,18 @@ function encerrarPorViolacao(motivo) {
 
     document
         .getElementById("prova")
-        .style.display = "none";
+        .style.display =
+        "none";
 
 
     /*
-     * Mostra encerramento.
+     * Mostra violação.
      */
 
     document
         .getElementById("violacao")
-        .style.display = "flex";
+        .style.display =
+        "flex";
 
 
     document
@@ -1382,7 +1456,7 @@ function encerrarPorViolacao(motivo) {
 
 
     /*
-     * Registra no navegador.
+     * Registra localmente.
      */
 
     localStorage.setItem(
@@ -1407,9 +1481,7 @@ function encerrarPorViolacao(motivo) {
      * Sai do fullscreen.
      */
 
-    if(
-        document.fullscreenElement
-    ) {
+    if(document.fullscreenElement) {
 
         document
             .exitFullscreen()
@@ -1459,12 +1531,14 @@ function iniciarCronometro() {
                     tempoRestante <= 0
                 ) {
 
+
                     clearInterval(
                         intervalo
                     );
 
 
-                    finalizarProva();
+                    finalizarPorTempo();
+
 
                 }
 
@@ -1478,7 +1552,7 @@ function iniciarCronometro() {
 
 
 /* =====================================================
-   ATUALIZAR CRONÔMETRO
+   CRONÔMETRO DISPLAY
 ===================================================== */
 
 function atualizarCronometro() {
@@ -1502,24 +1576,30 @@ function atualizarCronometro() {
 
     const h =
         String(horas)
-        .padStart(2, "0");
+        .padStart(2,"0");
 
 
     const m =
         String(minutos)
-        .padStart(2, "0");
+        .padStart(2,"0");
 
 
     const s =
         String(segundos)
-        .padStart(2, "0");
+        .padStart(2,"0");
 
 
     document
         .getElementById("cronometro")
         .innerText =
-        h + ":" + m + ":" + s;
+        h + ":" +
+        m + ":" +
+        s;
 
+
+    /*
+     * Últimos 5 minutos.
+     */
 
     if(
         tempoRestante <= 300
@@ -1540,7 +1620,7 @@ function atualizarCronometro() {
    FINALIZAR POR TEMPO
 ===================================================== */
 
-function finalizarProva() {
+function finalizarPorTempo() {
 
 
     provaEncerrada = true;
@@ -1548,9 +1628,6 @@ function finalizarProva() {
     provaIniciada = false;
 
     monitoramentoAtivo = false;
-
-
-    clearInterval(intervalo);
 
 
     const formulario =
@@ -1569,17 +1646,17 @@ function finalizarProva() {
 
     document
         .getElementById("prova")
-        .style.display = "none";
+        .style.display =
+        "none";
 
 
     document
         .getElementById("finalizado")
-        .style.display = "flex";
+        .style.display =
+        "flex";
 
 
-    if(
-        document.fullscreenElement
-    ) {
+    if(document.fullscreenElement) {
 
         document
             .exitFullscreen()
@@ -1594,7 +1671,7 @@ function finalizarProva() {
 
 
 /* =====================================================
-   BOTÃO DIREITO
+   BLOQUEAR BOTÃO DIREITO
 ===================================================== */
 
 document.addEventListener(
@@ -1614,7 +1691,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   SELEÇÃO
+   BLOQUEAR SELEÇÃO
 ===================================================== */
 
 document.addEventListener(
@@ -1634,7 +1711,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   ARRASTAR
+   BLOQUEAR ARRASTAR
 ===================================================== */
 
 document.addEventListener(
@@ -1654,7 +1731,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   ATALHOS
+   BLOQUEAR ATALHOS
 ===================================================== */
 
 document.addEventListener(
@@ -1849,7 +1926,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   BOTÃO VOLTAR
+   HISTÓRICO
 ===================================================== */
 
 history.pushState(
@@ -1920,4 +1997,3 @@ window.addEventListener(
 
 </html>
 ```
-
