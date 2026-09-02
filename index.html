@@ -4,1094 +4,747 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color"
-          content="#111111">
+<meta name="theme-color"
+      content="#111111">
 
-    <title>Avaliação Online - MSc Ronilson</title>
+<title>Avaliação Online - MSc Ronilson</title>
 
 
-    <style>
+<style>
 
-        /* ==================================================
-           RESET
-        ================================================== */
+/* =====================================================
+   RESET
+===================================================== */
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 
-        html,
-        body {
+html,
+body {
 
-            width: 100%;
-            min-height: 100%;
+    width: 100%;
+    min-height: 100%;
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-            background: #111;
+    background: #111;
 
-            color: white;
+    color: white;
 
-        }
+}
 
 
-        body {
+/* =====================================================
+   TELA INICIAL
+===================================================== */
 
-            overflow-x: hidden;
+#inicio {
 
-        }
+    width: 100%;
 
+    min-height: 100vh;
+    min-height: 100dvh;
 
-        /* ==================================================
-           TELA INICIAL
-        ================================================== */
+    display: flex;
 
-        #inicio {
+    align-items: center;
 
-            width: 100%;
+    justify-content: center;
 
-            min-height: 100vh;
-            min-height: 100dvh;
+    padding: 20px;
 
-            display: flex;
+    background:
+        radial-gradient(
+            circle at top,
+            #292929,
+            #111111 45%,
+            #050505 100%
+        );
 
-            align-items: center;
+}
 
-            justify-content: center;
 
-            padding: 20px;
+.card {
 
-            background:
-                radial-gradient(
-                    circle at top,
-                    #292929 0%,
-                    #111111 45%,
-                    #050505 100%
-                );
+    width: 100%;
 
-        }
+    max-width: 680px;
 
+    background: #1b1b1b;
 
-        /* ==================================================
-           CARD
-        ================================================== */
+    border: 1px solid #333;
 
-        .card {
+    border-radius: 16px;
 
-            width: 100%;
+    padding: 40px;
 
-            max-width: 680px;
+    text-align: center;
 
-            background: #1b1b1b;
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.7);
 
-            border: 1px solid #333;
+}
 
-            border-radius: 16px;
 
-            padding: 40px;
+.icone {
 
-            text-align: center;
+    font-size: 55px;
 
-            box-shadow:
-                0 20px 60px
-                rgba(0,0,0,.7);
+    margin-bottom: 15px;
 
-        }
+}
 
 
-        .icone {
+h1 {
 
-            font-size: clamp(
-                42px,
-                8vw,
-                60px
-            );
+    font-size: clamp(
+        24px,
+        5vw,
+        32px
+    );
 
-            margin-bottom: 15px;
+    line-height: 1.2;
 
-        }
+    margin-bottom: 10px;
 
+}
 
-        h1 {
 
-            font-size: clamp(
-                24px,
-                5vw,
-                32px
-            );
+.professor {
 
-            line-height: 1.2;
+    color: #31b279;
 
-            margin-bottom: 10px;
+    font-size: 18px;
 
-        }
+    margin-bottom: 25px;
 
+}
 
-        .professor {
 
-            color: #31b279;
+.descricao {
 
-            font-size: clamp(
-                15px,
-                3vw,
-                18px
-            );
+    color: #ccc;
 
-            margin-bottom: 25px;
+    line-height: 1.7;
 
-        }
+    margin-bottom: 25px;
 
+}
 
-        .descricao {
 
-            color: #ccc;
+.regras {
 
-            line-height: 1.7;
+    text-align: left;
 
-            font-size: 15px;
+    background: #101010;
 
-            margin-bottom: 25px;
+    border-radius: 10px;
 
-        }
+    padding: 20px;
 
+    margin-bottom: 25px;
 
-        /* ==================================================
-           REGRAS
-        ================================================== */
+}
 
-        .regras {
 
-            width: 100%;
+.regras h3 {
 
-            text-align: left;
+    color: #31b279;
 
-            background: #101010;
+    margin-bottom: 15px;
 
-            border-radius: 10px;
+}
 
-            padding: 20px;
 
-            margin-bottom: 25px;
+.regras p {
 
-        }
+    color: #ddd;
 
+    font-size: 14px;
 
-        .regras h3 {
+    line-height: 1.5;
 
-            color: #31b279;
+    margin: 8px 0;
 
-            font-size: 17px;
+}
 
-            margin-bottom: 15px;
 
-        }
+input {
 
+    width: 100%;
 
-        .regras p {
+    height: 52px;
 
-            color: #ddd;
+    padding: 0 15px;
 
-            font-size: 14px;
+    background: #222;
 
-            line-height: 1.5;
+    border: 1px solid #444;
 
-            margin: 9px 0;
+    border-radius: 8px;
 
-        }
+    color: white;
 
+    font-size: 16px;
 
-        /* ==================================================
-           CAMPO
-        ================================================== */
+    outline: none;
 
-        input {
+    margin-bottom: 15px;
 
-            width: 100%;
+}
 
-            height: 52px;
 
-            padding: 0 15px;
+input:focus {
 
-            background: #222;
+    border-color: #31b279;
 
-            border: 1px solid #444;
+}
 
-            border-radius: 8px;
 
-            color: white;
+.btn {
 
-            font-size: 16px;
+    width: 100%;
 
-            outline: none;
+    min-height: 52px;
 
-            margin-bottom: 15px;
+    padding: 14px;
 
-        }
+    border: none;
 
+    border-radius: 8px;
 
-        input:focus {
+    background: #31b279;
 
-            border-color: #31b279;
+    color: white;
 
-            box-shadow:
-                0 0 0 2px
-                rgba(49,178,121,.15);
+    font-size: 16px;
 
-        }
+    font-weight: bold;
 
+    cursor: pointer;
 
-        /* ==================================================
-           BOTÃO
-        ================================================== */
+}
 
-        .btn {
 
-            width: 100%;
+.btn:hover {
 
-            min-height: 52px;
+    background: #27945f;
 
-            padding: 14px;
+}
 
-            border: none;
 
-            border-radius: 8px;
+/* =====================================================
+   PROVA
+===================================================== */
 
-            background: #31b279;
+#prova {
 
-            color: white;
+    display: none;
 
-            font-size: 16px;
+    width: 100%;
 
-            font-weight: bold;
+    height: 100vh;
 
-            cursor: pointer;
+    height: 100dvh;
 
-            transition:
-                background .2s,
-                transform .2s;
+    background: white;
 
-        }
+}
 
 
-        .btn:hover {
+.topo {
 
-            background: #27945f;
+    width: 100%;
 
-            transform: translateY(-1px);
+    height: 64px;
 
-        }
+    background: #111;
 
+    display: flex;
 
-        .btn:active {
+    align-items: center;
 
-            transform: scale(.99);
+    justify-content: space-between;
 
-        }
+    gap: 15px;
 
+    padding:
+        8px 20px;
 
-        /* ==================================================
-           AMBIENTE DA PROVA
-        ================================================== */
+}
 
-        #prova {
 
-            display: none;
+.informacoes {
 
-            width: 100%;
+    min-width: 0;
 
-            height: 100vh;
+    flex: 1;
 
-            height: 100dvh;
+}
 
-            background: #f2f2f2;
 
-        }
+.titulo {
 
+    font-size: 17px;
 
-        /* ==================================================
-           CABEÇALHO
-        ================================================== */
+    font-weight: bold;
 
-        .topo {
+    white-space: nowrap;
 
-            width: 100%;
+    overflow: hidden;
 
-            min-height: 64px;
+    text-overflow: ellipsis;
 
-            background: #111;
+}
 
-            display: flex;
 
-            align-items: center;
+.aluno {
 
-            justify-content: space-between;
+    color: #31b279;
 
-            gap: 15px;
+    font-size: 13px;
 
-            padding:
-                8px
-                20px;
+    margin-top: 4px;
 
-            color: white;
+    white-space: nowrap;
 
-            position: relative;
+    overflow: hidden;
 
-            z-index: 100;
+    text-overflow: ellipsis;
 
-        }
+}
 
 
-        .informacoes {
+.cronometro {
 
-            min-width: 0;
+    flex-shrink: 0;
 
-            flex: 1;
+    min-width: 125px;
 
-        }
+    padding:
+        9px 14px;
 
+    background: #222;
 
-        .titulo {
+    border: 1px solid #31b279;
 
-            font-size: 17px;
+    border-radius: 7px;
 
-            font-weight: bold;
+    color: #31b279;
 
-            white-space: nowrap;
+    font-weight: bold;
 
-            overflow: hidden;
+    text-align: center;
 
-            text-overflow: ellipsis;
+}
 
-        }
 
+.area-formulario {
 
-        .aluno {
+    width: 100%;
 
-            color: #31b279;
+    height:
+        calc(100vh - 64px);
 
-            font-size: 13px;
+    height:
+        calc(100dvh - 64px);
 
-            margin-top: 4px;
+    background: white;
 
-            white-space: nowrap;
+    overflow: hidden;
 
-            overflow: hidden;
+}
 
-            text-overflow: ellipsis;
 
-        }
+iframe {
 
+    display: block;
 
-        /* ==================================================
-           CRONÔMETRO
-        ================================================== */
+    width: 100%;
 
-        .cronometro {
+    height: 100%;
 
-            flex-shrink: 0;
+    min-height: 400px;
 
-            background: #222;
+    border: none;
 
-            border: 1px solid #31b279;
+    background: white;
 
-            border-radius: 7px;
+}
 
-            padding:
-                9px
-                14px;
 
-            color: #31b279;
+/* =====================================================
+   TELA DE VIOLAÇÃO
+===================================================== */
 
-            font-weight: bold;
+#violacao {
 
-            font-size: 15px;
+    display: none;
 
-            min-width: 125px;
+    width: 100%;
 
-            text-align: center;
+    min-height: 100vh;
 
-        }
+    min-height: 100dvh;
 
+    align-items: center;
 
-        /* ==================================================
-           GOOGLE FORMS
-        ================================================== */
+    justify-content: center;
 
-        .area-formulario {
+    text-align: center;
 
-            width: 100%;
+    padding: 20px;
 
-            height:
-                calc(
-                    100vh - 64px
-                );
+    background: #111;
 
-            height:
-                calc(
-                    100dvh - 64px
-                );
+}
 
-            background: white;
 
-            overflow: hidden;
+.violacao-card {
 
-        }
+    width: 100%;
 
+    max-width: 600px;
 
-        iframe {
+    background: #1b1b1b;
 
-            display: block;
+    border: 2px solid #d32f2f;
 
-            width: 100%;
+    border-radius: 15px;
 
-            height: 100%;
+    padding: 40px 30px;
 
-            min-height: 500px;
+}
 
-            border: none;
 
-            background: white;
+.violacao-icone {
 
-        }
+    font-size: 60px;
 
+    margin-bottom: 20px;
 
-        /* ==================================================
-           TELA DE VIOLAÇÃO
-        ================================================== */
+}
 
-        #violacao {
 
-            display: none;
+.violacao-card h1 {
 
-            width: 100%;
+    color: #ff5555;
 
-            min-height: 100vh;
+    margin-bottom: 20px;
 
-            min-height: 100dvh;
+}
 
-            align-items: center;
 
-            justify-content: center;
+.violacao-card p {
 
-            text-align: center;
+    color: #ccc;
 
-            padding: 20px;
+    line-height: 1.7;
 
-            background: #111;
+    margin-bottom: 10px;
 
-        }
+}
 
 
-        .violacao-card {
+.motivo {
 
-            width: 100%;
+    background: #101010;
 
-            max-width: 600px;
+    border-radius: 8px;
 
-            background: #1b1b1b;
+    padding: 15px;
 
-            border: 2px solid #b3261e;
+    color: #ff7777;
 
-            border-radius: 15px;
+    margin-top: 20px;
 
-            padding: 40px 30px;
+    line-height: 1.5;
 
-            box-shadow:
-                0 20px 60px
-                rgba(0,0,0,.7);
+}
 
-        }
 
+/* =====================================================
+   FINAL
+===================================================== */
 
-        .violacao-icone {
+#finalizado {
 
-            font-size: 60px;
+    display: none;
 
-            margin-bottom: 20px;
+    width: 100%;
 
-        }
+    min-height: 100vh;
 
+    min-height: 100dvh;
 
-        .violacao-card h1 {
+    align-items: center;
 
-            color: #ff5555;
+    justify-content: center;
 
-            margin-bottom: 20px;
+    text-align: center;
 
-        }
+    background: #111;
 
+    padding: 20px;
 
-        .violacao-card p {
+}
 
-            color: #ccc;
 
-            line-height: 1.7;
+.final-card {
 
-            margin-bottom: 12px;
+    width: 100%;
 
-        }
+    max-width: 600px;
 
+    background: #1b1b1b;
 
-        .motivo {
+    border: 1px solid #31b279;
 
-            background: #101010;
+    border-radius: 15px;
 
-            border-radius: 8px;
+    padding: 40px 30px;
 
-            padding: 15px;
+}
 
-            color: #ff7777;
 
-            margin-top: 20px;
+.final-card h1 {
 
-            line-height: 1.5;
+    color: #31b279;
 
-        }
+    margin-bottom: 20px;
 
+}
 
-        /* ==================================================
-           TELA FINAL
-        ================================================== */
 
-        #finalizado {
+.final-card p {
 
-            display: none;
+    color: #ccc;
 
-            width: 100%;
+    line-height: 1.7;
 
-            min-height: 100vh;
+}
 
-            min-height: 100dvh;
 
-            align-items: center;
+/* =====================================================
+   TABLET
+===================================================== */
 
-            justify-content: center;
+@media(max-width:768px) {
 
-            text-align: center;
+    #inicio {
 
-            background: #111;
+        padding: 15px;
 
-            padding: 20px;
+    }
 
-        }
 
+    .card {
 
-        .final-card {
+        padding: 30px 22px;
 
-            width: 100%;
+    }
 
-            max-width: 600px;
 
-            background: #1b1b1b;
+    .topo {
 
-            border: 1px solid #31b279;
+        height: 60px;
 
-            border-radius: 15px;
+        padding:
+            7px 12px;
 
-            padding: 40px 30px;
+    }
 
-        }
 
+    .area-formulario {
 
-        .final-card h1 {
+        height:
+            calc(100vh - 60px);
 
-            color: #31b279;
+        height:
+            calc(100dvh - 60px);
 
-            margin-bottom: 20px;
+    }
 
-        }
+}
 
 
-        .final-card p {
+/* =====================================================
+   CELULAR
+===================================================== */
 
-            color: #ccc;
+@media(max-width:600px) {
 
-            line-height: 1.7;
+    #inicio {
 
-        }
+        align-items: flex-start;
 
+        padding: 12px;
 
-        /* ==================================================
-           TABLET
-        ================================================== */
+        overflow-y: auto;
 
-        @media (max-width: 768px) {
+    }
 
 
-            #inicio {
+    .card {
 
-                padding: 15px;
+        margin:
+            10px auto;
 
-            }
+        padding:
+            25px 18px;
 
+    }
 
-            .card {
 
-                padding: 30px 22px;
+    .icone {
 
-                border-radius: 14px;
+        font-size: 45px;
 
-            }
+    }
 
 
-            .regras {
+    h1 {
 
-                padding: 16px;
+        font-size: 24px;
 
-            }
+    }
 
 
-            .regras p {
+    .professor {
 
-                font-size: 13px;
+        font-size: 15px;
 
-            }
+        margin-bottom: 18px;
 
+    }
 
-            .topo {
 
-                min-height: 60px;
+    .descricao {
 
-                padding:
-                    7px
-                    12px;
+        font-size: 14px;
 
-                gap: 10px;
+    }
 
-            }
 
+    .regras {
 
-            .area-formulario {
+        padding: 15px;
 
-                height:
-                    calc(
-                        100vh - 60px
-                    );
+    }
 
-                height:
-                    calc(
-                        100dvh - 60px
-                    );
 
-            }
+    .regras p {
 
+        font-size: 13px;
 
-            iframe {
+    }
 
-                min-height: 400px;
 
-            }
+    .topo {
 
-        }
+        height: 58px;
 
+        padding:
+            6px 8px;
 
-        /* ==================================================
-           CELULAR
-        ================================================== */
+        gap: 8px;
 
-        @media (max-width: 600px) {
+    }
 
 
-            #inicio {
+    .titulo {
 
-                align-items: flex-start;
+        font-size: 13px;
 
-                padding:
-                    12px;
+    }
 
-                overflow-y: auto;
 
-            }
+    .aluno {
 
+        font-size: 10px;
 
-            .card {
+        max-width: 180px;
 
-                margin:
-                    10px
-                    auto;
+    }
 
-                padding:
-                    25px
-                    18px;
 
-                border-radius: 12px;
+    .cronometro {
 
-            }
+        min-width: 92px;
 
+        padding:
+            8px 5px;
 
-            .icone {
+        font-size: 12px;
 
-                margin-bottom: 10px;
+    }
 
-            }
 
+    .area-formulario {
 
-            h1 {
+        height:
+            calc(100vh - 58px);
 
-                font-size: 24px;
+        height:
+            calc(100dvh - 58px);
 
-            }
+    }
 
 
-            .professor {
+    .violacao-card {
 
-                font-size: 15px;
+        padding:
+            30px 20px;
 
-                margin-bottom: 18px;
+    }
 
-            }
+}
 
 
-            .descricao {
+/* =====================================================
+   CELULAR PEQUENO
+===================================================== */
 
-                font-size: 14px;
+@media(max-width:380px) {
 
-                line-height: 1.6;
+    .titulo {
 
-            }
+        font-size: 12px;
 
+    }
 
-            .regras {
 
-                padding:
-                    15px;
+    .aluno {
 
-                margin-bottom:
-                    18px;
+        max-width: 130px;
 
-            }
+    }
 
 
-            .regras h3 {
+    .cronometro {
 
-                font-size: 16px;
+        min-width: 85px;
 
-            }
+        font-size: 11px;
 
+    }
 
-            .regras p {
+}
 
-                font-size: 13px;
-
-                margin:
-                    7px 0;
-
-            }
-
-
-            input {
-
-                height: 50px;
-
-                font-size: 16px;
-
-            }
-
-
-            .btn {
-
-                min-height: 50px;
-
-                font-size: 15px;
-
-            }
-
-
-            /* -------------------------------
-               CABEÇALHO CELULAR
-            -------------------------------- */
-
-            .topo {
-
-                min-height: 58px;
-
-                padding:
-                    6px
-                    8px;
-
-            }
-
-
-            .titulo {
-
-                font-size: 13px;
-
-            }
-
-
-            .aluno {
-
-                font-size: 11px;
-
-                max-width:
-                    180px;
-
-            }
-
-
-            .cronometro {
-
-                min-width: 95px;
-
-                padding:
-                    8px
-                    7px;
-
-                font-size: 13px;
-
-            }
-
-
-            .area-formulario {
-
-                height:
-                    calc(
-                        100vh - 58px
-                    );
-
-                height:
-                    calc(
-                        100dvh - 58px
-                    );
-
-            }
-
-
-            iframe {
-
-                width: 100%;
-
-                height: 100%;
-
-                min-height: 400px;
-
-            }
-
-
-            .violacao-card {
-
-                padding:
-                    30px
-                    20px;
-
-            }
-
-
-            .violacao-icone {
-
-                font-size: 50px;
-
-            }
-
-
-            .violacao-card h1 {
-
-                font-size: 25px;
-
-            }
-
-
-            .final-card {
-
-                padding:
-                    30px
-                    20px;
-
-            }
-
-        }
-
-
-        /* ==================================================
-           CELULARES MUITO PEQUENOS
-        ================================================== */
-
-        @media (max-width: 380px) {
-
-
-            .topo {
-
-                min-height: 54px;
-
-            }
-
-
-            .titulo {
-
-                font-size: 12px;
-
-            }
-
-
-            .aluno {
-
-                max-width:
-                    135px;
-
-                font-size: 10px;
-
-            }
-
-
-            .cronometro {
-
-                min-width: 86px;
-
-                font-size: 12px;
-
-                padding:
-                    7px
-                    5px;
-
-            }
-
-
-            .area-formulario {
-
-                height:
-                    calc(
-                        100vh - 54px
-                    );
-
-                height:
-                    calc(
-                        100dvh - 54px
-                    );
-
-            }
-
-        }
-
-
-        /* ==================================================
-           TELA HORIZONTAL NO CELULAR
-        ================================================== */
-
-        @media (
-            max-height: 500px
-        ) and (
-            orientation: landscape
-        ) {
-
-
-            #inicio {
-
-                align-items: flex-start;
-
-                overflow-y: auto;
-
-            }
-
-
-            .card {
-
-                margin:
-                    10px
-                    auto;
-
-                padding:
-                    20px;
-
-            }
-
-
-            .icone {
-
-                font-size: 35px;
-
-                margin-bottom: 5px;
-
-            }
-
-
-            h1 {
-
-                font-size: 21px;
-
-            }
-
-
-            .professor {
-
-                margin-bottom: 10px;
-
-            }
-
-
-            .descricao {
-
-                margin-bottom: 10px;
-
-            }
-
-
-            .regras {
-
-                padding: 10px;
-
-                margin-bottom: 10px;
-
-            }
-
-
-            .regras p {
-
-                margin: 4px 0;
-
-            }
-
-
-            input {
-
-                height: 45px;
-
-            }
-
-
-            .btn {
-
-                min-height: 45px;
-
-            }
-
-        }
-
-
-        /* ==================================================
-           ACESSIBILIDADE
-        ================================================== */
-
-        button,
-        input {
-
-            -webkit-tap-highlight-color:
-                transparent;
-
-        }
-
-
-        button:focus-visible,
-        input:focus-visible {
-
-            outline:
-                2px solid #31b279;
-
-            outline-offset: 2px;
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -1100,8 +753,8 @@
 
 
 <!-- =====================================================
-     TELA INICIAL
-====================================================== -->
+     INÍCIO
+===================================================== -->
 
 <section id="inicio">
 
@@ -1170,11 +823,6 @@
             </p>
 
 
-            <p>
-                ✓ Após o encerramento, não será possível retornar.
-            </p>
-
-
         </div>
 
 
@@ -1189,6 +837,7 @@
 
         <button
             class="btn"
+            id="botaoIniciar"
             onclick="iniciarProva()"
         >
 
@@ -1204,8 +853,8 @@
 
 
 <!-- =====================================================
-     AMBIENTE DA PROVA
-====================================================== -->
+     PROVA
+===================================================== -->
 
 <section id="prova">
 
@@ -1249,6 +898,7 @@
 
 
         <iframe
+
             id="formulario"
 
             src="https://docs.google.com/forms/d/e/1FAIpQLSdSBg1ISfOMXN7dlGn04kiQWpHRgFPJyFvHAUmsarDUWr6nyA/viewform?embedded=true"
@@ -1269,7 +919,7 @@
 
 <!-- =====================================================
      VIOLAÇÃO
-====================================================== -->
+===================================================== -->
 
 <section id="violacao">
 
@@ -1297,9 +947,8 @@
 
         <p>
 
-            O formulário foi encerrado
-            e a avaliação não poderá
-            ser retomada.
+            O formulário foi encerrado e
+            não poderá ser retomado.
 
         </p>
 
@@ -1319,7 +968,7 @@
 
 <!-- =====================================================
      FINAL POR TEMPO
-====================================================== -->
+===================================================== -->
 
 <section id="finalizado">
 
@@ -1360,18 +1009,29 @@
 
 <script>
 
-
 /* =====================================================
-   CONFIGURAÇÕES
+   VARIÁVEIS
 ===================================================== */
 
 let provaIniciada = false;
 
 let provaEncerrada = false;
 
+let fullscreenAtivo = false;
+
+let monitoramentoAtivo = false;
+
 let tempoRestante = 90 * 60;
 
-let intervalo;
+let intervalo = null;
+
+
+/*
+ * Tempo utilizado somente para evitar
+ * falsos positivos durante a inicialização.
+ */
+
+let inicioMonitoramento = 0;
 
 
 /* =====================================================
@@ -1381,11 +1041,12 @@ let intervalo;
 async function iniciarProva() {
 
 
+    const campo =
+        document.getElementById("nomeAluno");
+
+
     const nome =
-        document
-        .getElementById("nomeAluno")
-        .value
-        .trim();
+        campo.value.trim();
 
 
     if(nome === "") {
@@ -1394,30 +1055,33 @@ async function iniciarProva() {
             "Digite seu nome completo antes de iniciar."
         );
 
+        campo.focus();
+
         return;
 
     }
 
 
     /*
-     * Impede iniciar novamente.
+     * Desabilita o botão para evitar
+     * dois cliques.
      */
 
-    if(provaIniciada) {
-
-        return;
-
-    }
-
-
-    provaIniciada = true;
+    const botao =
+        document.getElementById(
+            "botaoIniciar"
+        );
 
 
-    document
-        .getElementById("aluno")
-        .innerText =
-        "Aluno: " + nome;
+    botao.disabled = true;
 
+    botao.innerText =
+        "INICIANDO AVALIAÇÃO...";
+
+
+    /*
+     * Mostra a prova.
+     */
 
     document
         .getElementById("inicio")
@@ -1429,31 +1093,82 @@ async function iniciarProva() {
         .style.display = "block";
 
 
+    document
+        .getElementById("aluno")
+        .innerText =
+        "Aluno: " + nome;
+
+
     /*
-     * Tenta ativar tela cheia.
+     * IMPORTANTE:
+     *
+     * Ainda NÃO ativamos a fiscalização.
+     *
+     * Primeiro tentamos colocar
+     * o navegador em tela cheia.
      */
 
     try {
 
 
-        await document
-            .documentElement
-            .requestFullscreen();
+        if(
+            !document.fullscreenElement
+        ) {
+
+            await document
+                .documentElement
+                .requestFullscreen();
+
+        }
 
 
     }
-
     catch(erro) {
 
 
-        encerrarPorViolacao(
-            "Não foi possível ativar a tela cheia."
+        /*
+         * Alguns navegadores/celulares
+         * podem não permitir fullscreen.
+         *
+         * Não vamos encerrar a prova
+         * automaticamente por isso.
+         */
+
+        console.log(
+            "Fullscreen não disponível:",
+            erro
         );
 
-
-        return;
-
     }
+
+
+    /*
+     * A partir daqui a prova está
+     * realmente iniciada.
+     */
+
+    provaIniciada = true;
+
+
+    /*
+     * Dá um pequeno período para o
+     * navegador estabilizar.
+     */
+
+    setTimeout(
+        function() {
+
+            fullscreenAtivo =
+                !!document.fullscreenElement;
+
+            monitoramentoAtivo = true;
+
+            inicioMonitoramento =
+                Date.now();
+
+        },
+        1500
+    );
 
 
     iniciarCronometro();
@@ -1463,7 +1178,7 @@ async function iniciarProva() {
 
 
 /* =====================================================
-   DETECTAR SAÍDA DO FULLSCREEN
+   DETECTAR FULLSCREEN
 ===================================================== */
 
 document.addEventListener(
@@ -1471,10 +1186,57 @@ document.addEventListener(
     function() {
 
 
+        /*
+         * Ignora eventos antes do
+         * monitoramento estar ativo.
+         */
+
+        if(!monitoramentoAtivo) {
+
+            return;
+
+        }
+
+
+        /*
+         * Ignora os primeiros segundos
+         * da inicialização.
+         */
+
+        if(
+            Date.now() -
+            inicioMonitoramento <
+            2000
+        ) {
+
+            return;
+
+        }
+
+
+        /*
+         * Se existe fullscreen,
+         * registra que ele está ativo.
+         */
+
+        if(document.fullscreenElement) {
+
+            fullscreenAtivo = true;
+
+            return;
+
+        }
+
+
+        /*
+         * Só encerra se a prova já
+         * estava efetivamente em fullscreen.
+         */
+
         if(
             provaIniciada &&
             !provaEncerrada &&
-            !document.fullscreenElement
+            fullscreenAtivo
         ) {
 
 
@@ -1499,15 +1261,48 @@ document.addEventListener(
     function() {
 
 
+        /*
+         * Durante a inicialização
+         * não faz nada.
+         */
+
+        if(!monitoramentoAtivo) {
+
+            return;
+
+        }
+
+
+        /*
+         * Ignora uma possível mudança
+         * de foco nos primeiros segundos.
+         */
+
         if(
+            Date.now() -
+            inicioMonitoramento <
+            2000
+        ) {
+
+            return;
+
+        }
+
+
+        /*
+         * Só considera violação quando
+         * a página realmente ficou oculta.
+         */
+
+        if(
+            document.hidden &&
             provaIniciada &&
-            !provaEncerrada &&
-            document.hidden
+            !provaEncerrada
         ) {
 
 
             encerrarPorViolacao(
-                "O aluno mudou de aba ou janela."
+                "O aluno saiu da página ou mudou de aba."
             );
 
 
@@ -1536,6 +1331,8 @@ function encerrarPorViolacao(motivo) {
 
     provaIniciada = false;
 
+    monitoramentoAtivo = false;
+
 
     clearInterval(intervalo);
 
@@ -1544,21 +1341,24 @@ function encerrarPorViolacao(motivo) {
      * Remove o Google Forms.
      */
 
-    const iframe =
-        document.getElementById("formulario");
+    const formulario =
+        document.getElementById(
+            "formulario"
+        );
 
 
-    if(iframe) {
+    if(formulario) {
 
-        iframe.src = "about:blank";
+        formulario.src =
+            "about:blank";
 
-        iframe.remove();
+        formulario.remove();
 
     }
 
 
     /*
-     * Esconde prova.
+     * Esconde a prova.
      */
 
     document
@@ -1567,7 +1367,7 @@ function encerrarPorViolacao(motivo) {
 
 
     /*
-     * Mostra violação.
+     * Mostra encerramento.
      */
 
     document
@@ -1582,7 +1382,7 @@ function encerrarPorViolacao(motivo) {
 
 
     /*
-     * Registra localmente.
+     * Registra no navegador.
      */
 
     localStorage.setItem(
@@ -1607,11 +1407,15 @@ function encerrarPorViolacao(motivo) {
      * Sai do fullscreen.
      */
 
-    if(document.fullscreenElement) {
+    if(
+        document.fullscreenElement
+    ) {
 
         document
             .exitFullscreen()
-            .catch(() => {});
+            .catch(
+                () => {}
+            );
 
     }
 
@@ -1636,7 +1440,9 @@ function iniciarCronometro() {
 
                 if(provaEncerrada) {
 
-                    clearInterval(intervalo);
+                    clearInterval(
+                        intervalo
+                    );
 
                     return;
 
@@ -1653,12 +1459,12 @@ function iniciarCronometro() {
                     tempoRestante <= 0
                 ) {
 
-
-                    clearInterval(intervalo);
+                    clearInterval(
+                        intervalo
+                    );
 
 
                     finalizarProva();
-
 
                 }
 
@@ -1715,20 +1521,14 @@ function atualizarCronometro() {
         h + ":" + m + ":" + s;
 
 
-    /*
-     * Últimos 5 minutos.
-     */
-
     if(
         tempoRestante <= 300
     ) {
-
 
         document
             .getElementById("cronometro")
             .style.color =
             "#ff4444";
-
 
     }
 
@@ -1747,17 +1547,22 @@ function finalizarProva() {
 
     provaIniciada = false;
 
+    monitoramentoAtivo = false;
+
 
     clearInterval(intervalo);
 
 
-    const iframe =
-        document.getElementById("formulario");
+    const formulario =
+        document.getElementById(
+            "formulario"
+        );
 
 
-    if(iframe) {
+    if(formulario) {
 
-        iframe.src = "about:blank";
+        formulario.src =
+            "about:blank";
 
     }
 
@@ -1772,11 +1577,15 @@ function finalizarProva() {
         .style.display = "flex";
 
 
-    if(document.fullscreenElement) {
+    if(
+        document.fullscreenElement
+    ) {
 
         document
             .exitFullscreen()
-            .catch(() => {});
+            .catch(
+                () => {}
+            );
 
     }
 
@@ -1805,7 +1614,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   SELEÇÃO DE TEXTO
+   SELEÇÃO
 ===================================================== */
 
 document.addEventListener(
@@ -1845,7 +1654,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   BLOQUEIO DE ATALHOS
+   ATALHOS
 ===================================================== */
 
 document.addEventListener(
@@ -2040,34 +1849,6 @@ document.addEventListener(
 
 
 /* =====================================================
-   RECARREGAMENTO
-===================================================== */
-
-window.addEventListener(
-    "beforeunload",
-    function(event) {
-
-
-        if(
-            provaIniciada &&
-            !provaEncerrada
-        ) {
-
-
-            event.preventDefault();
-
-
-            event.returnValue = "";
-
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
    BOTÃO VOLTAR
 ===================================================== */
 
@@ -2106,8 +1887,34 @@ window.addEventListener(
     }
 );
 
-</script>
 
+
+/* =====================================================
+   RECARREGAMENTO
+===================================================== */
+
+window.addEventListener(
+    "beforeunload",
+    function(event) {
+
+
+        if(
+            provaIniciada &&
+            !provaEncerrada
+        ) {
+
+
+            event.preventDefault();
+
+            event.returnValue = "";
+
+
+        }
+
+    }
+);
+
+</script>
 
 </body>
 
