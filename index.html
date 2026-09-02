@@ -8,14 +8,7 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color"
-      content="#111111">
-
-<meta name="description"
-      content="Ambiente de avaliação online">
-
-<title>Avaliação Online - MSc Ronilson</title>
-
+<title>Avaliação - MSc Ronilson</title>
 
 <style>
 
@@ -24,9 +17,9 @@
 ===================================================== */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 
@@ -34,28 +27,14 @@ html,
 body {
 
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
     background: #111;
 
     color: #fff;
 
-}
-
-
-body {
-    overflow-x: hidden;
-}
-
-
-button,
-input {
-    font-family: inherit;
 }
 
 
@@ -66,72 +45,53 @@ input {
 #inicio {
 
     width: 100%;
-
     min-height: 100vh;
-    min-height: 100dvh;
 
     display: flex;
 
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     padding: 20px;
 
-    background:
-        radial-gradient(
-            circle at top,
-            #292929 0%,
-            #111 55%,
-            #050505 100%
-        );
+    background: #111;
+
 }
 
-
-/* =====================================================
-   CARD
-===================================================== */
 
 .card {
 
     width: 100%;
-    max-width: 700px;
+    max-width: 650px;
 
-    background: #1b1b1b;
-
-    border: 1px solid #333;
-
-    border-radius: 16px;
+    background: #1c1c1c;
 
     padding: 40px;
 
+    border-radius: 16px;
+
+    border: 1px solid #333;
+
     text-align: center;
 
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, .7);
 }
 
 
 .icone {
 
-    font-size: 58px;
+    font-size: 55px;
 
     margin-bottom: 15px;
+
 }
 
 
 .card h1 {
 
-    color: #fff;
-
-    font-size:
-        clamp(
-            24px,
-            5vw,
-            34px
-        );
+    font-size: 30px;
 
     margin-bottom: 10px;
+
 }
 
 
@@ -139,11 +99,10 @@ input {
 
     color: #31b279;
 
-    font-size: 18px;
-
     font-weight: bold;
 
     margin-bottom: 25px;
+
 }
 
 
@@ -151,33 +110,25 @@ input {
 
     color: #ccc;
 
-    font-size: 15px;
-
-    line-height: 1.7;
+    line-height: 1.6;
 
     margin-bottom: 25px;
+
 }
 
 
-/* =====================================================
-   REGRAS
-===================================================== */
-
 .regras {
 
-    width: 100%;
-
-    text-align: left;
-
     background: #101010;
-
-    border: 1px solid #292929;
 
     border-radius: 10px;
 
     padding: 20px;
 
+    text-align: left;
+
     margin-bottom: 25px;
+
 }
 
 
@@ -185,9 +136,8 @@ input {
 
     color: #31b279;
 
-    font-size: 17px;
-
     margin-bottom: 15px;
+
 }
 
 
@@ -197,65 +147,50 @@ input {
 
     font-size: 14px;
 
+    margin: 8px 0;
+
     line-height: 1.5;
 
-    margin: 9px 0;
 }
 
 
-/* =====================================================
-   NOME
-===================================================== */
-
-input {
+#nomeAluno {
 
     width: 100%;
 
     height: 52px;
 
-    padding:
-        0 15px;
+    padding: 0 15px;
 
     background: #222;
 
     color: #fff;
 
-    border: 1px solid #444;
+    border: 1px solid #555;
 
     border-radius: 8px;
 
-    outline: none;
-
     font-size: 16px;
 
+    outline: none;
+
     margin-bottom: 15px;
+
 }
 
 
-input::placeholder {
-    color: #999;
-}
-
-
-input:focus {
+#nomeAluno:focus {
 
     border-color: #31b279;
 
-    box-shadow:
-        0 0 0 2px
-        rgba(49, 178, 121, .15);
 }
 
-
-/* =====================================================
-   BOTÃO
-===================================================== */
 
 .btn {
 
     width: 100%;
 
-    min-height: 52px;
+    height: 52px;
 
     border: none;
 
@@ -265,29 +200,24 @@ input:focus {
 
     color: #fff;
 
-    font-size: 16px;
-
     font-weight: bold;
 
+    font-size: 16px;
+
     cursor: pointer;
+
 }
 
 
 .btn:hover {
+
     background: #27945f;
-}
 
-
-.btn:disabled {
-
-    opacity: .6;
-
-    cursor: not-allowed;
 }
 
 
 /* =====================================================
-   ÁREA DA PROVA
+   PROVA
 ===================================================== */
 
 #prova {
@@ -298,11 +228,8 @@ input:focus {
 
     height: 100vh;
 
-    height: 100dvh;
-
     background: #fff;
 
-    overflow: hidden;
 }
 
 
@@ -314,7 +241,7 @@ input:focus {
 
     width: 100%;
 
-    height: 64px;
+    height: 60px;
 
     background: #111;
 
@@ -324,22 +251,17 @@ input:focus {
 
     justify-content: space-between;
 
-    gap: 15px;
+    padding: 8px 15px;
 
-    padding:
-        8px 20px;
-
-    position: relative;
-
-    z-index: 100;
 }
 
 
-.informacoes {
+.info {
 
     min-width: 0;
 
     flex: 1;
+
 }
 
 
@@ -347,15 +269,10 @@ input:focus {
 
     color: #fff;
 
-    font-size: 17px;
+    font-size: 16px;
 
     font-weight: bold;
 
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
 }
 
 
@@ -363,103 +280,76 @@ input:focus {
 
     color: #31b279;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    margin-top: 4px;
+    margin-top: 3px;
 
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
 }
 
-
-/* =====================================================
-   CRONÔMETRO
-===================================================== */
 
 .cronometro {
 
-    flex-shrink: 0;
+    min-width: 110px;
 
-    min-width: 125px;
-
-    padding:
-        9px 14px;
+    padding: 8px 10px;
 
     background: #222;
 
-    border:
-        1px solid #31b279;
+    color: #31b279;
+
+    border: 1px solid #31b279;
 
     border-radius: 7px;
 
-    color: #31b279;
-
-    font-size: 15px;
+    text-align: center;
 
     font-weight: bold;
 
-    text-align: center;
 }
 
 
 /* =====================================================
-   GOOGLE FORMS
+   FORMULÁRIO
 ===================================================== */
+
+/*
+   ATENÇÃO:
+
+   O iframe NÃO possui nenhuma camada por cima.
+
+   O Google Forms fica totalmente clicável.
+*/
 
 .area-formulario {
 
     width: 100%;
 
-    height:
-        calc(100vh - 64px);
+    height: calc(100vh - 60px);
 
-    height:
-        calc(100dvh - 64px);
+    background: white;
 
-    background: #fff;
-
-    overflow: auto;
-
-    position: relative;
 }
 
 
-.area-formulario iframe {
-
-    display: block;
+#formulario {
 
     width: 100%;
 
-    min-width: 100%;
-
     height: 100%;
 
-    min-height: 1100px;
+    min-height: 100%;
 
-    border: 0;
+    border: none;
 
-    background: #fff;
+    display: block;
 
-    /*
-       IMPORTANTE:
+    background: white;
 
-       O Google Forms fica totalmente
-       interativo.
-    */
-
-    pointer-events: auto;
-
-    user-select: auto;
-
-    touch-action: auto;
 }
 
 
 /* =====================================================
-   TELA DE SUCESSO
+   SUCESSO
 ===================================================== */
 
 #sucesso {
@@ -470,23 +360,16 @@ input:focus {
 
     min-height: 100vh;
 
-    min-height: 100dvh;
-
     align-items: center;
 
     justify-content: center;
 
-    text-align: center;
-
     padding: 20px;
 
-    background:
-        radial-gradient(
-            circle at top,
-            #292929 0%,
-            #111 55%,
-            #050505 100%
-        );
+    text-align: center;
+
+    background: #111;
+
 }
 
 
@@ -494,29 +377,25 @@ input:focus {
 
     width: 100%;
 
-    max-width: 620px;
+    max-width: 600px;
 
-    padding:
-        45px 30px;
+    padding: 45px 25px;
 
-    background: #1b1b1b;
+    background: #1c1c1c;
 
-    border:
-        2px solid #31b279;
+    border: 2px solid #31b279;
 
     border-radius: 16px;
 
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, .7);
 }
 
 
-.sucesso-icone {
+.sucesso-icon {
 
     font-size: 70px;
 
     margin-bottom: 20px;
+
 }
 
 
@@ -524,14 +403,10 @@ input:focus {
 
     color: #31b279;
 
-    font-size:
-        clamp(
-            24px,
-            5vw,
-            34px
-        );
+    font-size: 30px;
 
     margin-bottom: 20px;
+
 }
 
 
@@ -539,26 +414,15 @@ input:focus {
 
     color: #ccc;
 
-    font-size: 16px;
-
     line-height: 1.7;
 
     margin: 8px 0;
-}
 
-
-.sucesso-nome {
-
-    color: #fff !important;
-
-    font-weight: bold;
-
-    margin-top: 20px !important;
 }
 
 
 /* =====================================================
-   TELA DE VIOLAÇÃO
+   VIOLAÇÃO
 ===================================================== */
 
 #violacao {
@@ -569,23 +433,16 @@ input:focus {
 
     min-height: 100vh;
 
-    min-height: 100dvh;
-
     align-items: center;
 
     justify-content: center;
 
-    text-align: center;
-
     padding: 20px;
 
-    background:
-        radial-gradient(
-            circle at top,
-            #292929 0%,
-            #111 55%,
-            #050505 100%
-        );
+    text-align: center;
+
+    background: #111;
+
 }
 
 
@@ -593,29 +450,25 @@ input:focus {
 
     width: 100%;
 
-    max-width: 620px;
+    max-width: 600px;
 
-    padding:
-        45px 30px;
+    padding: 45px 25px;
 
-    background: #1b1b1b;
+    background: #1c1c1c;
 
-    border:
-        2px solid #d32f2f;
+    border: 2px solid #d32f2f;
 
     border-radius: 16px;
 
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, .7);
 }
 
 
-.violacao-icone {
+.violacao-icon {
 
     font-size: 70px;
 
     margin-bottom: 20px;
+
 }
 
 
@@ -623,14 +476,10 @@ input:focus {
 
     color: #ff5555;
 
-    font-size:
-        clamp(
-            24px,
-            5vw,
-            34px
-        );
+    font-size: 30px;
 
     margin-bottom: 20px;
+
 }
 
 
@@ -638,17 +487,16 @@ input:focus {
 
     color: #ccc;
 
-    font-size: 16px;
-
     line-height: 1.7;
 
     margin: 8px 0;
+
 }
 
 
 .motivo {
 
-    margin-top: 22px;
+    margin-top: 20px;
 
     padding: 15px;
 
@@ -658,12 +506,11 @@ input:focus {
 
     color: #ff7777;
 
-    line-height: 1.5;
 }
 
 
 /* =====================================================
-   TEMPO ENCERRADO
+   TEMPO
 ===================================================== */
 
 #finalizado {
@@ -674,8 +521,6 @@ input:focus {
 
     min-height: 100vh;
 
-    min-height: 100dvh;
-
     align-items: center;
 
     justify-content: center;
@@ -684,13 +529,8 @@ input:focus {
 
     padding: 20px;
 
-    background:
-        radial-gradient(
-            circle at top,
-            #292929 0%,
-            #111 55%,
-            #050505 100%
-        );
+    background: #111;
+
 }
 
 
@@ -698,17 +538,16 @@ input:focus {
 
     width: 100%;
 
-    max-width: 620px;
+    max-width: 600px;
 
-    padding:
-        45px 30px;
+    padding: 45px 25px;
 
-    background: #1b1b1b;
+    background: #1c1c1c;
 
-    border:
-        2px solid #31b279;
+    border: 2px solid #31b279;
 
     border-radius: 16px;
+
 }
 
 
@@ -716,14 +555,8 @@ input:focus {
 
     color: #31b279;
 
-    font-size:
-        clamp(
-            24px,
-            5vw,
-            34px
-        );
-
     margin-bottom: 20px;
+
 }
 
 
@@ -733,61 +566,14 @@ input:focus {
 
     line-height: 1.7;
 
-    margin: 8px 0;
 }
 
 
 /* =====================================================
-   RESPONSIVO
+   CELULAR
 ===================================================== */
 
-@media (max-width: 768px) {
-
-    #inicio {
-        padding: 15px;
-    }
-
-
-    .card {
-        padding: 30px 22px;
-    }
-
-
-    .topo {
-
-        height: 60px;
-
-        padding:
-            7px 12px;
-    }
-
-
-    .area-formulario {
-
-        height:
-            calc(100vh - 60px);
-
-        height:
-            calc(100dvh - 60px);
-    }
-
-
-    .titulo {
-        font-size: 15px;
-    }
-
-
-    .cronometro {
-
-        min-width: 110px;
-
-        font-size: 13px;
-    }
-
-}
-
-
-@media (max-width: 600px) {
+@media(max-width: 600px) {
 
     #inicio {
 
@@ -796,6 +582,7 @@ input:focus {
         padding: 12px;
 
         overflow-y: auto;
+
     }
 
 
@@ -803,38 +590,36 @@ input:focus {
 
         margin: 10px auto;
 
-        padding:
-            25px 18px;
-    }
+        padding: 25px 18px;
 
-
-    .icone {
-        font-size: 45px;
     }
 
 
     .card h1 {
+
         font-size: 24px;
+
     }
 
 
     .professor {
+
         font-size: 15px;
-    }
 
-
-    .descricao {
-        font-size: 14px;
     }
 
 
     .regras {
+
         padding: 15px;
+
     }
 
 
     .regras p {
+
         font-size: 13px;
+
     }
 
 
@@ -842,15 +627,15 @@ input:focus {
 
         height: 58px;
 
-        padding:
-            6px 8px;
+        padding: 6px 8px;
 
-        gap: 8px;
     }
 
 
     .titulo {
+
         font-size: 12px;
+
     }
 
 
@@ -858,66 +643,31 @@ input:focus {
 
         font-size: 10px;
 
-        max-width: 180px;
     }
 
 
     .cronometro {
 
-        min-width: 90px;
-
-        padding:
-            8px 5px;
+        min-width: 85px;
 
         font-size: 11px;
+
     }
 
 
     .area-formulario {
 
-        height:
-            calc(100vh - 58px);
+        height: calc(100vh - 58px);
 
-        height:
-            calc(100dvh - 58px);
     }
 
 
-    .sucesso-card,
-    .violacao-card,
-    .final-card {
+    #formulario {
 
-        padding:
-            35px 20px;
-    }
+        width: 100%;
 
+        height: 100%;
 
-    .sucesso-icone,
-    .violacao-icone {
-
-        font-size: 60px;
-    }
-
-}
-
-
-@media (max-width: 380px) {
-
-    .titulo {
-        font-size: 11px;
-    }
-
-
-    .aluno {
-        max-width: 125px;
-    }
-
-
-    .cronometro {
-
-        min-width: 82px;
-
-        font-size: 10px;
     }
 
 }
@@ -931,7 +681,7 @@ input:focus {
 
 
 <!-- =====================================================
-     TELA INICIAL
+     INÍCIO
 ===================================================== -->
 
 <section id="inicio">
@@ -957,42 +707,26 @@ input:focus {
 
         <p class="descricao">
 
-            Leia atentamente as regras
-            antes de iniciar a avaliação.
+            Digite seu nome e clique em
+            iniciar para acessar a avaliação.
 
         </p>
 
 
         <div class="regras">
 
-
             <h3>
-                ⚠️ REGRAS DA AVALIAÇÃO
+                ⚠️ Regras
             </h3>
 
 
             <p>
-                ✓ Digite seu nome completo antes de iniciar.
+                ✓ Responda a avaliação normalmente.
             </p>
 
 
             <p>
-                ✓ Responda normalmente dentro do Google Forms.
-            </p>
-
-
-            <p>
-                ✓ Não utilize mecanismos de pesquisa.
-            </p>
-
-
-            <p>
-                ✓ Não abra outras páginas.
-            </p>
-
-
-            <p>
-                ✓ Não troque de aba ou janela.
+                ✓ Não troque de aba.
             </p>
 
 
@@ -1006,16 +740,6 @@ input:focus {
             </p>
 
 
-            <p>
-                ✓ Após encerrada, não poderá ser retomada.
-            </p>
-
-
-            <p>
-                ✓ Ao clicar em Enviar, aguarde a confirmação.
-            </p>
-
-
         </div>
 
 
@@ -1024,12 +748,10 @@ input:focus {
             id="nomeAluno"
             placeholder="Digite seu nome completo"
             autocomplete="off"
-            maxlength="100"
         >
 
 
         <button
-            type="button"
             class="btn"
             id="botaoIniciar"
             onclick="iniciarProva()"
@@ -1048,7 +770,7 @@ input:focus {
 
 
 <!-- =====================================================
-     TELA DA PROVA
+     PROVA
 ===================================================== -->
 
 <section id="prova">
@@ -1057,7 +779,7 @@ input:focus {
     <header class="topo">
 
 
-        <div class="informacoes">
+        <div class="info">
 
 
             <div class="titulo">
@@ -1070,6 +792,7 @@ input:focus {
             <div
                 class="aluno"
                 id="aluno">
+
             </div>
 
 
@@ -1091,6 +814,9 @@ input:focus {
 
     <!-- =================================================
          GOOGLE FORMS
+
+         NÃO HÁ NENHUMA CAMADA SOBRE O IFRAME.
+         O FORMS FICA TOTALMENTE CLICÁVEL.
     ================================================== -->
 
     <div class="area-formulario">
@@ -1106,9 +832,9 @@ input:focus {
 
             allow="fullscreen"
 
-            scrolling="yes"
+            frameborder="0"
 
-            referrerpolicy="strict-origin-when-cross-origin"
+            scrolling="yes"
 
         ></iframe>
 
@@ -1121,7 +847,7 @@ input:focus {
 
 
 <!-- =====================================================
-     TELA DE SUCESSO
+     SUCESSO
 ===================================================== -->
 
 <section id="sucesso">
@@ -1130,7 +856,7 @@ input:focus {
     <div class="sucesso-card">
 
 
-        <div class="sucesso-icone">
+        <div class="sucesso-icon">
             ✅
         </div>
 
@@ -1156,10 +882,7 @@ input:focus {
         </p>
 
 
-        <p
-            class="sucesso-nome"
-            id="nomeSucesso">
-        </p>
+        <p id="nomeSucesso"></p>
 
 
         <p>
@@ -1177,7 +900,7 @@ input:focus {
 
 
 <!-- =====================================================
-     TELA DE VIOLAÇÃO
+     VIOLAÇÃO
 ===================================================== -->
 
 <section id="violacao">
@@ -1186,7 +909,7 @@ input:focus {
     <div class="violacao-card">
 
 
-        <div class="violacao-icone">
+        <div class="violacao-icon">
             🚫
         </div>
 
@@ -1217,6 +940,7 @@ input:focus {
         <div
             class="motivo"
             id="motivo">
+
         </div>
 
 
@@ -1228,7 +952,7 @@ input:focus {
 
 
 <!-- =====================================================
-     TELA TEMPO
+     TEMPO
 ===================================================== -->
 
 <section id="finalizado">
@@ -1237,34 +961,23 @@ input:focus {
     <div class="final-card">
 
 
-        <div
-            style="
-                font-size:60px;
-                margin-bottom:20px;
-            "
-        >
+        <div style="font-size:60px;margin-bottom:20px;">
             ⏰
         </div>
 
 
         <h1>
-
             TEMPO ENCERRADO
-
         </h1>
 
 
         <p>
-
             O tempo destinado à avaliação terminou.
-
         </p>
 
 
         <p>
-
             A avaliação foi encerrada.
-
         </p>
 
 
@@ -1281,23 +994,7 @@ input:focus {
    CONFIGURAÇÃO
 ===================================================== */
 
-
-/*
- * Tempo da avaliação:
- *
- * 90 minutos
- */
-
 const TEMPO_PROVA = 90 * 60;
-
-
-/*
- * Google Forms
- */
-
-const FORM_URL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSdSBg1ISfOMXN7dlGn04kiQWpHRgFPJyFvHAUmsarDUWr6nyA/viewform?embedded=true";
-
 
 
 /* =====================================================
@@ -1312,89 +1009,41 @@ let monitoramentoAtivo = false;
 
 let fullscreenConfirmado = false;
 
-let formularioCarregamentos = 0;
+let carregamentosForms = 0;
 
 let tempoRestante = TEMPO_PROVA;
 
-let intervaloCronometro = null;
+let cronometroIntervalo = null;
 
-let nomeAlunoAtual = "";
-
-let enviandoFormulario = false;
-
+let nomeAluno = "";
 
 
 /* =====================================================
-   ELEMENTOS
-===================================================== */
-
-const inicio =
-    document.getElementById(
-        "inicio"
-    );
-
-
-const prova =
-    document.getElementById(
-        "prova"
-    );
-
-
-const sucesso =
-    document.getElementById(
-        "sucesso"
-    );
-
-
-const violacao =
-    document.getElementById(
-        "violacao"
-    );
-
-
-const finalizado =
-    document.getElementById(
-        "finalizado"
-    );
-
-
-const iframeFormulario =
-    document.getElementById(
-        "formulario"
-    );
-
-
-
-/* =====================================================
-   INICIAR AVALIAÇÃO
+   INICIAR
 ===================================================== */
 
 async function iniciarProva() {
 
 
-    const campoNome =
+    const campo =
         document.getElementById(
             "nomeAluno"
         );
 
 
     const nome =
-        campoNome.value.trim();
+        campo.value.trim();
 
-
-    /*
-     * Verifica nome.
-     */
 
     if (nome === "") {
 
 
         alert(
-            "Digite seu nome completo antes de iniciar a avaliação."
+            "Digite seu nome completo."
         );
 
 
-        campoNome.focus();
+        campo.focus();
 
 
         return;
@@ -1402,27 +1051,8 @@ async function iniciarProva() {
     }
 
 
-    /*
-     * Evita iniciar duas vezes.
-     */
+    nomeAluno = nome;
 
-    if (provaIniciada) {
-
-        return;
-
-    }
-
-
-    /*
-     * Guarda o nome.
-     */
-
-    nomeAlunoAtual = nome;
-
-
-    /*
-     * Mostra nome no cabeçalho.
-     */
 
     document
         .getElementById("aluno")
@@ -1430,19 +1060,11 @@ async function iniciarProva() {
         "Aluno: " + nome;
 
 
-    /*
-     * Nome na tela de sucesso.
-     */
-
     document
         .getElementById("nomeSucesso")
         .innerText =
         "Aluno: " + nome;
 
-
-    /*
-     * Desabilita botão.
-     */
 
     document
         .getElementById("botaoIniciar")
@@ -1450,18 +1072,18 @@ async function iniciarProva() {
 
 
     /*
-     * Esconde início.
-     */
-
-    inicio.style.display =
-        "none";
-
-
-    /*
      * Mostra prova.
      */
 
-    prova.style.display =
+    document
+        .getElementById("inicio")
+        .style.display =
+        "none";
+
+
+    document
+        .getElementById("prova")
+        .style.display =
         "block";
 
 
@@ -1469,29 +1091,19 @@ async function iniciarProva() {
      * Reset.
      */
 
-    provaEncerrada = false;
-
     provaIniciada = false;
+
+    provaEncerrada = false;
 
     monitoramentoAtivo = false;
 
     fullscreenConfirmado = false;
 
-    formularioCarregamentos = 0;
-
-    enviandoFormulario = false;
+    carregamentosForms = 0;
 
 
     /*
-     * Recarrega o Forms.
-     */
-
-    iframeFormulario.src =
-        FORM_URL;
-
-
-    /*
-     * Tenta entrar em tela cheia.
+     * Tenta tela cheia.
      */
 
     try {
@@ -1506,11 +1118,11 @@ async function iniciarProva() {
 
 
     }
-    catch (erro) {
+    catch(erro) {
 
 
         console.log(
-            "Tela cheia não disponível:",
+            "Fullscreen não disponível.",
             erro
         );
 
@@ -1518,18 +1130,14 @@ async function iniciarProva() {
 
 
     /*
-     * A prova começou.
+     * Marca início.
      */
 
     provaIniciada = true;
 
 
     /*
-     * Aguarda 2 segundos antes de
-     * ativar o monitoramento.
-     *
-     * Isso evita falso positivo
-     * durante a entrada na prova.
+     * Espera a página estabilizar.
      */
 
     setTimeout(
@@ -1542,12 +1150,10 @@ async function iniciarProva() {
             ) {
 
 
-                monitoramentoAtivo =
-                    true;
+                monitoramentoAtivo = true;
 
 
             }
-
 
         },
         2000
@@ -1555,7 +1161,7 @@ async function iniciarProva() {
 
 
     /*
-     * Inicia cronômetro.
+     * Cronômetro.
      */
 
     iniciarCronometro();
@@ -1565,102 +1171,79 @@ async function iniciarProva() {
 
 
 /* =====================================================
-   DETECTAR CARREGAMENTO DO GOOGLE FORMS
+   DETECTAR ENVIO DO FORMS
 ===================================================== */
 
-iframeFormulario.addEventListener(
-    "load",
-    function() {
+document
+    .getElementById("formulario")
+    .addEventListener(
+        "load",
+        function() {
 
 
-        /*
-         * Ignora se não estiver na prova.
-         */
+            if (
+                !provaIniciada ||
+                provaEncerrada
+            ) {
 
-        if (
-            !provaIniciada ||
-            provaEncerrada
-        ) {
+                return;
 
-            return;
-
-        }
+            }
 
 
-        /*
-         * Conta carregamentos.
-         */
-
-        formularioCarregamentos++;
+            carregamentosForms++;
 
 
-        console.log(
-            "Google Forms carregado:",
-            formularioCarregamentos
-        );
-
-
-        /*
-         * O primeiro carregamento:
-         *
-         * página da avaliação.
-         *
-         *
-         * O carregamento seguinte:
-         *
-         * normalmente ocorre quando
-         * o Google Forms vai para
-         * /formResponse depois do envio.
-         *
-         * Como o Forms está em outro
-         * domínio, não podemos ler
-         * diretamente seu conteúdo.
-         */
-
-        if (
-            formularioCarregamentos >= 2 &&
-            !provaEncerrada &&
-            !enviandoFormulario
-        ) {
-
-
-            enviandoFormulario = true;
+            console.log(
+                "Forms carregado:",
+                carregamentosForms
+            );
 
 
             /*
-             * Aguarda a confirmação
-             * terminar de carregar.
+             * Primeiro carregamento =
+             * página da prova.
+             *
+             * Segundo carregamento =
+             * normalmente página de
+             * confirmação após Enviar.
              */
 
-            setTimeout(
-                function() {
+            if (
+                carregamentosForms >= 2 &&
+                !provaEncerrada
+            ) {
 
 
-                    if (
-                        provaIniciada &&
-                        !provaEncerrada
-                    ) {
+                setTimeout(
+                    function() {
 
 
-                        mostrarSucesso();
+                        if (
+                            provaIniciada &&
+                            !provaEncerrada
+                        ) {
 
 
-                    }
+                            mostrarSucesso();
 
 
-                },
-                1000
-            );
+                        }
+
+
+                    },
+                    1000
+                );
+
+            }
 
         }
-
-    }
-);
+    );
 
 
 
 /* =====================================================
-   MOSTRAR SUCESSO
+   SUCESSO
 ===================================================== */
 
 function mostrarSucesso() {
@@ -1673,10 +1256,6 @@ function mostrarSucesso() {
     }
 
 
-    /*
-     * Finaliza a prova.
-     */
-
     provaEncerrada = true;
 
     provaIniciada = false;
@@ -1684,28 +1263,18 @@ function mostrarSucesso() {
     monitoramentoAtivo = false;
 
 
-    /*
-     * Para cronômetro.
-     */
-
     clearInterval(
-        intervaloCronometro
+        cronometroIntervalo
     );
-
-
-    /*
-     * Remove formulário.
-     */
-
-    iframeFormulario.src =
-        "about:blank";
 
 
     /*
      * Esconde prova.
      */
 
-    prova.style.display =
+    document
+        .getElementById("prova")
+        .style.display =
         "none";
 
 
@@ -1713,16 +1282,14 @@ function mostrarSucesso() {
      * Mostra sucesso.
      */
 
-    sucesso.style.display =
+    document
+        .getElementById("sucesso")
+        .style.display =
         "flex";
 
 
     /*
      * Sai da tela cheia.
-
-     * Aqui não é considerado
-     * violação porque a prova
-     * foi concluída.
      */
 
     if (
@@ -1733,7 +1300,7 @@ function mostrarSucesso() {
         document
             .exitFullscreen()
             .catch(
-                function() {}
+                function(){}
             );
 
 
@@ -1752,14 +1319,7 @@ document.addEventListener(
     function() {
 
 
-        /*
-         * Durante inicialização,
-         * não verifica.
-         */
-
-        if (
-            !monitoramentoAtivo
-        ) {
+        if (!monitoramentoAtivo) {
 
             return;
 
@@ -1767,7 +1327,7 @@ document.addEventListener(
 
 
         /*
-         * Entrou em fullscreen.
+         * Entrou novamente.
          */
 
         if (
@@ -1775,8 +1335,7 @@ document.addEventListener(
         ) {
 
 
-            fullscreenConfirmado =
-                true;
+            fullscreenConfirmado = true;
 
 
             return;
@@ -1785,7 +1344,7 @@ document.addEventListener(
 
 
         /*
-         * Saiu da tela cheia.
+         * Saiu.
          */
 
         if (
@@ -1795,7 +1354,7 @@ document.addEventListener(
         ) {
 
 
-            encerrarPorViolacao(
+            encerrarAvaliacao(
                 "Você saiu da tela cheia."
             );
 
@@ -1808,7 +1367,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   TROCA DE ABA / JANELA
+   TROCA DE ABA
 ===================================================== */
 
 document.addEventListener(
@@ -1816,23 +1375,12 @@ document.addEventListener(
     function() {
 
 
-        /*
-         * Durante inicialização,
-         * não verifica.
-         */
-
-        if (
-            !monitoramentoAtivo
-        ) {
+        if (!monitoramentoAtivo) {
 
             return;
 
         }
 
-
-        /*
-         * Página ficou escondida.
-         */
 
         if (
             document.hidden &&
@@ -1841,7 +1389,7 @@ document.addEventListener(
         ) {
 
 
-            encerrarPorViolacao(
+            encerrarAvaliacao(
                 "Você saiu da página ou trocou de aba/janela."
             );
 
@@ -1875,7 +1423,7 @@ window.addEventListener(
         ) {
 
 
-            encerrarPorViolacao(
+            encerrarAvaliacao(
                 "Você tentou sair da avaliação usando o botão Voltar."
             );
 
@@ -1897,17 +1445,13 @@ window.addEventListener(
 
 
 /* =====================================================
-   ENCERRAR POR VIOLAÇÃO
+   ENCERRAR AVALIAÇÃO
 ===================================================== */
 
-function encerrarPorViolacao(
+function encerrarAvaliacao(
     motivo
 ) {
 
-
-    /*
-     * Evita executar duas vezes.
-     */
 
     if (provaEncerrada) {
 
@@ -1916,10 +1460,6 @@ function encerrarPorViolacao(
     }
 
 
-    /*
-     * Estado encerrado.
-     */
-
     provaEncerrada = true;
 
     provaIniciada = false;
@@ -1927,28 +1467,42 @@ function encerrarPorViolacao(
     monitoramentoAtivo = false;
 
 
-    /*
-     * Para cronômetro.
-     */
-
     clearInterval(
-        intervaloCronometro
+        cronometroIntervalo
     );
 
 
     /*
-     * Remove formulário.
+     * Remove o Forms.
      */
 
-    iframeFormulario.src =
-        "about:blank";
+    const iframe =
+        document.getElementById(
+            "formulario"
+        );
+
+
+    if (iframe) {
+
+
+        iframe.src =
+            "about:blank";
+
+
+        iframe.style.display =
+            "none";
+
+
+    }
 
 
     /*
      * Esconde prova.
      */
 
-    prova.style.display =
+    document
+        .getElementById("prova")
+        .style.display =
         "none";
 
 
@@ -1956,60 +1510,16 @@ function encerrarPorViolacao(
      * Mostra bloqueio.
      */
 
-    violacao.style.display =
+    document
+        .getElementById("violacao")
+        .style.display =
         "flex";
 
-
-    /*
-     * Mostra motivo.
-     */
 
     document
         .getElementById("motivo")
         .innerText =
         "Motivo: " + motivo;
-
-
-    /*
-     * Registra localmente.
-     */
-
-    try {
-
-
-        localStorage.setItem(
-            "avaliacao_encerrada",
-            "true"
-        );
-
-
-        localStorage.setItem(
-            "avaliacao_aluno",
-            nomeAlunoAtual
-        );
-
-
-        localStorage.setItem(
-            "avaliacao_motivo",
-            motivo
-        );
-
-
-        localStorage.setItem(
-            "avaliacao_data",
-            new Date().toISOString()
-        );
-
-
-    }
-    catch (erro) {
-
-
-        console.log(
-            "LocalStorage indisponível."
-        );
-
-    }
 
 
     /*
@@ -2024,7 +1534,7 @@ function encerrarPorViolacao(
         document
             .exitFullscreen()
             .catch(
-                function() {}
+                function(){}
             );
 
 
@@ -2048,20 +1558,10 @@ function iniciarCronometro() {
     atualizarCronometro();
 
 
-    clearInterval(
-        intervaloCronometro
-    );
-
-
-    intervaloCronometro =
+    cronometroIntervalo =
         setInterval(
             function() {
 
-
-                /*
-                 * Se a prova acabou,
-                 * para o relógio.
-                 */
 
                 if (
                     provaEncerrada
@@ -2069,7 +1569,7 @@ function iniciarCronometro() {
 
 
                     clearInterval(
-                        intervaloCronometro
+                        cronometroIntervalo
                     );
 
 
@@ -2078,35 +1578,18 @@ function iniciarCronometro() {
                 }
 
 
-                /*
-                 * Diminui 1 segundo.
-                 */
-
                 tempoRestante--;
 
 
-                /*
-                 * Atualiza.
-                 */
-
                 atualizarCronometro();
 
-
-                /*
-                 * Acabou o tempo.
-                 */
 
                 if (
                     tempoRestante <= 0
                 ) {
 
 
-                    clearInterval(
-                        intervaloCronometro
-                    );
-
-
-                    finalizarPorTempo();
+                    finalizarTempo();
 
 
                 }
@@ -2158,45 +1641,28 @@ function atualizarCronometro() {
             .padStart(2, "0");
 
 
-    const elemento =
-        document.getElementById(
-            "cronometro"
-        );
+    document
+        .getElementById("cronometro")
+        .innerText =
+        h + ":" + m + ":" + s;
 
-
-    elemento.innerText =
-        h + ":" +
-        m + ":" +
-        s;
-
-
-    /*
-     * Últimos 5 minutos.
-     */
 
     if (
         tempoRestante <= 300
     ) {
 
 
-        elemento.style.color =
+        document
+            .getElementById("cronometro")
+            .style.color =
             "#ff4444";
 
 
-        elemento.style.borderColor =
+        document
+            .getElementById("cronometro")
+            .style.borderColor =
             "#ff4444";
 
-
-    }
-    else {
-
-
-        elemento.style.color =
-            "#31b279";
-
-
-        elemento.style.borderColor =
-            "#31b279";
 
     }
 
@@ -2205,10 +1671,10 @@ function atualizarCronometro() {
 
 
 /* =====================================================
-   FINALIZAR POR TEMPO
+   TEMPO ENCERRADO
 ===================================================== */
 
-function finalizarPorTempo() {
+function finalizarTempo() {
 
 
     if (provaEncerrada) {
@@ -2225,33 +1691,36 @@ function finalizarPorTempo() {
     monitoramentoAtivo = false;
 
 
-    /*
-     * Remove Forms.
-     */
-
-    iframeFormulario.src =
-        "about:blank";
+    clearInterval(
+        cronometroIntervalo
+    );
 
 
-    /*
-     * Esconde prova.
-     */
+    const iframe =
+        document.getElementById(
+            "formulario"
+        );
 
-    prova.style.display =
+
+    if (iframe) {
+
+        iframe.src =
+            "about:blank";
+
+    }
+
+
+    document
+        .getElementById("prova")
+        .style.display =
         "none";
 
 
-    /*
-     * Mostra tela.
-     */
-
-    finalizado.style.display =
+    document
+        .getElementById("finalizado")
+        .style.display =
         "flex";
 
-
-    /*
-     * Sai do fullscreen.
-     */
 
     if (
         document.fullscreenElement
@@ -2261,259 +1730,13 @@ function finalizarPorTempo() {
         document
             .exitFullscreen()
             .catch(
-                function() {}
+                function(){}
             );
 
 
     }
 
 }
-
-
-
-/* =====================================================
-   BOTÃO DIREITO
-===================================================== */
-
-document.addEventListener(
-    "contextmenu",
-    function(event) {
-
-
-        /*
-         * Não interfere no Forms
-         * com clique normal.
-         */
-
-        if (
-            provaIniciada
-        ) {
-
-
-            event.preventDefault();
-
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
-   ARRASTAR
-===================================================== */
-
-document.addEventListener(
-    "dragstart",
-    function(event) {
-
-
-        if (
-            provaIniciada
-        ) {
-
-
-            event.preventDefault();
-
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
-   ATALHOS
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-
-        if (
-            !provaIniciada
-        ) {
-
-            return;
-
-        }
-
-
-        const tecla =
-            event.key.toLowerCase();
-
-
-        /*
-         * F12
-         */
-
-        if (
-            event.key === "F12"
-        ) {
-
-
-            event.preventDefault();
-
-            return;
-
-        }
-
-
-        /*
-         * CTRL + SHIFT + I
-         */
-
-        if (
-            event.ctrlKey &&
-            event.shiftKey &&
-            tecla === "i"
-        ) {
-
-
-            event.preventDefault();
-
-            return;
-
-        }
-
-
-        /*
-         * CTRL + SHIFT + J
-         */
-
-        if (
-            event.ctrlKey &&
-            event.shiftKey &&
-            tecla === "j"
-        ) {
-
-
-            event.preventDefault();
-
-            return;
-
-        }
-
-
-        /*
-         * CTRL + SHIFT + C
-         */
-
-        if (
-            event.ctrlKey &&
-            event.shiftKey &&
-            tecla === "c"
-        ) {
-
-
-            event.preventDefault();
-
-            return;
-
-        }
-
-
-        /*
-         * CTRL + U
-         */
-
-        if (
-            event.ctrlKey &&
-            tecla === "u"
-        ) {
-
-
-            event.preventDefault();
-
-            return;
-
-        }
-
-
-        /*
-         * IMPORTANTE:
-         *
-         * Não bloqueamos:
-         *
-         * Ctrl+C
-         * Ctrl+V
-         * Ctrl+X
-         * Tab
-         * Enter
-         * Backspace
-         * Setas
-         *
-         * Isso permite responder
-         * normalmente ao Google Forms.
-         */
-
-    }
-);
-
-
-
-/* =====================================================
-   FECHAR / RECARREGAR
-===================================================== */
-
-window.addEventListener(
-    "beforeunload",
-    function(event) {
-
-
-        if (
-            provaIniciada &&
-            !provaEncerrada
-        ) {
-
-
-            event.preventDefault();
-
-
-            event.returnValue = "";
-
-
-        }
-
-    }
-);
-
-
-
-/* =====================================================
-   ESC
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-
-        if (
-            event.key === "Escape" &&
-            provaIniciada &&
-            monitoramentoAtivo
-        ) {
-
-
-            /*
-             * O navegador retira o fullscreen.
-             *
-             * O evento fullscreenchange
-             * irá encerrar a avaliação.
-             */
-
-            console.log(
-                "ESC pressionado."
-            );
-
-        }
-
-    }
-);
 
 </script>
 
