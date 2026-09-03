@@ -393,7 +393,9 @@ button,input{
                 id="googleForm"
                 src="https://docs.google.com/forms/d/e/1FAIpQLSdkWHZpbACo1Z9xvV-uzMU8v5E8JsRUaLzKcFAooPAKkuL7Xw/viewform?embedded=true"
                 title="Avaliação Google Forms"
-                allowfullscreen>
+                allowfullscreen
+                loading="eager"
+                referrerpolicy="strict-origin-when-cross-origin">
             </iframe>
 
         </div>
@@ -785,33 +787,35 @@ document.addEventListener("keydown", (event) => {
 
 
 /* ==========================================================
-   MENU DE CONTEXTO
-   ========================================================== */
-
-document.addEventListener("contextmenu", (event) => {
-
-    if (!provaIniciada || encerrando) return;
-
-    /*
-     * Não impede o funcionamento interno do formulário,
-     * porque o formulário está em outro documento/origem.
-     */
-    event.preventDefault();
-
-});
-
-
-/* ==========================================================
-   COPIAR / ARRASTAR NA PÁGINA EXTERNA
+   INTERAÇÃO COM O GOOGLE FORMS
    ========================================================== */
 
 /*
- * Não usamos preventDefault em selectstart/dragstart.
+ * Não existe bloqueio global de clique, mouse, toque ou seleção.
  *
- * Isso é intencional:
- * o Google Forms precisa continuar plenamente interativo.
+ * O iframe do Google Forms precisa receber os eventos diretamente.
+ * Assim, os botões "Avançar", "Voltar", opções, caixas de seleção
+ * e o botão "Enviar" permanecem clicáveis.
  */
 
+/* ==========================================================
+   NENHUM BLOQUEIO DE MOUSE / TECLADO NO FORMULÁRIO
+   ========================================================== */
+
+/*
+ * Não usamos preventDefault() para:
+ * - click
+ * - mousedown
+ * - mouseup
+ * - pointerdown
+ * - pointerup
+ * - touchstart
+ * - touchend
+ * - selectstart
+ * - dragstart
+ *
+ * Isso é essencial para o Google Forms.
+ */
 
 /* ==========================================================
    ENCERRAMENTO POR VIOLAÇÃO
