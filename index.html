@@ -1,1746 +1,1488 @@
-```html
+
+avaliacao_integradora_Centro.html
+100%
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta charset="UTF-8">
+    <title>Avaliação Integradora do 2º Bimestre 2026/2 do Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</title>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <!-- Ícone da avaliação exibido na aba do navegador -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%2331b279%22%2F%3E%3Cpath%20d%3D%22M18%2014h22l8%208v28H18z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M40%2014v9h8%22%20fill%3D%22none%22%20stroke%3D%22%2331b279%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22m25%2036%206%206%2012-13%22%20fill%3D%22none%22%20stroke%3D%22%2318875c%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E" />
+    <meta name="theme-color" content="#31b279" />
 
-<title>
-Avaliação Acadêmica - Professor Msc Ronilson Silva
-</title>
-
-<style>
-
-/* =====================================================
-   CONFIGURAÇÃO GERAL 
+    <style>
+      /* =====================================================
+   CONFIGURAÇÃO GERAL
 ===================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-html,
-body{
-    width:100%;
-    height:100%;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#111;
-}
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #111;
+      }
 
-
-/* =====================================================
+      /* =====================================================
    TELA INICIAL
 ===================================================== */
 
-#inicio{
+      #inicio {
+        position: fixed;
 
-    position:fixed;
+        top: 0;
+        left: 0;
 
-    top:0;
-    left:0;
+        width: 100%;
+        height: 100%;
 
-    width:100%;
-    height:100%;
+        background: linear-gradient(135deg, #000000, #202020);
 
-    background:
-        linear-gradient(
-            135deg,
-            #000000,
-            #202020
-        );
+        display: flex;
 
-    display:flex;
+        align-items: flex-start;
+        justify-content: center;
 
-    align-items:center;
-    justify-content:center;
+        overflow-y: auto;
 
-    z-index:1000;
+        z-index: 1000;
 
-    padding:20px;
-}
+        padding: 20px;
+      }
 
+      .card-inicio {
+        margin: auto;
 
-.card-inicio{
+        width: 100%;
+        max-width: 680px;
 
-    width:100%;
-    max-width:680px;
+        background: #ffffff;
 
-    background:#ffffff;
+        color: #222;
 
-    color:#222;
+        border-radius: 18px;
 
-    border-radius:18px;
+        padding: 40px;
 
-    padding:40px;
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.65);
 
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.65);
+        text-align: center;
+      }
 
-    text-align:center;
-}
+      .icone-inicio {
+        font-size: 60px;
 
+        margin-bottom: 15px;
+      }
 
-.icone-inicio{
+      .card-inicio h1 {
+        font-size: 29px;
 
-    font-size:60px;
+        margin-bottom: 10px;
+      }
 
-    margin-bottom:15px;
-}
+      .professor {
+        color: #31b279;
 
+        font-size: 19px;
 
-.card-inicio h1{
+        font-weight: bold;
 
-    font-size:29px;
+        margin-bottom: 25px;
+      }
 
-    margin-bottom:10px;
-}
-
-
-.professor{
-
-    color:#31b279;
-
-    font-size:19px;
-
-    font-weight:bold;
-
-    margin-bottom:25px;
-}
-
-
-/* =====================================================
+      /* =====================================================
    AVISO
 ===================================================== */
 
-.aviso{
+      .aviso {
+        background: #fff3cd;
 
-    background:#fff3cd;
+        border: 1px solid #ffe69c;
 
-    border:1px solid #ffe69c;
+        color: #664d03;
 
-    color:#664d03;
+        padding: 18px;
 
-    padding:18px;
+        border-radius: 10px;
 
-    border-radius:10px;
+        text-align: left;
 
-    text-align:left;
+        line-height: 1.6;
 
-    line-height:1.6;
+        margin-bottom: 25px;
+      }
 
-    margin-bottom:25px;
-}
+      .aviso strong {
+        font-weight: bold;
+      }
 
-
-.aviso strong{
-    font-weight:bold;
-}
-
-
-/* =====================================================
+      /* =====================================================
    BOTÃO INICIAR
 ===================================================== */
 
-#btnIniciar{
+      #btnIniciar {
+        width: 100%;
 
-    width:100%;
+        padding: 17px;
 
-    padding:17px;
+        background: #31b279;
 
-    background:#31b279;
+        color: #fff;
 
-    color:#fff;
+        border: none;
 
-    border:none;
+        border-radius: 10px;
 
-    border-radius:10px;
+        font-size: 17px;
 
-    font-size:17px;
+        font-weight: bold;
 
-    font-weight:bold;
+        cursor: pointer;
 
-    cursor:pointer;
+        transition: 0.2s;
+      }
 
-    transition:.2s;
-}
+      #btnIniciar:hover:not(:disabled) {
+        background: #269764;
 
+        transform: scale(1.01);
+      }
 
-#btnIniciar:hover{
+      #btnIniciar:disabled {
+        background: #9e9e9e;
 
-    background:#269764;
+        cursor: not-allowed;
+      }
 
-    transform:scale(1.01);
-}
+      /* =====================================================
+   MENU DE TURMAS
+===================================================== */
 
+      .menu-turmas {
+        text-align: left;
 
-/* =====================================================
+        margin-bottom: 25px;
+      }
+
+      .menu-turmas h2 {
+        font-size: 15px;
+
+        letter-spacing: 1px;
+
+        color: #31b279;
+
+        border-bottom: 2px solid #31b279;
+
+        padding-bottom: 6px;
+
+        margin-bottom: 10px;
+      }
+
+      .lista-turmas {
+        display: grid;
+
+        gap: 8px;
+      }
+
+      .turma {
+        width: 100%;
+
+        padding: 13px 16px;
+
+        background: #f5f5f5;
+
+        color: #222;
+
+        border: 2px solid #ddd;
+
+        border-radius: 9px;
+
+        font-size: 15px;
+
+        font-weight: bold;
+
+        text-align: left;
+
+        cursor: pointer;
+
+        transition: 0.15s;
+      }
+
+      .turma:hover {
+        border-color: #31b279;
+      }
+
+      .turma.selecionada {
+        background: #e6f6ee;
+
+        border-color: #31b279;
+
+        color: #18875c;
+      }
+
+      .turma.selecionada::before {
+        content: "✔ ";
+      }
+
+      /* =====================================================
+   LOGIN INSTITUCIONAL
+===================================================== */
+
+      .passo-login {
+        background: #e8f1fd;
+
+        border: 1px solid #b6d4fe;
+
+        color: #084298;
+
+        padding: 20px;
+
+        border-radius: 10px;
+
+        text-align: left;
+
+        line-height: 1.6;
+
+        margin-bottom: 20px;
+      }
+
+      .passo-login h2 {
+        font-size: 17px;
+
+        margin-bottom: 8px;
+      }
+
+      .btn-login {
+        width: 100%;
+
+        padding: 15px;
+
+        margin-top: 12px;
+
+        border: none;
+
+        border-radius: 10px;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+      }
+
+      #btnLogin {
+        background: #1a73e8;
+
+        color: #fff;
+      }
+
+      #btnJaEntrei {
+        background: #31b279;
+
+        color: #fff;
+      }
+
+      #btnJaEntrei:disabled {
+        background: #9e9e9e;
+
+        cursor: not-allowed;
+      }
+
+      .oculto {
+        display: none;
+      }
+
+      .btn-sair-conta {
+        width: 100%;
+
+        margin-top: 25px;
+
+        padding: 15px;
+
+        background: #1a73e8;
+
+        color: #fff;
+
+        border: none;
+
+        border-radius: 10px;
+
+        font-size: 15px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+      }
+
+      /* =====================================================
    TELA DA AVALIAÇÃO
 ===================================================== */
 
-#avaliacao{
+      #avaliacao {
+        display: none;
 
-    display:none;
+        position: fixed;
 
-    position:fixed;
+        top: 0;
+        left: 0;
 
-    top:0;
-    left:0;
+        width: 100%;
+        height: 100%;
 
-    width:100%;
-    height:100%;
+        background: #f2f2f2;
+      }
 
-    background:#f2f2f2;
-}
-
-
-/* =====================================================
+      /* =====================================================
    CABEÇALHO
 ===================================================== */
 
-.topo{
+      .topo {
+        position: fixed;
 
-    position:fixed;
+        top: 0;
+        left: 0;
 
-    top:0;
-    left:0;
+        width: 100%;
 
-    width:100%;
+        height: 65px;
 
-    height:65px;
+        background: #000;
 
-    background:#000;
+        color: #fff;
 
-    color:#fff;
+        display: flex;
 
-    display:flex;
+        align-items: center;
 
-    align-items:center;
+        justify-content: space-between;
 
-    justify-content:space-between;
+        padding: 0 20px;
 
-    padding:0 20px;
+        z-index: 100;
+      }
 
-    z-index:100;
-}
+      .titulo {
+        color: #31b279;
 
+        font-size: 18px;
 
-.titulo{
+        font-weight: bold;
+      }
 
-    color:#31b279;
+      .status {
+        color: #fff;
 
-    font-size:18px;
+        font-size: 13px;
 
-    font-weight:bold;
-}
+        margin-right: 10px;
+      }
 
+      .botoes-topo {
+        display: flex;
 
-.status{
+        align-items: center;
 
-    color:#fff;
+        gap: 8px;
+      }
 
-    font-size:13px;
+      .btn {
+        border: none;
 
-    margin-right:10px;
-}
+        border-radius: 7px;
 
+        padding: 10px 14px;
 
-.botoes-topo{
+        font-weight: bold;
 
-    display:flex;
+        cursor: pointer;
+      }
 
-    align-items:center;
+      #btnTelaCheia {
+        background: #444;
 
-    gap:8px;
-}
+        color: #fff;
+      }
 
+      #btnFinalizar {
+        background: #c62828;
 
-.btn{
+        color: #fff;
+      }
 
-    border:none;
-
-    border-radius:7px;
-
-    padding:10px 14px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-
-#btnTelaCheia{
-
-    background:#444;
-
-    color:#fff;
-}
-
-
-#btnFinalizar{
-
-    background:#c62828;
-
-    color:#fff;
-}
-
-
-/* =====================================================
+      /* =====================================================
    GOOGLE FORMS
 ===================================================== */
 
-.area-formulario{
+      .area-formulario {
+        position: absolute;
 
-    position:absolute;
+        top: 65px;
 
-    top:65px;
+        left: 0;
+        right: 0;
+        bottom: 0;
 
-    left:0;
-    right:0;
-    bottom:0;
+        background: #fff;
+      }
 
-    background:#fff;
-}
+      #googleForm {
+        width: 100%;
+        height: 100%;
 
+        border: none;
 
-#googleForm{
+        display: block;
+      }
 
-    width:100%;
-    height:100%;
-
-    border:none;
-
-    display:block;
-}
-
-
-/* =====================================================
+      /* =====================================================
    MODAL DE SAÍDA
 ===================================================== */
 
-#modalSaida{
+      #modalSaida {
+        display: none;
 
-    display:none;
+        position: fixed;
 
-    position:fixed;
+        top: 0;
+        left: 0;
 
-    top:0;
-    left:0;
+        width: 100%;
+        height: 100%;
 
-    width:100%;
-    height:100%;
+        background: rgba(0, 0, 0, 0.88);
 
-    background:
-        rgba(0,0,0,.88);
+        z-index: 99999;
 
-    z-index:99999;
+        align-items: center;
 
-    align-items:center;
+        justify-content: center;
 
-    justify-content:center;
+        padding: 20px;
+      }
 
-    padding:20px;
-}
+      .modal {
+        width: 100%;
 
+        max-width: 520px;
 
-.modal{
+        background: #fff;
 
-    width:100%;
+        color: #222;
 
-    max-width:520px;
+        border-radius: 18px;
 
-    background:#fff;
+        padding: 35px;
 
-    color:#222;
+        text-align: center;
 
-    border-radius:18px;
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.8);
+      }
 
-    padding:35px;
+      .modal-icone {
+        font-size: 65px;
 
-    text-align:center;
+        margin-bottom: 15px;
+      }
 
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.8);
-}
+      .modal h2 {
+        font-size: 25px;
 
+        margin-bottom: 15px;
+      }
 
-.modal-icone{
+      .modal p {
+        line-height: 1.6;
 
-    font-size:65px;
+        margin-bottom: 25px;
+      }
 
-    margin-bottom:15px;
-}
+      .botoes-modal {
+        display: flex;
 
+        gap: 10px;
+      }
 
-.modal h2{
+      #btnContinuar {
+        flex: 1;
 
-    font-size:25px;
+        background: #31b279;
 
-    margin-bottom:15px;
-}
+        color: #fff;
 
+        border: none;
 
-.modal p{
+        padding: 15px;
 
-    line-height:1.6;
+        border-radius: 9px;
 
-    margin-bottom:25px;
-}
+        font-weight: bold;
 
+        cursor: pointer;
+      }
 
-.botoes-modal{
+      #btnEncerrar {
+        flex: 1;
 
-    display:flex;
+        background: #c62828;
 
-    gap:10px;
-}
+        color: #fff;
 
+        border: none;
 
-#btnContinuar{
+        padding: 15px;
 
-    flex:1;
+        border-radius: 9px;
 
-    background:#31b279;
+        font-weight: bold;
 
-    color:#fff;
+        cursor: pointer;
+      }
 
-    border:none;
-
-    padding:15px;
-
-    border-radius:9px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-
-#btnEncerrar{
-
-    flex:1;
-
-    background:#c62828;
-
-    color:#fff;
-
-    border:none;
-
-    padding:15px;
-
-    border-radius:9px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-}
-
-
-/* =====================================================
+      /* =====================================================
    TELA ENCERRADA
 ===================================================== */
 
-#encerrada{
+      #encerrada {
+        display: none;
 
-    display:none;
+        position: fixed;
 
-    position:fixed;
+        top: 0;
+        left: 0;
 
-    top:0;
-    left:0;
+        width: 100%;
+        height: 100%;
 
-    width:100%;
-    height:100%;
+        background: #111;
 
-    background:#111;
+        color: #fff;
 
-    color:#fff;
+        align-items: center;
 
-    align-items:center;
+        justify-content: center;
 
-    justify-content:center;
+        text-align: center;
 
-    text-align:center;
+        z-index: 100000;
 
-    z-index:100000;
+        padding: 20px;
+      }
 
-    padding:20px;
-}
+      .caixa-encerrada {
+        width: 100%;
 
+        max-width: 550px;
 
-.caixa-encerrada{
+        background: #fff;
 
-    width:100%;
+        color: #222;
 
-    max-width:550px;
+        padding: 40px;
 
-    background:#fff;
+        border-radius: 18px;
 
-    color:#222;
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.7);
+      }
 
-    padding:40px;
+      .icone-encerrada {
+        font-size: 65px;
 
-    border-radius:18px;
+        margin-bottom: 15px;
+      }
 
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.7);
-}
+      .caixa-encerrada h1 {
+        color: #c62828;
 
+        margin-bottom: 15px;
+      }
 
-.icone-encerrada{
+      .caixa-encerrada p {
+        line-height: 1.6;
+      }
 
-    font-size:65px;
-
-    margin-bottom:15px;
-}
-
-
-.caixa-encerrada h1{
-
-    color:#c62828;
-
-    margin-bottom:15px;
-}
-
-
-.caixa-encerrada p{
-
-    line-height:1.6;
-}
-
-
-/* =====================================================
+      /* =====================================================
    TELA FINALIZADA
 ===================================================== */
 
-#finalizada{
+      #finalizada {
+        display: none;
 
-    display:none;
+        position: fixed;
 
-    position:fixed;
+        top: 0;
+        left: 0;
 
-    top:0;
-    left:0;
+        width: 100%;
+        height: 100%;
 
-    width:100%;
-    height:100%;
+        background: #111;
 
-    background:#111;
+        color: #fff;
 
-    color:#fff;
+        align-items: center;
 
-    align-items:center;
+        justify-content: center;
 
-    justify-content:center;
+        text-align: center;
 
-    text-align:center;
+        z-index: 100000;
 
-    z-index:100000;
+        padding: 20px;
+      }
 
-    padding:20px;
-}
+      .caixa-finalizada {
+        width: 100%;
 
+        max-width: 550px;
 
-.caixa-finalizada{
+        background: #fff;
 
-    width:100%;
+        color: #222;
 
-    max-width:550px;
+        padding: 40px;
 
-    background:#fff;
+        border-radius: 18px;
+      }
 
-    color:#222;
+      .caixa-finalizada h1 {
+        color: #31b279;
 
-    padding:40px;
+        margin-bottom: 15px;
+      }
 
-    border-radius:18px;
-}
+      .caixa-finalizada p {
+        line-height: 1.6;
+      }
 
-
-.caixa-finalizada h1{
-
-    color:#31b279;
-
-    margin-bottom:15px;
-}
-
-
-.caixa-finalizada p{
-
-    line-height:1.6;
-}
-
-
-/* =====================================================
+      /* =====================================================
    RESPONSIVO
 ===================================================== */
 
-@media(max-width:700px){
+      @media (max-width: 700px) {
+        .topo {
+          height: 100px;
 
-    .topo{
+          flex-direction: column;
 
-        height:100px;
+          justify-content: center;
 
-        flex-direction:column;
+          gap: 5px;
+        }
 
-        justify-content:center;
+        .area-formulario {
+          top: 100px;
+        }
 
-        gap:5px;
-    }
+        .titulo {
+          font-size: 15px;
+        }
 
+        .status {
+          display: none;
+        }
 
-    .area-formulario{
+        .card-inicio {
+          padding: 25px;
+        }
 
-        top:100px;
-    }
+        .modal {
+          padding: 25px;
+        }
 
+        .botoes-modal {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
 
-    .titulo{
-
-        font-size:15px;
-    }
-
-
-    .status{
-
-        display:none;
-    }
-
-
-    .card-inicio{
-
-        padding:25px;
-    }
-
-
-    .modal{
-
-        padding:25px;
-    }
-
-
-    .botoes-modal{
-
-        flex-direction:column;
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- =====================================================
+  <body>
+    <!-- =====================================================
      TELA INICIAL
 ===================================================== -->
 
-<div id="inicio">
+    <div id="inicio">
+      <div class="card-inicio">
+        <div class="icone-inicio">📝</div>
 
-    <div class="card-inicio">
+        <h1>Avaliação Integradora do 2º Bimestre 2026/2</h1>
 
-        <div class="icone-inicio">
-            📝
+        <div class="professor">Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</div>
+
+        <div class="passo-login" id="passoLogin">
+          <h2>🔐 Passo 1 — Entre com seu e-mail institucional</h2>
+
+          Clique no botão abaixo. Vai abrir uma janela do Google: entre com o
+          seu <strong>e-mail institucional</strong> (não use e-mail pessoal).
+
+          <br /><br />
+
+          Depois de entrar, <strong>feche a aba do Google (Ctrl+W)</strong>
+          para voltar a esta tela. Se as turmas não aparecerem, clique em
+          <strong>JÁ ENTREI</strong>.
+
+          <button type="button" class="btn-login" id="btnLogin">
+            ENTRAR COM E-MAIL INSTITUCIONAL
+          </button>
+
+          <button type="button" class="btn-login" id="btnJaEntrei" disabled>
+            ✔ JÁ ENTREI — CONTINUAR
+          </button>
         </div>
 
-        <h1>
-            Avaliação Acadêmica
-        </h1>
+        <div class="aviso oculto" id="blocoAviso">
+          <strong> ⚠️ ATENÇÃO </strong>
 
-        <div class="professor">
-            Professor Msc Ronilson Silva
+          <br /><br />
+
+          Ao clicar em
+          <strong> INICIAR AVALIAÇÃO </strong>, você entrará no ambiente da
+          avaliação.
+
+          <br /><br />
+
+          Durante a avaliação:
+
+          <br /><br />
+
+          • Não copie conteúdo.<br />
+
+          • Não cole respostas.<br />
+
+          • Não utilize Ctrl+C ou Ctrl+V.<br />
+
+          • Não utilize o botão direito.<br />
+
+          • Não troque de aba.<br />
+
+          • Não saia da página.<br />
+
+          • Não utilize o botão voltar.
+
+          <br /><br />
+
+          <strong>
+            Caso tente sair da avaliação, será apresentada uma confirmação.
+          </strong>
         </div>
 
-        <div class="aviso">
+        <div class="menu-turmas oculto" id="blocoTurmas">
+          <h2>CENTRO</h2>
 
-            <strong>
-                ⚠️ ATENÇÃO
-            </strong>
-
-            <br><br>
-
-            Ao clicar em
-            <strong>
-                INICIAR AVALIAÇÃO
-            </strong>,
-            você entrará no ambiente da avaliação.
-
-            <br><br>
-
-            Durante a avaliação:
-
-            <br><br>
-
-            • Não copie conteúdo.<br>
-
-            • Não cole respostas.<br>
-
-            • Não utilize Ctrl+C ou Ctrl+V.<br>
-
-            • Não utilize o botão direito.<br>
-
-            • Não troque de aba.<br>
-
-            • Não saia da página.<br>
-
-            • Não utilize o botão voltar.
-
-            <br><br>
-
-            <strong>
-                Caso tente sair da avaliação,
-                será apresentada uma confirmação.
-            </strong>
-
+          <div class="lista-turmas">
+            <button type="button" class="turma" data-turma="2NOT">2º Período Noturno</button>
+            <button type="button" class="turma" data-turma="4NOT">4º Período Noturno</button>
+          </div>
         </div>
 
-
-        <button id="btnIniciar">
-
-            ▶ INICIAR AVALIAÇÃO
-
-        </button>
-
+        <button id="btnIniciar" class="oculto" disabled>▶ SELECIONE SUA TURMA</button>
+      </div>
     </div>
 
-</div>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      TELA DA AVALIAÇÃO
 ===================================================== -->
 
-<div id="avaliacao">
-
-    <header class="topo">
-
-        <div class="titulo">
-
-            📚 Avaliação — Professor Msc Ronilson Silva
-
-        </div>
-
+    <div id="avaliacao">
+      <header class="topo">
+        <div class="titulo">Avaliação Integradora do 2º Bimestre 2026/2</div>
 
         <div class="botoes-topo">
+          <span class="status"> ● Avaliação em andamento </span>
 
-            <span class="status">
+          <button class="btn" id="btnTelaCheia">⛶ Tela Cheia</button>
 
-                ● Avaliação em andamento
-
-            </span>
-
-
-            <button
-                class="btn"
-                id="btnTelaCheia">
-
-                ⛶ Tela Cheia
-
-            </button>
-
-
-            <button
-                class="btn"
-                id="btnFinalizar">
-
-                ✓ Finalizar
-
-            </button>
-
+          <button class="btn" id="btnFinalizar">✓ Finalizar</button>
         </div>
+      </header>
 
-    </header>
-
-
-
-    <div class="area-formulario">
-
+      <div class="area-formulario">
         <iframe
-
-            id="googleForm"
-
-            title="Avaliação Google Forms"
-
-            allow="fullscreen"
-
+          id="googleForm"
+          title="Avaliação Google Forms"
+          allow="fullscreen"
         ></iframe>
-
+      </div>
     </div>
 
-</div>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      MODAL DE SAÍDA
 ===================================================== -->
 
-<div id="modalSaida">
+    <div id="modalSaida">
+      <div class="modal">
+        <div class="modal-icone">⚠️</div>
 
-    <div class="modal">
-
-        <div class="modal-icone">
-            ⚠️
-        </div>
-
-        <h2>
-            Deseja sair da avaliação?
-        </h2>
+        <h2>Deseja sair da avaliação?</h2>
 
         <p>
+          O sistema detectou uma tentativa de saída da avaliação.
 
-            O sistema detectou uma tentativa
-            de saída da avaliação.
+          <br /><br />
 
-            <br><br>
+          Se você confirmar a saída,
+          <strong> a sessão da avaliação será encerrada. </strong>
 
-            Se você confirmar a saída,
-            <strong>
-                a sessão da avaliação será encerrada.
-            </strong>
+          <br /><br />
 
-            <br><br>
-
-            Deseja realmente sair?
-
+          <strong>Antes de encerrar, clique em ENVIAR dentro do Google Forms.</strong>
+          Fechar esta tela não envia as respostas automaticamente.
+          <br /><br />
+          Você já enviou suas respostas?
         </p>
 
-
         <div class="botoes-modal">
+          <button id="btnContinuar">NÃO — CONTINUAR</button>
 
-            <button id="btnContinuar">
-
-                NÃO — CONTINUAR
-
-            </button>
-
-
-            <button id="btnEncerrar">
-
-                SIM — ENCERRAR
-
-            </button>
-
+          <button id="btnEncerrar">JÁ ENVIEI — ENCERRAR</button>
         </div>
-
+      </div>
     </div>
 
-</div>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      AVALIAÇÃO ENCERRADA
 ===================================================== -->
 
-<div id="encerrada">
+    <div id="encerrada">
+      <div class="caixa-encerrada">
+        <div class="icone-encerrada">🔒</div>
 
-    <div class="caixa-encerrada">
-
-        <div class="icone-encerrada">
-            🔒
-        </div>
-
-        <h1>
-            AVALIAÇÃO ENCERRADA
-        </h1>
+        <h1>AVALIAÇÃO ENCERRADA</h1>
 
         <p>
+          A sessão desta página foi encerrada. O envio das respostas só ocorre
+          após clicar em <strong>Enviar</strong> dentro do Google Forms.
 
-            A sessão da avaliação foi encerrada.
+          <br /><br />
 
-            <br><br>
+          A tentativa de saída foi registrada pelo sistema.
 
-            A tentativa de saída foi registrada
-            pelo sistema.
+          <br /><br />
 
-            <br><br>
-
-            Procure o professor responsável
-            caso tenha ocorrido algum problema.
-
+          Procure o professor responsável caso tenha ocorrido algum problema.
         </p>
 
+        <button type="button" class="btn-sair-conta">
+          🚪 SAIR DA CONTA E LIBERAR PARA O PRÓXIMO ALUNO
+        </button>
+      </div>
     </div>
 
-</div>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      AVALIAÇÃO FINALIZADA
 ===================================================== -->
 
-<div id="finalizada">
+    <div id="finalizada">
+      <div class="caixa-finalizada">
+        <div class="icone-encerrada">✅</div>
 
-    <div class="caixa-finalizada">
-
-        <div class="icone-encerrada">
-            ✅
-        </div>
-
-        <h1>
-            AVALIAÇÃO FINALIZADA
-        </h1>
+        <h1>AVALIAÇÃO FINALIZADA</h1>
 
         <p>
+          A sessão desta página foi finalizada. Confira a confirmação de envio
+          do Google Forms: esta página não consegue verificar se as respostas foram recebidas.
 
-            A avaliação foi finalizada.
+          <br /><br />
 
-            <br><br>
-
-            Obrigado.
-
+          Obrigado.
         </p>
 
+        <button type="button" class="btn-sair-conta">
+          🚪 SAIR DA CONTA E LIBERAR PARA O PRÓXIMO ALUNO
+        </button>
+      </div>
     </div>
 
-</div>
-
-
-
-<script>
-
-/* =====================================================
+    <script>
+      /* =====================================================
    NOVO LINK DO GOOGLE FORMS
 ===================================================== */
 
-const LINK_GOOGLE_FORMS =
-"https://docs.google.com/forms/d/e/1FAIpQLSdqBBSmZNtdMq32qwuxPKTG_sN9c3Ev1Vgv7Fo4v4UDy30Bvw/viewform?usp=header";
+      /* Cole aqui o link de cada turma (termine com ?embedded=true) */
+      const LINKS_TURMAS = {
+        "2NOT": "https://docs.google.com/forms/d/e/1FAIpQLSeOZN8iz-KdET9imQ2EbnYiyS4fp2DB8fr__LuXYt6GfNRMVg/viewform?embedded=true",
+        "4NOT": "https://docs.google.com/forms/d/e/1FAIpQLSex-v0QV5Nw_Y-JMkJU4jIa6NsqLkZLAe_X8C9m7CAmZZ_4lA/viewform?embedded=true",
+        };
 
+      /* =====================================================
+   LOGIN INSTITUCIONAL (abre o Google em outra janela)
+===================================================== */
 
-/* =====================================================
+      /* Página do Google que aparece depois do login, com o aviso
+         "Login feito — feche esta aba". Cole aqui o link do Google Docs
+         publicado na Web (termina com /pub). */
+      const URL_APOS_LOGIN = "COLE_AQUI_O_LINK_DO_DOC_PUBLICADO";
+
+      const URL_LOGIN =
+        "https://accounts.google.com/ServiceLogin?continue=" +
+        encodeURIComponent(
+          URL_APOS_LOGIN.startsWith("https://")
+            ? URL_APOS_LOGIN
+            : "https://myaccount.google.com/"
+        );
+
+      const URL_LOGOUT = "https://accounts.google.com/Logout";
+
+      const OPCOES_JANELA = "width=520,height=680,left=100,top=60";
+
+      let janelaLogin = null;
+      let vigiaLogin = null;
+
+      document.getElementById("btnLogin").addEventListener("click", function () {
+        janelaLogin = window.open(URL_LOGIN, "loginGoogle", OPCOES_JANELA);
+
+        document.getElementById("btnJaEntrei").disabled = false;
+
+        if (!janelaLogin) {
+          alert(
+            "O navegador bloqueou a janela de login.\n\n" +
+              "Clique no ícone de pop-up bloqueado na barra de endereço, " +
+              "escolha 'Sempre permitir' e clique de novo em ENTRAR."
+          );
+          return;
+        }
+
+        loginIniciadoEm = Date.now();
+
+        clearInterval(vigiaLogin);
+
+        /* Quando o aluno fechar a janela do Google, avança sozinho */
+        vigiaLogin = setInterval(function () {
+          if (janelaLogin && janelaLogin.closed) {
+            clearInterval(vigiaLogin);
+            liberarEscolhaTurma();
+          }
+        }, 700);
+      });
+
+      document
+        .getElementById("btnJaEntrei")
+        .addEventListener("click", liberarEscolhaTurma);
+
+      /* Quando o aluno volta para esta janela depois de entrar no Google */
+      let loginIniciadoEm = 0;
+      let turmasLiberadas = false;
+
+      window.addEventListener("focus", function () {
+        if (loginIniciadoEm && Date.now() - loginIniciadoEm > 4000) {
+          liberarEscolhaTurma();
+        }
+      });
+
+      function liberarEscolhaTurma() {
+        if (turmasLiberadas) {
+          return;
+        }
+
+        turmasLiberadas = true;
+
+        clearInterval(vigiaLogin);
+
+        if (janelaLogin && !janelaLogin.closed) {
+          janelaLogin.close();
+        }
+
+        document.getElementById("passoLogin").classList.add("oculto");
+        document.getElementById("blocoAviso").classList.remove("oculto");
+        document.getElementById("blocoTurmas").classList.remove("oculto");
+        document.getElementById("btnIniciar").classList.remove("oculto");
+
+        registrarEvento("LOGIN_INFORMADO");
+      }
+
+      /* Ao final: sai da conta Google e volta para a tela inicial */
+      document.querySelectorAll(".btn-sair-conta").forEach(function (botao) {
+        botao.addEventListener("click", function () {
+          botao.disabled = true;
+          botao.textContent = "Saindo da conta...";
+
+          const janelaSair = window.open(URL_LOGOUT, "sairGoogle", OPCOES_JANELA);
+
+          setTimeout(function () {
+            if (janelaSair && !janelaSair.closed) {
+              janelaSair.close();
+            }
+
+            permitirSaida = true;
+
+            location.reload();
+          }, 3500);
+        });
+      });
+
+      let turmaSelecionada = null;
+      let nomeTurmaSelecionada = "";
+
+      const btnIniciar = document.getElementById("btnIniciar");
+
+      document.querySelectorAll(".turma").forEach(function (botao) {
+        botao.addEventListener("click", function () {
+          document.querySelectorAll(".turma").forEach(function (b) {
+            b.classList.remove("selecionada");
+          });
+
+          botao.classList.add("selecionada");
+
+          turmaSelecionada = botao.dataset.turma;
+          nomeTurmaSelecionada = botao.textContent.trim();
+
+          btnIniciar.disabled = false;
+          btnIniciar.textContent = "▶ INICIAR AVALIAÇÃO";
+        });
+      });
+
+      /* =====================================================
    VARIÁVEIS
 ===================================================== */
 
-let avaliacaoIniciada = false;
+      let avaliacaoIniciada = false;
 
-let avaliacaoEncerrada = false;
+      let avaliacaoEncerrada = false;
 
-let permitirSaida = false;
+      let permitirSaida = false;
 
-
-/* =====================================================
+      /* =====================================================
    ELEMENTOS
 ===================================================== */
 
-const inicio =
-document.getElementById("inicio");
+      const inicio = document.getElementById("inicio");
 
-const avaliacao =
-document.getElementById("avaliacao");
+      const avaliacao = document.getElementById("avaliacao");
 
-const googleForm =
-document.getElementById("googleForm");
+      const googleForm = document.getElementById("googleForm");
 
-const modalSaida =
-document.getElementById("modalSaida");
+      const modalSaida = document.getElementById("modalSaida");
 
-const encerrada =
-document.getElementById("encerrada");
+      const encerrada = document.getElementById("encerrada");
 
-const finalizada =
-document.getElementById("finalizada");
+      const finalizada = document.getElementById("finalizada");
 
-
-/* =====================================================
+      /* =====================================================
    INICIAR AVALIAÇÃO
 ===================================================== */
 
-document
-.getElementById("btnIniciar")
-.addEventListener(
-    "click",
-    function(){
+      document
+        .getElementById("btnIniciar")
+        .addEventListener("click", function () {
+          const link = LINKS_TURMAS[turmaSelecionada];
 
-        avaliacaoIniciada = true;
+          if (!link || !link.startsWith("https://")) {
+            alert("Selecione sua turma antes de iniciar.");
+            return;
+          }
 
-        avaliacaoEncerrada = false;
+          document.querySelector(".titulo").textContent =
+            "Avaliação Integradora do 2º Bimestre 2026/2 — Centro · " +
+            nomeTurmaSelecionada;
 
-        permitirSaida = false;
+          avaliacaoIniciada = true;
 
+          avaliacaoEncerrada = false;
 
-        inicio.style.display =
-        "none";
+          permitirSaida = false;
 
+          inicio.style.display = "none";
 
-        avaliacao.style.display =
-        "block";
+          avaliacao.style.display = "block";
 
+          googleForm.src = link;
 
-        googleForm.src =
-        LINK_GOOGLE_FORMS;
+          registrarEvento("INICIO_AVALIACAO_" + turmaSelecionada);
 
+          entrarTelaCheia();
+        });
 
-        registrarEvento(
-            "INICIO_AVALIACAO"
-        );
-
-
-        entrarTelaCheia();
-
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    TELA CHEIA
 ===================================================== */
 
-function entrarTelaCheia(){
-
-    if(
-        document.documentElement.requestFullscreen
-    ){
-
-        document
-        .documentElement
-        .requestFullscreen()
-        .catch(
-            function(){}
-        );
-
-    }
-
-}
-
-
-document
-.getElementById("btnTelaCheia")
-.addEventListener(
-    "click",
-    function(){
-
-        if(avaliacaoIniciada){
-
-            entrarTelaCheia();
-
+      function entrarTelaCheia() {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen().catch(function () {});
         }
+      }
 
-    }
-);
+      document
+        .getElementById("btnTelaCheia")
+        .addEventListener("click", function () {
+          if (avaliacaoIniciada) {
+            entrarTelaCheia();
+          }
+        });
 
-
-/* =====================================================
+      /* =====================================================
    DETECTAR SAÍDA DA TELA CHEIA
 ===================================================== */
 
-document.addEventListener(
-    "fullscreenchange",
-    function(){
+      document.addEventListener("fullscreenchange", function () {
+        if (
+          avaliacaoIniciada &&
+          !document.fullscreenElement &&
+          !permitirSaida
+        ) {
+          registrarEvento("SAIDA_TELA_CHEIA");
 
-        if(
-
-            avaliacaoIniciada &&
-
-            !document.fullscreenElement &&
-
-            !permitirSaida
-
-        ){
-
-            registrarEvento(
-                "SAIDA_TELA_CHEIA"
-            );
-
-
-            mostrarModal();
-
+          mostrarModal();
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    DETECTAR TROCA DE ABA
 ===================================================== */
 
-document.addEventListener(
-    "visibilitychange",
-    function(){
+      document.addEventListener("visibilitychange", function () {
+        if (avaliacaoIniciada && document.hidden && !permitirSaida) {
+          registrarEvento("TROCA_DE_ABA");
 
-        if(
-
-            avaliacaoIniciada &&
-
-            document.hidden &&
-
-            !permitirSaida
-
-        ){
-
-            registrarEvento(
-                "TROCA_DE_ABA"
-            );
-
-
-            mostrarModal();
-
+          mostrarModal();
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    PERDA DE FOCO
 ===================================================== */
 
-window.addEventListener(
-    "blur",
-    function(){
-
-        if(
-
-            avaliacaoIniciada &&
-
-            !permitirSaida
-
-        ){
-
-            registrarEvento(
-                "PERDA_DE_FOCO"
-            );
-
+      window.addEventListener("blur", function () {
+        if (avaliacaoIniciada && !permitirSaida) {
+          registrarEvento("PERDA_DE_FOCO");
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    BLOQUEAR COPIAR
 ===================================================== */
 
-document.addEventListener(
-    "copy",
-    function(event){
+      document.addEventListener("copy", function (event) {
+        if (avaliacaoIniciada) {
+          event.preventDefault();
 
-        if(avaliacaoIniciada){
-
-            event.preventDefault();
-
-            registrarEvento(
-                "TENTATIVA_COPIAR"
-            );
-
+          registrarEvento("TENTATIVA_COPIAR");
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    BLOQUEAR COLAR
 ===================================================== */
 
-document.addEventListener(
-    "paste",
-    function(event){
+      document.addEventListener("paste", function (event) {
+        if (avaliacaoIniciada) {
+          event.preventDefault();
 
-        if(avaliacaoIniciada){
-
-            event.preventDefault();
-
-            registrarEvento(
-                "TENTATIVA_COLAR"
-            );
-
+          registrarEvento("TENTATIVA_COLAR");
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    BLOQUEAR RECORTAR
 ===================================================== */
 
-document.addEventListener(
-    "cut",
-    function(event){
+      document.addEventListener("cut", function (event) {
+        if (avaliacaoIniciada) {
+          event.preventDefault();
 
-        if(avaliacaoIniciada){
-
-            event.preventDefault();
-
-            registrarEvento(
-                "TENTATIVA_RECORTAR"
-            );
-
+          registrarEvento("TENTATIVA_RECORTAR");
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    BLOQUEAR BOTÃO DIREITO
 ===================================================== */
 
-document.addEventListener(
-    "contextmenu",
-    function(event){
+      document.addEventListener("contextmenu", function (event) {
+        if (avaliacaoIniciada) {
+          event.preventDefault();
 
-        if(avaliacaoIniciada){
-
-            event.preventDefault();
-
-            registrarEvento(
-                "BOTAO_DIREITO"
-            );
-
+          registrarEvento("BOTAO_DIREITO");
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    BLOQUEAR ATALHOS
 ===================================================== */
 
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(!avaliacaoIniciada){
-
-            return;
-
+      document.addEventListener("keydown", function (event) {
+        if (!avaliacaoIniciada) {
+          return;
         }
 
-
-        const tecla =
-        event.key.toLowerCase();
-
+        const tecla = event.key.toLowerCase();
 
         /* CTRL+C */
 
-        if(
-            event.ctrlKey &&
-            tecla === "c"
-        ){
+        if (event.ctrlKey && tecla === "c") {
+          event.preventDefault();
 
-            event.preventDefault();
+          registrarEvento("CTRL_C");
 
-            registrarEvento(
-                "CTRL_C"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* CTRL+V */
 
-        if(
-            event.ctrlKey &&
-            tecla === "v"
-        ){
+        if (event.ctrlKey && tecla === "v") {
+          event.preventDefault();
 
-            event.preventDefault();
+          registrarEvento("CTRL_V");
 
-            registrarEvento(
-                "CTRL_V"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* CTRL+X */
 
-        if(
-            event.ctrlKey &&
-            tecla === "x"
-        ){
+        if (event.ctrlKey && tecla === "x") {
+          event.preventDefault();
 
-            event.preventDefault();
+          registrarEvento("CTRL_X");
 
-            registrarEvento(
-                "CTRL_X"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* CTRL+A */
 
-        if(
-            event.ctrlKey &&
-            tecla === "a"
-        ){
+        if (event.ctrlKey && tecla === "a") {
+          event.preventDefault();
 
-            event.preventDefault();
+          registrarEvento("CTRL_A");
 
-            registrarEvento(
-                "CTRL_A"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* CTRL+U */
 
-        if(
-            event.ctrlKey &&
-            tecla === "u"
-        ){
+        if (event.ctrlKey && tecla === "u") {
+          event.preventDefault();
 
-            event.preventDefault();
+          registrarEvento("CTRL_U");
 
-            registrarEvento(
-                "CTRL_U"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* CTRL+S */
 
-        if(
-            event.ctrlKey &&
-            tecla === "s"
-        ){
+        if (event.ctrlKey && tecla === "s") {
+          event.preventDefault();
 
-            event.preventDefault();
+          registrarEvento("CTRL_S");
 
-            registrarEvento(
-                "CTRL_S"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* CTRL+P */
 
-        if(
-            event.ctrlKey &&
-            tecla === "p"
-        ){
+        if (event.ctrlKey && tecla === "p") {
+          event.preventDefault();
 
-            event.preventDefault();
+          registrarEvento("CTRL_P");
 
-            registrarEvento(
-                "CTRL_P"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* F12 */
 
-        if(
-            event.key === "F12"
-        ){
+        if (event.key === "F12") {
+          event.preventDefault();
 
-            event.preventDefault();
+          registrarEvento("F12");
 
-            registrarEvento(
-                "F12"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* CTRL+SHIFT+I */
 
-        if(
+        if (event.ctrlKey && event.shiftKey && tecla === "i") {
+          event.preventDefault();
 
-            event.ctrlKey &&
-            event.shiftKey &&
-            tecla === "i"
+          registrarEvento("DEVTOOLS");
 
-        ){
-
-            event.preventDefault();
-
-            registrarEvento(
-                "DEVTOOLS"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* CTRL+SHIFT+J */
 
-        if(
+        if (event.ctrlKey && event.shiftKey && tecla === "j") {
+          event.preventDefault();
 
-            event.ctrlKey &&
-            event.shiftKey &&
-            tecla === "j"
+          registrarEvento("CONSOLE");
 
-        ){
-
-            event.preventDefault();
-
-            registrarEvento(
-                "CONSOLE"
-            );
-
-            return;
-
+          return;
         }
-
 
         /* CTRL+SHIFT+C */
 
-        if(
+        if (event.ctrlKey && event.shiftKey && tecla === "c") {
+          event.preventDefault();
 
-            event.ctrlKey &&
-            event.shiftKey &&
-            tecla === "c"
+          registrarEvento("INSPECTOR");
 
-        ){
-
-            event.preventDefault();
-
-            registrarEvento(
-                "INSPECTOR"
-            );
-
-            return;
-
+          return;
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    BOTÃO VOLTAR
 ===================================================== */
 
-history.pushState(
-    null,
-    "",
-    location.href
-);
+      history.pushState(null, "", location.href);
 
+      window.addEventListener("popstate", function () {
+        if (avaliacaoIniciada) {
+          registrarEvento("BOTAO_VOLTAR");
 
-window.addEventListener(
-    "popstate",
-    function(){
+          history.pushState(null, "", location.href);
 
-        if(avaliacaoIniciada){
-
-            registrarEvento(
-                "BOTAO_VOLTAR"
-            );
-
-
-            history.pushState(
-                null,
-                "",
-                location.href
-            );
-
-
-            mostrarModal();
-
+          mostrarModal();
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    FECHAR / RECARREGAR
 ===================================================== */
 
-window.addEventListener(
-    "beforeunload",
-    function(event){
+      window.addEventListener("beforeunload", function (event) {
+        if (avaliacaoIniciada && !permitirSaida) {
+          registrarEvento("FECHAR_OU_RECARREGAR");
 
-        if(
+          event.preventDefault();
 
-            avaliacaoIniciada &&
-
-            !permitirSaida
-
-        ){
-
-            registrarEvento(
-                "FECHAR_OU_RECARREGAR"
-            );
-
-
-            event.preventDefault();
-
-            event.returnValue = "";
-
+          event.returnValue = "";
         }
+      });
 
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    MOSTRAR MODAL
 ===================================================== */
 
-function mostrarModal(){
+      function mostrarModal() {
+        if (avaliacaoEncerrada) {
+          return;
+        }
 
-    if(avaliacaoEncerrada){
+        modalSaida.style.display = "flex";
+      }
 
-        return;
-
-    }
-
-
-    modalSaida.style.display =
-    "flex";
-
-}
-
-
-/* =====================================================
+      /* =====================================================
    CONTINUAR
 ===================================================== */
 
-document
-.getElementById("btnContinuar")
-.addEventListener(
-    "click",
-    function(){
+      document
+        .getElementById("btnContinuar")
+        .addEventListener("click", function () {
+          modalSaida.style.display = "none";
 
-        modalSaida.style.display =
-        "none";
+          registrarEvento("CONTINUOU_AVALIACAO");
 
+          entrarTelaCheia();
+        });
 
-        registrarEvento(
-            "CONTINUOU_AVALIACAO"
-        );
-
-
-        entrarTelaCheia();
-
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    ENCERRAR
 ===================================================== */
 
-document
-.getElementById("btnEncerrar")
-.addEventListener(
-    "click",
-    function(){
+      document
+        .getElementById("btnEncerrar")
+        .addEventListener("click", function () {
+          if (!confirm("Você já clicou em ENVIAR no Google Forms e viu a confirmação de envio?\n\nOK: encerrar a página.\nCancelar: voltar e enviar as respostas.")) {
+            modalSaida.style.display = "none";
+            entrarTelaCheia();
+            return;
+          }
+          permitirSaida = true;
 
-        permitirSaida = true;
+          encerrarAvaliacao("SAIDA_CONFIRMADA");
+        });
 
-
-        encerrarAvaliacao(
-            "SAIDA_CONFIRMADA"
-        );
-
-    }
-);
-
-
-/* =====================================================
+      /* =====================================================
    ENCERRAR AVALIAÇÃO
 ===================================================== */
 
-function encerrarAvaliacao(
-    motivo
-){
-
-    if(avaliacaoEncerrada){
-
-        return;
-
-    }
-
-
-    avaliacaoEncerrada = true;
-
-    avaliacaoIniciada = false;
-
-
-    registrarEvento(
-        motivo
-    );
-
-
-    avaliacao.style.display =
-    "none";
-
-
-    modalSaida.style.display =
-    "none";
-
-
-    encerrada.style.display =
-    "flex";
-
-
-    if(
-        document.fullscreenElement
-    ){
-
-        document
-        .exitFullscreen()
-        .catch(
-            function(){}
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   FINALIZAR MANUALMENTE
-===================================================== */
-
-document
-.getElementById("btnFinalizar")
-.addEventListener(
-    "click",
-    function(){
-
-        if(!avaliacaoIniciada){
-
-            return;
-
+      function encerrarAvaliacao(motivo) {
+        if (avaliacaoEncerrada) {
+          return;
         }
 
-
-        const confirmar =
-        confirm(
-            "Você tem certeza que deseja finalizar a avaliação?"
-        );
-
-
-        if(!confirmar){
-
-            return;
-
-        }
-
-
-        permitirSaida = true;
-
-
-        registrarEvento(
-            "FINALIZACAO_MANUAL"
-        );
-
+        avaliacaoEncerrada = true;
 
         avaliacaoIniciada = false;
 
+        registrarEvento(motivo);
 
-        avaliacao.style.display =
-        "none";
+        avaliacao.style.display = "none";
 
+        modalSaida.style.display = "none";
 
-        finalizada.style.display =
-        "flex";
+        encerrada.style.display = "flex";
 
-
-        if(
-            document.fullscreenElement
-        ){
-
-            document
-            .exitFullscreen()
-            .catch(
-                function(){}
-            );
-
+        if (document.fullscreenElement) {
+          document.exitFullscreen().catch(function () {});
         }
+      }
 
-    }
-);
+      /* =====================================================
+   FINALIZAR MANUALMENTE
+===================================================== */
 
+      document
+        .getElementById("btnFinalizar")
+        .addEventListener("click", function () {
+          if (!avaliacaoIniciada) {
+            return;
+          }
 
-/* =====================================================
+          const confirmar = confirm(
+            "Você já clicou em ENVIAR no Google Forms e viu a confirmação de envio?\n\nOK: finalizar esta página.\nCancelar: voltar e enviar as respostas."
+          );
+
+          if (!confirmar) {
+            return;
+          }
+
+          permitirSaida = true;
+
+          registrarEvento("FINALIZACAO_MANUAL");
+
+          avaliacaoIniciada = false;
+
+          avaliacao.style.display = "none";
+
+          finalizada.style.display = "flex";
+
+          if (document.fullscreenElement) {
+            document.exitFullscreen().catch(function () {});
+          }
+        });
+
+      /* =====================================================
    REGISTRAR EVENTOS
 ===================================================== */
 
-function registrarEvento(
-    tipo
-){
+      function registrarEvento(tipo) {
+        const evento = {
+          evento: tipo,
 
-    const evento = {
+          data: new Date().toLocaleString("pt-BR"),
+        };
 
-        evento:tipo,
+        console.log("EVENTO DA AVALIAÇÃO:", evento);
 
-        data:
-        new Date()
-        .toLocaleString(
-            "pt-BR"
-        )
+        let eventos =
+          JSON.parse(localStorage.getItem("eventos_avaliacao")) || [];
 
-    };
+        eventos.push(evento);
 
-
-    console.log(
-        "EVENTO DA AVALIAÇÃO:",
-        evento
-    );
-
-
-    let eventos =
-    JSON.parse(
-        localStorage.getItem(
-            "eventos_avaliacao"
-        )
-    ) || [];
-
-
-    eventos.push(
-        evento
-    );
-
-
-    localStorage.setItem(
-        "eventos_avaliacao",
-        JSON.stringify(
-            eventos
-        )
-    );
-
-}
-
-</script>
-
-
-</body>
-
+        localStorage.setItem("eventos_avaliacao", JSON.stringify(eventos));
+      }
+    </script>
+  </body>
 </html>
-```
 
